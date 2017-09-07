@@ -1,0 +1,29 @@
+.checkbox-inline label, .radio-inline label{
+  font-weight: normal;
+}
+
+.top20 { margin-top:20x; }
+.top50 { margin-top:50px; }
+.top100 { margin-top:100px; }
+.top150 { margin-top:150px; }
+.top250 { margin-top:250px; }
+.top500 { margin-top:500px; }
+
+.bottom20 { margin-bottom:20px; }
+.bottom50 { margin-bottom:50px; }
+.bottom100 { margin-bottom:100px; }
+.bottom150 { margin-bottom:150px; }
+.bottom250 { margin-bottom:250px; }
+.bottom500 { margin-bottom:500px; }
+
+.login-margin { 	
+	margin-top:25px; 
+	margin-bottom:30px;	
+}
+
+.button-margin { 	
+	margin-top:50px; 
+	margin-bottom:50px;	
+	margin-right:50px; 
+	margin-left:50px;	
+}

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+			http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context
+			http://www.springframework.org/schema/context/spring-context.xsd
+			http://www.springframework.org/schema/tx
+			http://www.springframework.org/schema/tx/spring-tx.xsd
+			http://www.springframework.org/schema/security
+			http://www.springframework.org/schema/security/spring-security.xsd">
+
+	<http auto-config="true" use-expressions="true">
+		<intercept-url pattern="/login" access="permitAll" />
+		<intercept-url pattern="/logout" access="permitAll" />
+		<intercept-url pattern="/accessdenied" access="permitAll" />
+		<intercept-url pattern="/**" access="hasRole('user')" />
+		<form-login login-page="/login" default-target-url="/getAllProducts"
+			authentication-failure-url="/accessdenied" />
+		<logout logout-success-url="/logout" />
+	</http>
+
+	<authentication-manager alias="authenticationManager">
+		<authentication-provider>
+			<jdbc-user-service data-source-ref="dataSource"
+
+			users-by-username-query="		     
+			 SELECT USERNAME, PASSWORD, ENABLED FROM CUSTOMER_ROLE 
+			 WHERE USERNAME = ? "
+
+			authorities-by-username-query="
+			SELECT USERNAME, ROLE FROM CUSTOMER_ROLE 
+			 WHERE USERNAME = ?"
+			/>
+		</authentication-provider>
+	</authentication-manager>
+
+</beans:beans>
