@@ -20,13 +20,6 @@ public class OrderStatus {
 	@Column(name = "DESCRIPTION")
 	String description;
 
-	
-	public OrderStatus(int statusId, String status, String description) {
-		super();
-		this.statusId = statusId;
-		this.status = status;
-		this.description = description;
-	}
 
 	public int getStatusId() {
 		return statusId;

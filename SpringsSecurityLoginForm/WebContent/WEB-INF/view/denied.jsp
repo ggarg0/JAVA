@@ -10,10 +10,11 @@
 		<div class="top150">
 			<div class="row justify-content-around">
 
-				<div class="col-sm-4">
+				<div class="col-md-6">
 					<c:if test="${not empty error}">
 						<div style="color: red">
 							<p class="lead">
+						
 						<span class="text-error">Login denied : ${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}</span>
 					</p>
 						</div>

@@ -31,17 +31,6 @@ public class Customer {
 	@Column(name = "CITY")
 	String city;
 
-	public Customer(int customerId, String firstName, String lastName,
-			String emailId, String phoneNumber, String address, String city) {
-		this.customerId = customerId;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.emailId = emailId;
-		this.phoneNumber = phoneNumber;
-		this.address = address;
-		this.city = city;
-	}
-
 	public int getCustomerId() {
 		return customerId;
 	}

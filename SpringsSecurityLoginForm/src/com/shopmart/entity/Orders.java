@@ -29,14 +29,6 @@ public class Orders {
 	@Column(name = "INVOICE_ID")
 	int invoiceId;
 
-	
-	public Orders(int orderId, int customerId, Date dateCreated, int statusId, int invoiceId) {
-		this.orderId = orderId;
-		this.customerId = customerId;
-		this.dateCreated = dateCreated;
-		this.statusId = statusId;
-		this.invoiceId = invoiceId;
-	}
 
 	public int getOrderId() {
 		return orderId;

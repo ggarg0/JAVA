@@ -74,7 +74,6 @@ public class EditEmployeeController {
 	@RequestMapping("/editEmp/{employeeId}")
 	public String updateEmplyoee(@PathVariable("employeeId") Integer employeeId,
 			ModelMap model) {
-		//EmployeeEntity employee = employeeManager.updateEmployee(employeeId);
 		model.addAttribute("employee", employeeManager.getEmployee(employeeId));
 		return "editEmployeeList";
 	}

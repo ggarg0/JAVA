@@ -28,18 +28,19 @@
 			
 			<div class="top20">
 				<c:if test="${!empty model.productList}">
-					<table class="table table-striped">
+					<table class="table table-striped table-responsive">
 
 						<tr>
-							<th>Product Name</th>
+							<th style="width: 50%">Product Name</th>
 							<th>Product Price</th>
-							<th>Product Description</th>
+							<th style="width: 30%">Product Description</th>
 							<th>Available Quantity</th>
 							<th>Order</th>
 
 						</tr>
 						<c:forEach items="${model.productList}" var="product">
 							<tr>
+						
 								<td>${product.productName}</td>
 								<td>${product.productPrice}</td>
 								<td>${product.productDescription}</td>

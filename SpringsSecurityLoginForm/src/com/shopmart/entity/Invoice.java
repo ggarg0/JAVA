@@ -25,14 +25,6 @@ public class Invoice {
 	@Column(name = "TOTAL_AMOUNT")
 	double totalAmount;
 
-	
-	public Invoice(int invoiceId, double totalProductPrice, double deliveryCharge, double taxes, double totalAmount) {
-		this.invoiceId = invoiceId;
-		this.totalProductPrice = totalProductPrice;
-		this.deliveryCharge = deliveryCharge;
-		this.taxes = taxes;
-		this.totalAmount = totalAmount;
-	}
 
 	public int getInvoiceId() {
 		return invoiceId;

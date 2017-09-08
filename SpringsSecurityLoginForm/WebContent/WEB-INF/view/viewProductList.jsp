@@ -3,9 +3,11 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
-<spring:url value="/resources/css/bootstrap.min.css"
-	var="bootstrap.min.css" />
-<link href="${bootstrap.min.css}" rel="stylesheet" />
+<spring:url value="resources/css/core.css" var="coreCss" />
+<spring:url value="resources/css/bootstrap.min.css"
+	var="bootstrapCss" />
+<link href="${bootstrapCss}" rel="stylesheet" />
+<link href="${coreCss}" rel="stylesheet" />
 <title>Home Appliances Shop</title>
 </head>
 <jsp:include page="appHeader.jsp" />
@@ -13,23 +15,22 @@
 <div class="top20">
 	<div class="container">
 			<div class="row">
-				<div class="button-margin">
-					
+		
+       			
+				<div class="button-margin">					
 				<c:if test="${!empty model.categoryList}">
-					<c:forEach items="${model.categoryList}" var="category">
+					<c:forEach items="${model.categoryList}" var="category">					
 						<button type="button" class="btn btn-outline-info" 
 						onclick="location.href='/SpringsSecurityLoginForm/getProductByCategory/${category.categoryId}'">
 						${category.categoryName}</button>
 					</c:forEach>
 				</c:if>
-			</div>
-</div>
+			</div></div>
 
 			
 			<div class="top20">
 				<c:if test="${!empty model.productList}">
-					<table class="table table-striped">
-
+					<table class="table-responsive table table-striped">
 						<tr>
 							<th>Product Name</th>
 							<th>Product Price</th>
@@ -49,6 +50,9 @@
 					</table>
 				</c:if>
 			</div>
+			  <div class="col-md-12 text-center">
+      <ul class="pagination pagination-lg pager" id="myPager"></ul>
+      </div>
 		</div>
 	</div>
 

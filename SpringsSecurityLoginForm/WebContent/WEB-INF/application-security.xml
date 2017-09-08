@@ -16,7 +16,7 @@
 		<intercept-url pattern="/login" access="permitAll" />
 		<intercept-url pattern="/logout" access="permitAll" />
 		<intercept-url pattern="/accessdenied" access="permitAll" />
-		<intercept-url pattern="/**" access="hasRole('user')" />
+		<intercept-url pattern="/**" access="hasRole('user') or hasRole('admin')" />
 		<form-login login-page="/login" default-target-url="/getAllProducts"
 			authentication-failure-url="/accessdenied" />
 		<logout logout-success-url="/logout" />

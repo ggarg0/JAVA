@@ -19,13 +19,6 @@ public class OrderDetails {
 	@Column(name = "QUANTITY")
 	int quantity;
 
-	
-	public OrderDetails(int ordersId, int productId, int quantity) {
-		super();
-		this.ordersId = ordersId;
-		this.productId = productId;
-		this.quantity = quantity;
-	}
 
 	public int getOrdersId() {
 		return ordersId;

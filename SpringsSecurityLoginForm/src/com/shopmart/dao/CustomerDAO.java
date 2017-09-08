@@ -5,7 +5,11 @@ import java.util.List;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
 import com.shopmart.entity.Customer;
+import com.shopmart.entity.CustomerRole;
+import com.shopmart.entity.EmployeeEntity;
 
 @Repository
 public class CustomerDAO {
@@ -22,4 +26,14 @@ public class CustomerDAO {
 				+ customerId).list();
 	}
 
+
+	public void addCustomer(Customer customer) {
+		this.sessionFactory.getCurrentSession().save(customer);
+	}
+	
+
+	public void addCustomerRole(CustomerRole customerrole) {
+		this.sessionFactory.getCurrentSession().save(customerrole);
+	}
+	
 }

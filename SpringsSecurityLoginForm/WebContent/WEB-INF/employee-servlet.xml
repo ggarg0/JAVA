@@ -63,6 +63,16 @@
 
 	<bean id="employeeDAO" class="com.shopmart.dao.EmployeeDaoImpl"></bean>
 	<bean id="employeeManager" class="com.shopmart.service.EmployeeManagerImpl"></bean>
+	
+	<bean id="category" class="com.shopmart.entity.Category"></bean>
+	<bean id="customer" class="com.shopmart.entity.Customer"></bean>
+	<bean id="invoice" class="com.shopmart.entity.Invoice"></bean>
+	<bean id="orders" class="com.shopmart.entity.Orders"></bean>
+	<bean id="orderstatus" class="com.shopmart.entity.OrderStatus"></bean>
+	<bean id="product" class="com.shopmart.entity.Product"></bean>
+	<bean id="customerrole" class="com.shopmart.entity.CustomerRole"></bean>
+	
+	
 	<bean id="categoryService" class="com.shopmart.service.CategoryService"></bean>
 	<bean id="customerService" class="com.shopmart.service.CustomerService"></bean>
 	<bean id="invoiceService" class="com.shopmart.service.InvoiceService"></bean>

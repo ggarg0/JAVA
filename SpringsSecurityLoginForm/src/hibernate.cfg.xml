@@ -13,5 +13,6 @@
 		<mapping class="com.shopmart.entity.Invoice" />
 		<mapping class="com.shopmart.entity.Customer" />
 		<mapping class="com.shopmart.entity.Category" />
+		<mapping class="com.shopmart.entity.CustomerRole" />
     </session-factory>
 </hibernate-configuration>

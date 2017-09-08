@@ -5,17 +5,18 @@
 <jsp:include page="loginHeader.jsp" />
 <body>
 
-	<% session.invalidate(); %>
+	<%
+		session.invalidate();
+	%>
 	<div class="container">
 		<div class="top150">
 			<div class="row justify-content-around">
 
 				<div class="col-sm-4">
-					<p class="lead">
-						<span class="text-error">You are now logged out!!</span>
-					</p>
+						<p class="lead">
+							<span class="text-success">You are now logged out!!</span>
+						</p>
 					<p>
-
 						<a href="/SpringsSecurityLoginForm/login">Login Again</a>
 					</p>
 				</div>

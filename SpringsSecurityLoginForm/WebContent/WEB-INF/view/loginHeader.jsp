@@ -10,9 +10,6 @@
 <link href="${coreCss}" rel="stylesheet" />
 </head>
 
-<spring:url value="/" var="urlHome" />
-<spring:url value="/logout" var="logout" />
-
 <nav class="navbar navbar-light" style="background-color: #5bc0de;">
  <div class="row">
   <div class="col-4">

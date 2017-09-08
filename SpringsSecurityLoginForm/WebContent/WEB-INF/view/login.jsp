@@ -5,8 +5,8 @@
 <html>
 <head>
 <title>Home Appliances Shop</title>
-<spring:url value="/../resources/css/core.css" var="coreCss" />
-<spring:url value="/../resources/css/bootstrap.min.css" var="bootstrapCss" />
+<spring:url value="/resources/css/core.css" var="coreCss" />
+<spring:url value="/resources/css/bootstrap.min.css" var="bootstrapCss" />
 <link href="${bootstrapCss}" rel="stylesheet" />
 <link href="${coreCss}" rel="stylesheet" />
 </head>
@@ -51,7 +51,7 @@
 								favorites</li>
 						</ul>
 						<p>
-							<a href="/new-customer/" class="btn btn-info btn-block">Register
+							<a href="/SpringsSecurityLoginForm/newcustomer" class="btn btn-info btn-block">Register
 								now!</a>
 						</p>
 					</div>

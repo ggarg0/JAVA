@@ -38,10 +38,8 @@ public class ProductController {
 	public ModelAndView getProductByCategory(@PathVariable int categoryId){
 		Map<String, Object> model = new HashMap<>();
 		model.put("categoryList", categoryService.getAllCategory());
-		model.put("productList", productService.getProductByCategory(categoryId));
-	
+		model.put("productList", productService.getProductByCategory(categoryId));	
 		return new ModelAndView("viewProductByCategoryList", "model", model);
-
 	}
 
 	
