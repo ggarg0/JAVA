@@ -1,0 +1,3 @@
+id=select * from emp;
+password=abc
+schema=gaurav
