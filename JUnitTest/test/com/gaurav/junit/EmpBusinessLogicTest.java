@@ -1,4 +1,4 @@
-package Test;
+package com.gaurav.junit;
 
 import static org.junit.Assert.*;
 
@@ -9,10 +9,7 @@ import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import com.gaurav.junit.EmpBusinessLogic;
-import com.gaurav.junit.EmployeeDetails;
-
-public class TestEmpBusinessLogic {
+public class EmpBusinessLogicTest {
 
 	EmpBusinessLogic empBusinessLogic;
 	EmployeeDetails employee;
@@ -43,25 +40,24 @@ public class TestEmpBusinessLogic {
 		empBusinessLogic = null;
 		employee = null;
 	}
-
-	@Test
+	
+	@Test(timeout = 1)
 	public void testCalculateYearlySalary() {
-
 		double salary = empBusinessLogic.calculateYearlySalary(employee);
 		System.out.println("salary ... " + salary);
 		assertEquals(96000, salary,0.0);
 	}
-
-	@Test(timeout = 1)
+	
+	@Ignore("Not Ready to Run")
+	@Test
 	public void testCalculateAppraisal() {
 
 		double appraisal = empBusinessLogic.calculateAppraisal(employee);
 		System.out.println("appraisal ... " + appraisal);
 		assertEquals(500, appraisal, 0.0);
-
 	}
-
-	@Ignore("Not Ready to Run")
+	
+	
 	@Test(expected = ArithmeticException.class)
 	public void divisionWithException() {
 		int i = 1 / 0;
