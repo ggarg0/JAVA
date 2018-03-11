@@ -51,12 +51,19 @@ public class EmpBusinessLogicTest {
 	@Ignore("Not Ready to Run")
 	@Test
 	public void testCalculateAppraisal() {
-
 		double appraisal = empBusinessLogic.calculateAppraisal(employee);
 		System.out.println("appraisal ... " + appraisal);
 		assertEquals(500, appraisal, 0.0);
 	}
 	
+/*	@Test
+	public void testCalculateAppraisalWithMockito() {
+		double appraisal = empBusinessLogic.calculateAppraisal(employee);
+		when(empBusinessLogic.calculateAppraisal(employee).thenReturn(100));
+		SomeBusinessImpl businessImpl = new SomeBusinessImpl(dataServiceMock);
+		int result = businessImpl.findTheGreatestFromAllData();
+		assertEquals(24, result);
+	}*/
 	
 	@Test(expected = ArithmeticException.class)
 	public void divisionWithException() {
