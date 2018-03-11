@@ -62,5 +62,16 @@ public class EmpBusinessLogicTest {
 	public void divisionWithException() {
 		int i = 1 / 0;
 	}
+	
+	@Test
+	public void assertMethods() {
+		double salary = empBusinessLogic.calculateYearlySalary(employee);
+		double appraisal = empBusinessLogic.calculateAppraisal(employee);
+		
+		assertTrue(salary>appraisal);
+		//assertFalse(salary>appraisal);
+		//assertNull(employee);
+		assertNotNull(employee);
+	}
 
 }
