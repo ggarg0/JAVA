@@ -10,8 +10,5 @@ public class GetDateNow1 {
 
   String dateNow = formatter.format(d1);
   System.out.println("Date Object with Formatter:=>  " + dateNow);
-
-
-
   }
 }

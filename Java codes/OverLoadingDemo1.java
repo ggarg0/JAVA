@@ -1,5 +1,5 @@
 class OverLoadingDemo1 {
-		public OverLoadingDemo1(Object o)
+		private OverLoadingDemo1(Object o)
 		{
 					System.out.println("Inside Object");
 

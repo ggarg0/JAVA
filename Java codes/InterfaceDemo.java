@@ -1,11 +1,12 @@
 abstract interface Shape{
 	public void draw();
-	//public void draw1();
+	public void draw1();
+	//public void draw2();
 
 }
 abstract interface Shape1{
 	public void draw();
-	//public void draw1();
+	public void draw1();
 
 }
 class Rectangle implements Shape,Shape1{

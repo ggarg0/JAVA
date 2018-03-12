@@ -27,23 +27,18 @@ class SuperNotSerial{
 		System.out.println("Recovered object name : "+d.name+ " & weight : " + d.weight);
 	}
 }
-class Dog extends Animal  implements Serializable{
+class Dog extends Animal  {
 	String name;
-	Dog()	{
-
-	}
+	Dog()	{	}
 	Dog(int w, String n)	{
 		super(w);
 		name=n;
 	}
 }
-class Animal {
+class Animal implements Serializable{
 	  int weight;
-	  Animal()
-	 	 {
-	}
-	 Animal(int w)
-	 {
+	  Animal(){}
+	 Animal(int w){
 		weight=w;
 	}
 	 //int weight;

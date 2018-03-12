@@ -1,20 +1,19 @@
 abstract class Shape{
+	Shape(){}
 	abstract void draw();
-void display(){
-			System.out.println("Shape Hello");
+	void display(){
+		System.out.println("Shape Hello");
 	}
-
 }
 
 class Rectangle extends Shape{
-/*	void display(){
+	void display(){
 			System.out.println("Hello");
-	}*/
+	}
 	void draw(){
 		System.out.println("Drawing Rectangle");
 	}
 }
-
 class AbstractDemoTest{
 	public static void main(String args[]){
 		Shape s1=new Rectangle();

@@ -1,18 +1,25 @@
 import java.io.*;
-class SuperNotSerial{
-	public static void main(String[] a)	{
+
+class SuperNotSerial1
+{
+	public static void main(String[] a)
+	{
 		Dog d = new Dog(12,"Gaurav");
 		System.out.println("Before Serial name : "+d.name+ " & weight : " + d.weight);
-		try		{
+		try
+		{
 			FileOutputStream fos = new FileOutputStream("SuperNotSerial.txt");
 			ObjectOutputStream bos = new ObjectOutputStream(fos);
 			bos.writeObject(d);
 			bos.close();
 		}
-		catch(Exception e){
+		catch(Exception e)
+		{
 			System.out.println("EXP : " + e);
 		}
-		try{
+
+		try
+				{
 					//d.name="Changed Name";
 					//d.weight=123;
 					//System.out.println("Change after serial name : "+d.name+ " & weight : " + d.weight);
@@ -21,30 +28,24 @@ class SuperNotSerial{
 					d= (Dog) bis.readObject();
 					bis.close();
 				}
-				catch(Exception e)				{
+				catch(Exception e)
+				{
 					System.out.println("EXP : " + e);
 		}
 		System.out.println("Recovered object name : "+d.name+ " & weight : " + d.weight);
 	}
 }
-class Dog extends Animal implements Serializable {
+class Dog extends Animal implements Serializable
+{
 	String name;
-	Dog()	{
-
-	}
-	Dog(int w, String n)	{
-		super(w);
+	Dog(int w, String n)
+	{
+		weight=w;
 		name=n;
 	}
 }
-class Animal {
-	transient  int weight;
-	  Animal()
-	 	 {
-	}
-	 Animal(int w)
-	 {
-		weight=w;
-	}
+class Animal
+{
+	 static int weight=42;
 	 //int weight;
 }

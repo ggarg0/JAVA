@@ -9,23 +9,23 @@ class TestJoinMethod1 implements Runnable{
 
 public static void main(String args[]){
  TestJoinMethod1 test=new TestJoinMethod1();
- Thread[] threads = new Thread[4];
+ Thread[] threads = new Thread[9];
  try{
-/* for (int i = 0; i < threads.length; i++) {
+for (int i = 0; i < threads.length; i++) {
       threads[i] = new Thread(test,"Thread"+i);
       threads[i].start();
-       threads[i].join();
+      threads[i].join();
     }
-*/
 
- Thread t1 = new Thread(test,"IMP");
+/* Thread t1 = new Thread(test,"IMP");
  Thread t2 = new Thread(test,"FIRST");
 Thread t3 = new Thread(test,"SECOND");
 
  t1.start();
  t1.join();
  t2.start();
- t3.start();
+  t2.join();
+ t3.start();*/
  }catch(Exception e){System.out.println(e);}
  }
 }

@@ -1,27 +1,23 @@
 class Animal{
-	 void speak() throws NoSuchFieldException{
-			System.out.println("I am an  Animal");
-	}
-	void run(){
-			System.out.println("Dog is running");
+	static void speak(){
+		System.out.println("I am an  Animal");
 	}
 }
 
 class Dog extends Animal{
- 	public void speak() throws Exception{
+ 	static void speak(){
 			System.out.println("I am a Dog");
 	}
-
+	void run(){
+				System.out.println("Dog is running");
+	}
 }
 
-class OverRidingNew{
+class OverRidingNewExample{
 	public static void main(String args[]){
-		try{
 		Animal aniobj=new Dog();
 		aniobj.speak();
 		aniobj.run();
-	}
-	catch (Exception e){}
 	}
 }
 

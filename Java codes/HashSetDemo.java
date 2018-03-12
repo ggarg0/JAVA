@@ -18,9 +18,9 @@ public class HashSetDemo{
 	   while (iterator.hasNext()){
 				String o= (String) iterator.next();
 	            System.out.println("Old : " + o);
-	           if(o.equals("2"))  {
+	           if(o.equals("Jerry"))  {
 				   iterator.remove();
-				   break;
+				   //break;
       			}
         }
         iterator = hashset.iterator();

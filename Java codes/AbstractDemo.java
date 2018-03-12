@@ -1,11 +1,25 @@
-  abstract class Shape{
-	 void draw() {};
+abstract class Shape{
+	abstract void draw();
 }
 
-class AbstractDemo extends Shape{
+class Rectangle extends Shape{
+	void draw(){
+		System.out.println("Drawing Rectangle");
+	}
+}
 
+class Traingle extends Shape{
+	void draw(){
+		System.out.println("Drawing Traingle");
+	}
+}
+
+class AbstractDemo{
 	public static void main(String args[]){
-		Shape s=new AbstractDemo();
+		Shape s1=new Rectangle();
+		s1.draw();
+		s1=new Traingle();
+		s1.draw();
 	}
 }
 

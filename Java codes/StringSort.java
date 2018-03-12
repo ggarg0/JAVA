@@ -15,7 +15,7 @@ public static void main(String[] args){
             }
         }
     }
-    wordSt=new String(word);
+    wordSt=String.valueOf(word);
     System.out.println("Using Loop : " + wordSt);
 
 // Using sort function
