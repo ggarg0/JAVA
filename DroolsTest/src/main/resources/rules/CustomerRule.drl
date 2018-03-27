@@ -1,0 +1,14 @@
+package com.sample
+ 
+import com.sample.DroolsTest.Message;
+import com.sample.customer.CustomerRuleObject;
+ 
+dialect "java"
+ 
+rule "CustomerRule"
+ 
+    when
+        customerRuleObject:CustomerRuleObject (getFirstName() == 'Deepak' )
+    then
+        customerRuleObject.setMessage(customerRuleObject.getMessage()+'First Name is ' + customerRuleObject.getFirstName());
+end
