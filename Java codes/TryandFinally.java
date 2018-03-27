@@ -1,10 +1,3 @@
-
-/*
-execute the program , then modify the program by removing the comment in
-line2, then comment the line1
-*/
-
-
 class TryandFinally {
 	public static void main(String [] args) {
 		try {
