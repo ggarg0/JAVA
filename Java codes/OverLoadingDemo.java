@@ -4,11 +4,12 @@ class OverLoadingDemo {
 					System.out.println("Inside int");
 					return num1+num2;
 		}
-		public float add(float num1,int num2)
+		private float add(float num1,float num2)
 		{
 				System.out.println("Inside long");
 				return num1+num2;
 		}
+
 		public static void main(String arg[])
 		{
 			OverLoadingDemo overload=new OverLoadingDemo();

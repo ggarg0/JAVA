@@ -1,6 +1,6 @@
 abstract class Shape{
 	Shape(){}
-	abstract void draw();
+	//abstract void draw();
 	void display(){
 		System.out.println("Shape Hello");
 	}
@@ -18,7 +18,7 @@ class AbstractDemoTest{
 	public static void main(String args[]){
 		Shape s1=new Rectangle();
 		Rectangle s2=new Rectangle();
-		s1.draw();
+		//s1.draw();
 		s1.display();
 		s2.draw();
 		s2.display();
