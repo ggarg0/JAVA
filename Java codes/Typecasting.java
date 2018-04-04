@@ -1,20 +1,15 @@
-class Typecasting
-{
-	public static void main(String arg[])
-	{
+class Typecasting{
+	public static void main(String arg[]){
 
 		 long longNumber=200;
-
 		 float floatNumber=123.5F;
 		 double doubleNumber=12.5;
-		/* explicit type Casting NOT required to convert from float to double */
+		 int intNumber =100;
+
 		 doubleNumber=floatNumber;
-		 /* explicit type casting REQUIRED to convert from float to long */
-		 //longNumber=(long)floatNumber;
-		 longNumber=floatNumber;
+		 longNumber=intNumber;
 
-	    System.out.println(doubleNumber);
-	    System.out.println(longNumber);
-
+	     System.out.println(doubleNumber);
+	     System.out.println(longNumber);
  	}
 }
