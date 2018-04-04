@@ -1,30 +1,25 @@
-class runnableExtThreads implements  Runnable
+class runnableExtThreads implements Runnable
 {
-	runnableExtThreads()
-	{
+	runnableExtThreads()	{
 		System.out.println("Base Constructor");
 	}
-	public void run()
-		{
-//int i=1/0;
-//System.exit(0);
-			System.out.println("run Constructor");
+	public void run(){
+		//int i=1/0;
+		//System.exit(0);
+		System.out.println("run Constructor");
 	}
 }
 
-class ExtrunnableDemo
-{
-	public static void main(String a[])
-	{
+class ThreadRunnableDemo{
+	public static void main(String a[])	{
 		System.out.println("Hi i am main thread");
 		runnableExtThreads obj=new runnableExtThreads();
 		Thread t=new Thread(obj);
 		try{
 			boolean flag=true;
-			while(flag)
-			{
+			while(flag)			{
 				System.out.println("flag : " + flag);
-				t.sleep(5000);
+				t.sleep(500);
 				flag=false;
 		}
 
@@ -32,10 +27,9 @@ class ExtrunnableDemo
 		//t.sleep(1000);
 		System.out.println("flag : " + flag);
 	}
-	catch(Exception e)
-	{
+	catch(Exception e){
 		System.out.println("Exception : " + e);
-		}
+	}
 		finally {
 					System.out.println("This is finally.");
 		}

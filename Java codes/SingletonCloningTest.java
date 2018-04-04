@@ -7,8 +7,8 @@
 			 }
 			 return INSTANCE;
           }
-         public Singleton clone() throws CloneNotSupportedException {
-			 //		return super.clone();
+         public Object clone() throws CloneNotSupportedException {
+			 	//return super.clone();
 		  	 throw new CloneNotSupportedException();
          }
  }
