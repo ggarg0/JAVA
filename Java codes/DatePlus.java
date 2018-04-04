@@ -12,16 +12,10 @@ public class DatePlus
 		cal.setTime(date);
 		cal.add(Calendar.DATE, 70); // add 10 days
 		date = cal.getTime();
+        System.out.println(currentDate.format(date));
 
-       System.out.println(currentDate.format(date));
-
-
-           // 2015/09/27 15:07:53
-	       System.out.println( new SimpleDateFormat("yyMMddHHmmss").format(Calendar.getInstance().getTime()) );
-
-
-
-
-
+        Date currDate = new Date(118, 3, 8);
+        System.out.println(currDate);
+    	System.out.println((new Date().getTime() - currDate.getTime())/(1000 * 60 * 60 * 24));
     }
 }
