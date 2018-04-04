@@ -5,7 +5,7 @@ import javax.swing.text.DefaultHighlighter;
 import javax.swing.text.Highlighter;
 import javax.swing.text.Highlighter.HighlightPainter;
 
-public class highlighterTest {
+public class HighlighterTest {
    public static void main(String[] args) throws BadLocationException {
 
       JTextArea textArea = new JTextArea(10, 30);
@@ -19,7 +19,7 @@ public class highlighterTest {
       int p0 = text.indexOf("world");
       int p1 = p0 + "world".length();
       highlighter.addHighlight(p0, p1, painter );
- //highlighter.removeAllHighlights();
+	 //highlighter.removeAllHighlights();
       JOptionPane.showMessageDialog(null, new JScrollPane(textArea));
    }
 }

@@ -22,10 +22,10 @@ class ExampleThread extends Thread {
 		}
 	}
 }
-public class VolatileExample {
+public class ThreadVolatileExample {
 	public static void main(String args[]) {
 		new ExampleThread("Thread 1 ").start();
-		new ExampleThread("Thread 2 ").sleep(1000);
+	//	new ExampleThread("Thread 2 ").sleep(1000);
 		new ExampleThread("Thread 2 ").start();
 	}
 }
