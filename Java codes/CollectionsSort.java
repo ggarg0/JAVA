@@ -20,8 +20,6 @@ public class CollectionsSort
 		System.out.println("List : " + obj.get(1));
 }
 catch(Exception e)
-{
-
-	}
+{	}
 	}
 }

@@ -37,7 +37,7 @@ class HDTV implements Comparable<HDTV> {
 
 public class ComparableHDTV {
 	public static void main(String[] args) {
-		HDTV tv1 = new HDTV(65, "Samsung");
+		HDTV tv1 = new HDTV(55, "LG");
 		HDTV tv2 = new HDTV(60, "Sony");
 
 		if (tv1.compareTo(tv2) > 0) {
