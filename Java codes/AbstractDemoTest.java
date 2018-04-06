@@ -5,7 +5,6 @@ abstract class Shape{
 		System.out.println("Shape Hello");
 	}
 }
-
 class Rectangle extends Shape{
 	void display(){
 			System.out.println("Hello");

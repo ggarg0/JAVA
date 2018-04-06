@@ -6,7 +6,6 @@ public class ExceptionDemo{
 			int c=5/b;		// line 9
 			System.out.println("TESTing");// line 10
 	 	}
-
 	  	catch(ArithmeticException ae){
 	    	System.out.println("Divided by zero"+ae);
 	  	}catch(Exception e){
@@ -19,12 +18,6 @@ public class ExceptionDemo{
 	System.out.println("TESTs");
    	}
 }
-
-/*
-Correct the compilation error and execute.
-After executing the progarm verify the output.
-modify the program by commenting the line 9 and execute the program
-*/
 
 
 
