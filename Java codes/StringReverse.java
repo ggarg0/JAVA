@@ -3,7 +3,7 @@ import java.util.*;
 public class StringReverse{
 public static void main(String[] args){
 
-    String wordSt="gauravs";
+    String wordSt="garg";
     char[] word=wordSt.toCharArray();
  	int right = word.length-1;
 

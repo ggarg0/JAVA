@@ -17,6 +17,7 @@ public class Palindrome {
             int remainder = palindrome % 10;
             reverse = reverse * 10 + remainder;
             palindrome = palindrome / 10;
+            System.out.println("palindrome : " + palindrome + ", remainder : " + remainder + ", reverse : " + reverse);
         }
         if (number == reverse) {
             return true;

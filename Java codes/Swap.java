@@ -3,8 +3,7 @@ class Swap
 	public static void main (String []a1){
 
 	try{
-		int a = 70;
-		int b = 50;
+		int a = 70, b = 50;
 
 		System.out.println("value of a and b before swapping, a: " + a +" b: " + b);
 

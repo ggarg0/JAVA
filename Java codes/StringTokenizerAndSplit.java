@@ -5,7 +5,7 @@ public class StringTokenizerAndSplit {
 
 	public static void main(String[] args) {
 		String delims = ",";
-		String splitString = "one,two,,three,four,,five";
+		String splitString = "one,two, ,three,four,,five";
 
 		System.out.println("StringTokenizer Example: \n");
 		StringTokenizer st = new StringTokenizer(splitString, delims);

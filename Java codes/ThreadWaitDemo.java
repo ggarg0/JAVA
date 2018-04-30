@@ -19,13 +19,8 @@ class ThreadWaitDemo extends Thread{
 		}
 	}
 	public static void main(String[] a){
-			ThreadB b=new ThreadB();
-			ThreadB b1=new ThreadB();
-			//b.run();
+			ThreadWaitDemo b = new ThreadWaitDemo();
 			b.start();
-			//	b.start();
 			b.display();
-			//b1.start();
-			//b1.display();
 	}
 }
