@@ -2,21 +2,21 @@ package com.gaurav.cab;
 
 public class CabDetails {
 
-	int CabId;
+	String CabId;
 	String CabType;
 	String CabAvailable;
 	
-	public CabDetails(int cabId, String cabType, String cabAvailable) {
+	public CabDetails(String cabId, String cabType, String cabAvailable) {
 		CabId = cabId;
 		CabType = cabType;
 		CabAvailable = cabAvailable;
 	}
 	
-	public int getCabId() {
+	public String getCabId() {
 		return CabId;
 	}
 
-	public void setCabId(int cabId) {
+	public void setCabId(String cabId) {
 		CabId = cabId;
 	}
 

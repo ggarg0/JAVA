@@ -1,6 +1,10 @@
 package com.gaurav.cabImpl;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
@@ -10,34 +14,46 @@ import com.gaurav.cab.CabDetails;
 
 public class CabOperations {
 
-	public Set getCabInformation() {
-		Set cabInfo = new HashSet();
-		cabInfo.add(new CabDetails(10001, "DZIRE", "Y"));
-		cabInfo.add(new CabDetails(10002, "SWIFT", "Y"));
-		cabInfo.add(new CabDetails(10003, "INDICA", "Y"));
-		cabInfo.add(new CabDetails(10004, "CITY", "Y"));
-		cabInfo.add(new CabDetails(10005, "ETIOS", "Y"));
-		cabInfo.add(new CabDetails(10006, "DUSTER", "Y"));
-		cabInfo.add(new CabDetails(10007, "INNOVA", "Y"));
-		cabInfo.add(new CabDetails(10008, "VERNA", "Y"));
-		cabInfo.add(new CabDetails(10009, "CIAZ", "Y"));
-		cabInfo.add(new CabDetails(10010, "AMAZE", "Y"));
+	public Set<CabDetails> getCabInformation() {
+		Set<CabDetails> cabInfo = new HashSet<>();
+		String csvFile = "Data.csv";
+		BufferedReader br = null;
+		String line = "";
+		String cvsSplitBy = ",";
 
+		try {
+			br = new BufferedReader(new FileReader(csvFile));
+			while ((line = br.readLine()) != null) {
+				// use comma as separator
+				String[] cab = line.split(cvsSplitBy);
+				cabInfo.add(new CabDetails(cab[0], cab[1], cab[2]));
+				System.out.println("Cab details : " + cab[0] + " , " + cab[1]);
+			}
+		} catch (Exception e) {
+			System.out.println("Exception : " + e);
+		} finally {
+			if (br != null) {
+				try {
+					br.close();
+				} catch (IOException e) {
+					System.out.println("Exception : " + e);
+				}
+			}
+		}
 		return cabInfo;
 	}
 
-	public List<Integer> confirmCabBooking(Set cabInfo, List<Integer> bookedCab) {
+	public Set<String> confirmCabBooking
+	(Set<CabDetails> cabInfo, Set<String> bookedCab) {
 		boolean validateBooking = validateCabAvailabiliy(cabInfo);
 		System.out.println("************* Booking Cab ***************");
-		Iterator iterator = cabInfo.iterator();
+		Iterator<CabDetails> iterator = cabInfo.iterator();
 		if (validateBooking) {
 			while (iterator.hasNext()) {
-				CabDetails cab = (CabDetails) iterator.next();
+				CabDetails cab = iterator.next();
 				if (cab.getCabAvailable().equalsIgnoreCase("Y")) {
-
 					bookedCab.add(cab.getCabId());
-					System.out.println("Cab " + cab.getCabType()
-							+ " booked with cab Id : " + cab.getCabId());
+					System.out.println("Cab " + cab.getCabType() + " booked with cab Id : " + cab.getCabId());
 					cab.setCabAvailable("N");
 					break;
 				}
@@ -51,17 +67,15 @@ public class CabOperations {
 		return bookedCab;
 	}
 
-	public List<Integer> cancelCabBooking(int cabId, Set cabInfo,
-			List<Integer> bookedCab) {
+	public Set<String> cancelCabBooking(String cabId, Set<CabDetails> cabInfo, Set<String> bookedCab) {
 		System.out.println("************* Cancelling Cab ***************");
 		if (bookedCab.contains(cabId)) {
-			Iterator iterator = cabInfo.iterator();
+			Iterator<CabDetails> iterator = cabInfo.iterator();
 			while (iterator.hasNext()) {
-				CabDetails cab = (CabDetails) iterator.next();
-				if (cab.getCabId() == cabId) {
-					bookedCab.remove(new Integer(cab.getCabId()));
-					System.out.println("Cab " + cab.getCabType()
-							+ " cancelled with cab Id : " + cab.getCabId());
+				CabDetails cab = iterator.next();
+				if (cab.getCabId().equalsIgnoreCase(cabId)) {
+					bookedCab.remove(cab.getCabId());
+					System.out.println("Cab " + cab.getCabType() + " cancelled with cab Id : " + cab.getCabId());
 					cab.setCabAvailable("Y");
 					break;
 				}
@@ -76,12 +90,12 @@ public class CabOperations {
 		return bookedCab;
 	}
 
-	public List<Integer> getAvailableCabDetails(Set cabInfo) {
-		List<Integer> availableCab = new ArrayList<Integer>();
+	public List<String> getAvailableCabDetails(Set<CabDetails> cabInfo) {
+		List<String> availableCab = new ArrayList<>();
 
-		Iterator iterator = cabInfo.iterator();
+		Iterator<CabDetails> iterator = cabInfo.iterator();
 		while (iterator.hasNext()) {
-			CabDetails cab = (CabDetails) iterator.next();
+			CabDetails cab = iterator.next();
 			if (cab.getCabAvailable().equalsIgnoreCase("Y")) {
 				availableCab.add(cab.getCabId());
 				continue;
@@ -92,12 +106,12 @@ public class CabOperations {
 		return availableCab;
 	}
 
-	public boolean validateCabAvailabiliy(Set cabInfo) {
+	public boolean validateCabAvailabiliy(Set<CabDetails> cabInfo) {
 
 		boolean validateFlag = false;
-		Iterator iterator = cabInfo.iterator();
+		Iterator<CabDetails> iterator = cabInfo.iterator();
 		while (iterator.hasNext()) {
-			CabDetails cab = (CabDetails) iterator.next();
+			CabDetails cab = iterator.next();
 			if (cab.getCabAvailable().equalsIgnoreCase("Y")) {
 				validateFlag = true;
 				break;
