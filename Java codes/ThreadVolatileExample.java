@@ -6,16 +6,16 @@ class ExampleThread extends Thread {
 	public void run() {
 		for (int i = 0; i < 3; i++) {
 			try {
-				System.out.println(getName() + " : ");
 				if (getName().equals("Thread 1 "))
 				{
 					testValue = 10;
+					System.out.println( "Test Value in Thread 1 : " + testValue);
 				}
 				if (getName().equals("Thread 2 "))
 				{
-					System.out.println( "Test Value : " + testValue);
+					System.out.println( "Test Value in Thread 2 : " + testValue);
 				}
-				Thread.sleep(1000);
+				Thread.sleep(500);
 			} catch (InterruptedException exception) {
 				exception.printStackTrace();
 			}
