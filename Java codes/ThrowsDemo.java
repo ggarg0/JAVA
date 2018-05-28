@@ -10,12 +10,11 @@ class NumberTest {
 			throw e;
 			//return a;
 		}
-		finally{
+		/*finally{
 			return b;
-		}
+		}*/
 	}
 }
-
 public class ThrowsDemo {
 	public static void main( String args[]){
 		try{
