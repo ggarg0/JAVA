@@ -7,7 +7,6 @@ class ListMissingElement{
 
 		// Using XOR
 		Integer xor = 0;
-
 		for (int i = 0; i < array1.length; i++) {
 			xor ^= array1[i];
 		}
@@ -17,15 +16,8 @@ class ListMissingElement{
 		System.out.println("Missing Number using xor : " + xor);
 
 		//Using collections
-		List list1 = Arrays.asList(array1);
-		List list2 = Arrays.asList(array2);
-
-		Arrays.sort(array1);
-		List list3 = Arrays.asList(array1);
-		System.out.println("Sorted List : " + list3);
-
-		Set<Integer> set = new HashSet<Integer>(list1);
-		set.removeAll(list2);
+		Set<Integer> set = new HashSet<Integer>(Arrays.asList(array1));
+		set.removeAll(Arrays.asList(array2));
 		System.out.println("Missing Number using set : " + set);
  	}
 }

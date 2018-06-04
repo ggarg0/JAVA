@@ -13,9 +13,9 @@ public class ListDuplicateExample {
 
 	public static void findDuplicateUsingCounter(List<String> list) {
 		List<String> duplicateList = new ArrayList<String>();
-		int counter = 0;
+		int counter = 1;
 		for (int i = counter; i < list.size(); i++) {
-			if (counter >= 1 && (list.get(counter - 1).equalsIgnoreCase((list.get(counter))))) {
+			if ((list.get(counter - 1).equalsIgnoreCase((list.get(counter))))) {
 				duplicateList.add(list.get(counter));
 			}
 			counter++;
