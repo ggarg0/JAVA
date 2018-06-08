@@ -2,7 +2,8 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class ReadFileExample {
+public class ReadFileExample
+{
 
 	private static final String FILENAME = "D:\\GIT\\JAVA\\Java codes\\Test.txt";
 
