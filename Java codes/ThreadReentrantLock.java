@@ -11,6 +11,7 @@ public class ThreadReentrantLock extends Thread {
 		lock.lock();
 		try {
 			i++;
+
 			System.out.println("Count : "+ i + " - thread : " + name);
 		} finally {
 			lock.unlock();
