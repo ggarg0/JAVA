@@ -1,17 +1,17 @@
 class ThreadWaitDemo extends Thread{
-	static int total;
+	private int total;
 	public void run(){
 		synchronized(this){
 			for (int i=0; i<10; i++)
 				total+=i;
 			System.out.println("Call notify from run method after calculating total");
-			notify();
+			this.notify();
 		}
 	}
 	public synchronized void display(){
 		try	{
 			System.out.println("Waiting for B to complete from display method - " + Thread.currentThread().getName() + " -> Total : "+ total);
-			wait();
+			this.wait();
 			System.out.println("B complete call from display method -> Total : " + total);
 		}
 		catch(Exception e){

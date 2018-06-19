@@ -6,7 +6,7 @@ class OverLoadingDemo {
 		}
 		private float add(float num1,float num2)
 		{
-				System.out.println("Inside long");
+				System.out.println("Inside float");
 				return num1+num2;
 		}
 
@@ -15,7 +15,7 @@ class OverLoadingDemo {
 			OverLoadingDemo overload=new OverLoadingDemo();
 			int intNumber=overload.add(11,10);
 			float longNumber=overload.add(10.0f,20);
-			//float longNumber1=overload.add(10,20.0f);
+			float longNumber1=overload.add(10,20.0f);
 
 			System.out.println("intNumber="+intNumber);
 			System.out.println("longNumber="+longNumber);
