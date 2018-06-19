@@ -7,40 +7,41 @@ class LinkedListImplementation {
 	private static int numNodes;
 
 	public static void main(String[] args) {
-		System.out.println("/=/=/=/= TESTING /=/=/=/=");
-		LinkedListImplementation ll = new LinkedListImplementation();
-		ll.add(10);
-		ll.add(11);
-		ll.add(17);
-		ll.add(16);
-		ll.addAtHead(12);
-		ll.deleteFromMiddle();
-		ll.addAtTail(8);
+		
+		LinkedListImplementation list = new LinkedListImplementation();
+		
+		list.add(10);
+		list.add(11);
+		list.add(17);
+		list.add(16);
+		list.addAtHead(12);
+		list.deleteFromMiddle();
+		list.addAtTail(8);
+		list.addAtIndex(4, 9);
+		list.deleteAtIndex(3);
 		
 		System.out.println("Size : " + getSize());
-		ll.addAtIndex(4, 9);
-		ll.deleteAtIndex(3);
-		/*System.out.println("Find by index : " + ll.findByIndex(2).data);
-		System.out.println("Find by Value : " + ll.findByNode(findByIndex(3)));*/
+		System.out.println("Find by index : " + list.findByIndex(2).data);
+		System.out.println("Find by Value : " + list.findByNode(findByIndex(3)));
 	}
 
 	public void add(Object data) {
- 		if (head == null) {
+		if (head == null) {
 			head = new Node(data);
 			numNodes++;
 			printList();
 			return;
-		} 
-		
+		}
+
 		Node temp = head;
-		while (temp.next != null) 
+		while (temp.next != null)
 			temp = temp.next;
-			 
+
 		temp.next = new Node(data);
 		numNodes++;
 		printList();
 	}
-	
+
 	public void addAtHead(Object dat) {
 		Node temp = head;
 		head = new Node(dat);
@@ -51,9 +52,9 @@ class LinkedListImplementation {
 
 	public void addAtTail(Object dat) {
 		Node temp = head;
-		while (temp.next != null) {
-			temp = temp.next;
-		}
+		
+		while (temp.next != null) 
+			temp = temp.next;		
 
 		temp.next = new Node(dat);
 		numNodes++;
@@ -63,9 +64,10 @@ class LinkedListImplementation {
 	public void addAtIndex(int index, Object dat) {
 		Node temp = head;
 		Node holder;
-		for (int i = 0; i < index - 1 && temp.next != null; i++) {
+		
+		for (int i = 0; i < index - 1 && temp.next != null; i++) 
 			temp = temp.next;
-		}
+		
 		holder = temp.next;
 		temp.next = new Node(dat);
 		temp.next.next = holder;
@@ -75,16 +77,17 @@ class LinkedListImplementation {
 
 	public void deleteAtIndex(int index) {
 		Node temp = head;
-		for (int i = 0; i < index - 1 && temp.next != null; i++) {
+		
+		for (int i = 0; i < index - 1 && temp.next != null; i++) 
 			temp = temp.next;
-		}
+		
 		temp.next = temp.next.next;
 		numNodes--;
 		printList();
 	}
-	
+
 	public void deleteFromMiddle() {
-		int index = getSize()/2;
+		int index = getSize() / 2;
 		System.out.println("Middle of List : " + index);
 		deleteAtIndex(index);
 	}
@@ -101,9 +104,10 @@ class LinkedListImplementation {
 
 	public static Node findByIndex(int index) {
 		Node temp = head;
-		for (int i = 0; i < index; i++) {
+		
+		for (int i = 0; i < index; i++) 
 			temp = temp.next;
-		}
+		
 		return temp;
 	}
 
@@ -111,7 +115,7 @@ class LinkedListImplementation {
 		Node temp = head;
 		List list = new ArrayList();
 		while (temp != null) {
-			list.add(temp.getData());			
+			list.add(temp.getData());
 			temp = temp.next;
 		}
 		System.out.println(list);
@@ -121,8 +125,8 @@ class LinkedListImplementation {
 		return numNodes;
 	}
 
-	class Node {	
-		// Declare class variables
+	class Node {
+
 		private Node next;
 		private Object data;
 
