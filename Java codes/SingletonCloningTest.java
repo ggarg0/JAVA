@@ -1,5 +1,12 @@
  class Singleton  implements Cloneable{
           private Singleton() {}
+
+          /* private Singleton() {
+		          if (instance != null) {
+		              throw new InstantiationError("Error creating class");
+		          }
+    		}*/
+
           private static Singleton INSTANCE;
           public static Singleton getInstance() {
 		  if(INSTANCE==null){
@@ -8,7 +15,7 @@
 			 return INSTANCE;
           }
          public Object clone() throws CloneNotSupportedException {
-			// 	return super.clone();
+			 	//return super.clone();
 		  	 throw new CloneNotSupportedException();
          }
  }
