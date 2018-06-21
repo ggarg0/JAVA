@@ -28,12 +28,20 @@ public class HashMapSortKeys {
          }
          Map<Integer, String> map = new TreeMap<Integer, String>(hmap);
          System.out.println("After Sorting by keys :");
-         Set set2 = map.entrySet();
+
+         /*Set set2 = map.entrySet();
          Iterator iterator2 = set2.iterator();
          while(iterator2.hasNext()) {
               Map.Entry me2 = (Map.Entry)iterator2.next();
               System.out.print(me2.getKey() + ": ");
               System.out.println(me2.getValue());
+         }*/
+          Set set1 = map.keySet();
+          Iterator iterator1 = set1.iterator();
+		  	while(iterator1.hasNext()) {
+		 	   Integer key=(Integer)iterator1.next();
+		 	   System.out.print(key);
+		       System.out.println(" - " + (String)map.get(key));
          }
     }
 }

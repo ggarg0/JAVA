@@ -64,8 +64,24 @@ public class ComparatorHDTV {
 		al.add(tv7);
 
 		Collections.sort(al, new SizeComparator());
+		System.out.println("By Id");
+		System.out.println("--------------------");
 		for (HDTV a : al) {
-			System.out.println(a.getBrand());
+			System.out.println(a.getSize() + " - " +  a.getBrand());
 		}
+
+		Collections.sort(al, new Comparator<HDTV>() {
+					@Override
+					public int compare(HDTV o1, HDTV o2) {
+						return o1.getBrand().compareTo(o2.getBrand());
+					}
+		});
+		System.out.println("--------------------");
+		System.out.println("By Brand");
+		System.out.println("--------------------");
+		for (HDTV a : al) {
+			System.out.println(a.getSize() + " - " + a.getBrand());
+		}
+
 	}
 }

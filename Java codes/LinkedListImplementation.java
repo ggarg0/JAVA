@@ -19,17 +19,31 @@ class LinkedListImplementation {
 		list.addAtTail(8);
 		list.addAtIndex(4, 9);
 		list.deleteAtIndex(3);
+		list.reverse();
 		
 		System.out.println("Size : " + getSize());
 		System.out.println("Find by index : " + list.findByIndex(2).data);
-		System.out.println("Find by Value : " + list.findByNode(findByIndex(3)));
 	}
 
+    public void reverse() {
+    	Node temp = head;
+        Node prev = null;
+        Node next = null;
+        while (temp != null) {
+            next = temp.next;
+            temp.next = prev;
+            prev = temp;
+            temp = next;
+        }
+        head = prev;
+        printListDetails(head);
+    }
+	
 	public void add(Object data) {
 		if (head == null) {
 			head = new Node(data);
 			numNodes++;
-			printList();
+			printListDetails(head);
 			return;
 		}
 
@@ -39,7 +53,7 @@ class LinkedListImplementation {
 
 		temp.next = new Node(data);
 		numNodes++;
-		printList();
+		printListDetails(head);
 	}
 
 	public void addAtHead(Object dat) {
@@ -47,7 +61,7 @@ class LinkedListImplementation {
 		head = new Node(dat);
 		head.next = temp;
 		numNodes++;
-		printList();
+		printListDetails(head);
 	}
 
 	public void addAtTail(Object dat) {
@@ -58,7 +72,7 @@ class LinkedListImplementation {
 
 		temp.next = new Node(dat);
 		numNodes++;
-		printList();
+		printListDetails(head);
 	}
 
 	public void addAtIndex(int index, Object dat) {
@@ -72,7 +86,7 @@ class LinkedListImplementation {
 		temp.next = new Node(dat);
 		temp.next.next = holder;
 		numNodes++;
-		printList();
+		printListDetails(head);
 	}
 
 	public void deleteAtIndex(int index) {
@@ -83,7 +97,7 @@ class LinkedListImplementation {
 		
 		temp.next = temp.next.next;
 		numNodes--;
-		printList();
+		printListDetails(head);
 	}
 
 	public void deleteFromMiddle() {
@@ -110,16 +124,16 @@ class LinkedListImplementation {
 		
 		return temp;
 	}
+	
+	public void printListDetails(Node node) {
+		Node temp = node;
+	        while (temp != null) {
+	            System.out.print(temp.data + " ");
+	            temp = temp.next;
+	        }
+	        System.out.println();
+	    }
 
-	public static void printList() {
-		Node temp = head;
-		List list = new ArrayList();
-		while (temp != null) {
-			list.add(temp.getData());
-			temp = temp.next;
-		}
-		System.out.println(list);
-	}
 
 	public static int getSize() {
 		return numNodes;
