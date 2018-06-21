@@ -36,14 +36,14 @@ class LinkedListImplementation {
             temp = next;
         }
         head = prev;
-        printListDetails(head);
+        printListDetails();
     }
 	
 	public void add(Object data) {
 		if (head == null) {
 			head = new Node(data);
 			numNodes++;
-			printListDetails(head);
+			printListDetails();
 			return;
 		}
 
@@ -53,7 +53,7 @@ class LinkedListImplementation {
 
 		temp.next = new Node(data);
 		numNodes++;
-		printListDetails(head);
+		printListDetails();
 	}
 
 	public void addAtHead(Object dat) {
@@ -61,7 +61,7 @@ class LinkedListImplementation {
 		head = new Node(dat);
 		head.next = temp;
 		numNodes++;
-		printListDetails(head);
+		printListDetails();
 	}
 
 	public void addAtTail(Object dat) {
@@ -72,7 +72,7 @@ class LinkedListImplementation {
 
 		temp.next = new Node(dat);
 		numNodes++;
-		printListDetails(head);
+		printListDetails();
 	}
 
 	public void addAtIndex(int index, Object dat) {
@@ -86,7 +86,7 @@ class LinkedListImplementation {
 		temp.next = new Node(dat);
 		temp.next.next = holder;
 		numNodes++;
-		printListDetails(head);
+		printListDetails();
 	}
 
 	public void deleteAtIndex(int index) {
@@ -97,7 +97,7 @@ class LinkedListImplementation {
 		
 		temp.next = temp.next.next;
 		numNodes--;
-		printListDetails(head);
+		printListDetails();
 	}
 
 	public void deleteFromMiddle() {
@@ -125,14 +125,14 @@ class LinkedListImplementation {
 		return temp;
 	}
 	
-	public void printListDetails(Node node) {
-		Node temp = node;
+	public void printListDetails() {
+		Node temp = head;
 	        while (temp != null) {
-	            System.out.print(temp.data + " ");
+	            System.out.print(temp.getData() + " ");
 	            temp = temp.next;
 	        }
-	        System.out.println();
-	    }
+	    System.out.println();
+	}
 
 
 	public static int getSize() {
