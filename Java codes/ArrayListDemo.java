@@ -7,7 +7,8 @@ public class ArrayListDemo {
 			for (int i = 0; i < 5; i++) {
 				arraylist.add(new Integer(i));
 			}
-			arraylist.add("jack");
+			System.out.println("Size now =" + arraylist.size());
+			arraylist.add(7,"jack");
 			System.out.println("Size now =" + arraylist.size());
 			System.out.println("6 now =" + arraylist.get(5));
 			arraylist.remove(5);
