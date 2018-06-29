@@ -12,10 +12,11 @@ public class LamdaWithComparator {
 	public static void main(String[] args) {
 		//creating name comparator
 		Comparator<Employee> empNameComparator = (emp1, emp2) -> {
-			return (emp1.name.compareTo(emp2.name));
+			return (emp1.getName().compareTo(emp2.getName()));
 		};
 		//creating age comparator
-		Comparator<Employee> empAgeComparator = (emp1, emp2) -> emp1.age - emp2.age;
+		Comparator<Employee> empAgeComparator = 
+				(emp1, emp2) -> emp1.getAge() - emp2.getAge();
 
 		System.out.println("Sorting by Name : ");
 		Collections.sort(employeeList, empNameComparator);
@@ -29,7 +30,7 @@ public class LamdaWithComparator {
 		employeeList.sort(Comparator.comparing(Employee::getAge).reversed());
 		employeeList.forEach(System.out::println);
 
-		System.out.println("\nSorting by name : ");
+		System.out.println("\nSorting by name and age: ");
 		employeeList.sort(Comparator.comparing(Employee::getName).thenComparing(Employee::getAge));
 		employeeList.forEach(System.out::println);
 	}
