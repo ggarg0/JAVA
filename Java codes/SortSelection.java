@@ -1,18 +1,19 @@
 public class SortSelection {
 	public static void main(String a[]) {
-		int[] arr = { 10, 34, 2, 56, 7, 67, 88, 42 };
-		for (int i = 0; i < arr.length - 1; i++) {
+		int[] input = { 10, 34, 2, 56, 7, 67, 88, 42 };
+		int len = input.length;
+		for (int i = 0; i < len - 1; i++) {
 			int index = i;
-			for (int j = i + 1; j < arr.length; j++)
-				if (arr[j] < arr[index]) {
+			for (int j = i + 1; j < len; j++)
+				if (input[j] < input[index]) {
 					index = j;
 				}
-			int smallerNumber = arr[index];
-			arr[index] = arr[i];
-			arr[i] = smallerNumber;
+			int smallerNumber = input[index];
+			input[index] = input[i];
+			input[i] = smallerNumber;
 		}
-		for (int i = 0; i < arr.length; i++) {
-			System.out.print(arr[i] + ", ");
+		for (int i = 0; i < len; i++) {
+			System.out.print(input[i] + ", ");
 		}
 	}
 }
