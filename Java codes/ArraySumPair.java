@@ -1,7 +1,9 @@
 import java.util.HashSet;
 
 public class ArraySumPair {
-	static void printpairs(int arr[], int sum) {
+	public static void main(String[] args) {
+		int arr[] = { 1, 8, 45, 6, 10, 8 };
+		int sum = 16;
 		HashSet<Integer> s = new HashSet<Integer>();
 		for (int i = 0; i < arr.length; ++i) {
 			int temp = sum - arr[i];
@@ -11,11 +13,5 @@ public class ArraySumPair {
 			}
 			s.add(arr[i]);
 		}
-	}
-
-	public static void main(String[] args) {
-		int A[] = { 1, 8, 45, 6, 10, 8 };
-		int n = 16;
-		printpairs(A, n);
 	}
 }

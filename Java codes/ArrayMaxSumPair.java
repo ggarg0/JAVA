@@ -1,7 +1,7 @@
 class ArrayMaxSumPair {
-	static int arr[] =  { 12, 34, 10, 6, 40 };
-	static int first, second;
-	static void findLargestSumPair() {		
+	public static void main(String[] args) {
+		int arr[] = { 12, 34, 60, 45, 40 };
+		int first, second;
 		if (arr[0] > arr[1]) {
 			first = arr[0];
 			second = arr[1];
@@ -13,13 +13,11 @@ class ArrayMaxSumPair {
 			if (arr[i] > first) {
 				second = first;
 				first = arr[i];
-			}
-			else if (arr[i] > second && arr[i] != first)
+			} else if (arr[i] > second && arr[i] != first)
 				second = arr[i];
 		}
-	}
-	public static void main(String[] args) {
-		findLargestSumPair();
-		System.out.println("Max Pair Sum is " + (first + second));
+		int sum = (first + second);
+		System.out.println("Pair with given sum " + sum
+				+ " is (" + first + ", " + second + ")");
 	}
 }
