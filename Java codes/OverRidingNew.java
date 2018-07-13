@@ -1,6 +1,7 @@
 class Animal{
-	 //public void speak() throws NoSuchFieldException{
-	 public void speak() throws Exception{
+	 public void speak() throws NoSuchFieldException{
+	//public void speak() throws NullPointerException{
+	// public void speak() throws Exception{
 			System.out.println("I am an  Animal");
 	}
 	void run(){
@@ -10,8 +11,9 @@ class Animal{
 
 class Dog extends Animal {
  	//public void speak() throws NullPointerException{
+	//public void speak() throws NoSuchFieldException{
 	//public void speak() throws Exception{
-	public void speak() throws NoSuchFieldException{
+	//public void speak() {
 			System.out.println("I am a Dog");
 	}
 }
@@ -22,6 +24,7 @@ class OverRidingNew{
 		Animal aniobj=new Dog();
 		aniobj.speak();
 		aniobj.run();
+
 	}
 	catch (Exception e){}
 	}
