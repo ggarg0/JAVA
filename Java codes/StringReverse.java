@@ -5,10 +5,11 @@ public class StringReverse {
 
 		String wordSt = "gaurav";
 		char[] word = wordSt.toCharArray();
+		int left = 0;
 		int right = word.length - 1;
 
 		// Using Loop
-		for (int left = 0; left < right; left++, right--) {
+		for (int i = left; left < right; left++, right--) {
 			char temp = word[left];
 			word[left] = word[right];
 			word[right] = temp;
@@ -16,7 +17,7 @@ public class StringReverse {
 		wordSt = new String(word);
 		System.out.println("Using Loop : " + wordSt);
 
-		// Using sort function
+		// Using reverse function
 		String wordSt1 = "gaurav";
 		StringBuilder st = new StringBuilder();
 		st.append(wordSt1);

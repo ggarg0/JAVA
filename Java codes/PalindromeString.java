@@ -6,7 +6,7 @@ public class PalindromeString {
 		int left = 0;
 		int right = (arr.length-1);
 
-		for (int i = 0; left<right; left++, right--) {
+		for (int i = left; left<right; left++, right--) {
 			if (arr[left] == arr[right]) {
 				continue;
 			}
