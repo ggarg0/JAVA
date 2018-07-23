@@ -23,7 +23,7 @@ class ThreadRunnableDemo{
 				flag=false;
 		}
 
-		//t.start();
+		t.start();
 		//t.sleep(1000);
 		System.out.println("flag : " + flag);
 	}

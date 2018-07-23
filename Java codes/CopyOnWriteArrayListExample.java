@@ -12,7 +12,7 @@ public class CopyOnWriteArrayListExample{
         Iterator<String> failSafeIterator = threadSafeList.iterator();
         while(failSafeIterator.hasNext()){
             System.out.printf("Read from CopyOnWriteArrayList : %s %n", failSafeIterator.next());
-            failSafeIterator.remove(); //not supported in CopyOnWriteArrayList in Java
+            threadSafeList.remove("J2EE"); //not supported in CopyOnWriteArrayList in Java
         }
     }
 }
