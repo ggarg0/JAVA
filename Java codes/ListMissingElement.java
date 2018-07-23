@@ -16,8 +16,8 @@ class ListMissingElement{
 		System.out.println("Missing Number using xor : " + xor);
 
 		//Using collections
-		Set<Integer> set = new HashSet<Integer>(Arrays.asList(array1));
-		set.removeAll(Arrays.asList(array2));
-		System.out.println("Missing Number using set : " + set);
+		List<Integer> l1 = new ArrayList<Integer>(Arrays.asList(array1));
+		l1.removeAll(Arrays.asList(array2));
+		System.out.println("Missing Number using list : " + l1);
  	}
 }
