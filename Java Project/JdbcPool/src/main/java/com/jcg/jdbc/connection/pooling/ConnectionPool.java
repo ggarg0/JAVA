@@ -15,7 +15,7 @@ import org.apache.commons.pool.impl.GenericObjectPool;
 public class ConnectionPool {
 
 	static final String JDBC_DRIVER = "oracle.jdbc.driver.OracleDriver";  
-	static final String JDBC_DB_URL = "jdbc:oracle:thin:@localhost:1521:orcl";
+	static final String JDBC_DB_URL = "jdbc:oracle:thin:@localhost:1521:xe";
 	static final String JDBC_USER = "hr";
 	static final String JDBC_PASS = "hr";
 
@@ -51,7 +51,7 @@ public class ConnectionPool {
 			System.out.println("\n=====Making A New Connection Object For Db Transaction=====\n");
 			connObj = dataSource.getConnection();
 			jdbcObj.printDbStatus(); 
-			pstmtObj = connObj.prepareStatement("SELECT * FROM EMPLOYEE");
+			pstmtObj = connObj.prepareStatement("SELECT * FROM EMPLOYEES");
 			rsObj = pstmtObj.executeQuery();
 			while (rsObj.next()) {
 				System.out.println("Username: " + rsObj.getString("FIRST_NAME"));
