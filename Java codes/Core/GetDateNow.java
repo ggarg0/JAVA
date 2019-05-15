@@ -11,7 +11,7 @@ public class GetDateNow {
   System.out.println("Calendar Object without Formatter :=>  " + currentDate.getTime());
 
   SimpleDateFormat formatter=
-  new SimpleDateFormat("dd/MMM/yyyy HH:mm:ss");
+  new SimpleDateFormat("MMddyyyyHHmmss");
 
   String dateNow = formatter.format(d1);
   System.out.println("Date Object with Formatter:=>  " + dateNow.toString());
@@ -19,5 +19,7 @@ public class GetDateNow {
 
   String dateNow1 = formatter.format(currentDate.getTime());
   System.out.println("Calendar Object with Formatter :=>  " + dateNow1);
+
+  System.out.println("Test:=>  " + new SimpleDateFormat("MMddyyyyHHmmss").format(new Date()));
   }
 }
