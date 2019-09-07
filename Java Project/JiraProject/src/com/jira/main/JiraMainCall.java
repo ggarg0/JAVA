@@ -26,7 +26,7 @@ import com.jira.util.JiraUtil;
 public class JiraMainCall {
 	private final String JIRA_URL = "https://engjira.int.kronos.com";
 	private final String JIRA_ADMIN_USERNAME = "gaurav.garg@kronos.com";
-	private final String JIRA_ADMIN_PASSWORD = "Heyram@2016";
+	private final String JIRA_ADMIN_PASSWORD = "";
 	private XSSFWorkbook workbook;
 	private boolean skipSearchValidation = true;
 	private String developerInQuery = "";
