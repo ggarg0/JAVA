@@ -141,7 +141,6 @@ public class JiraMainCall {
 					issueCount++;
 					excelItems.add(0, issueCount);
 					excelItems.add(1, issue.getKey());
-					//excelItems.add(1, "https://engjira.int.kronos.com/browse/" +issue.getKey());
 					excelItems.add(2, JiraUtil.getAffectedVersion(issue.getAffectedVersions()));
 					excelItems.add(3, issue.getSummary());
 					excelItems.add(4, JiraUtil.getCustomField(issue.getFieldByName("Developer")));
