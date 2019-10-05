@@ -24,17 +24,17 @@ import com.atlassian.util.concurrent.Promise;
 import com.jira.util.JiraUtil;
 
 public class JiraMainCall {
-	private final String JIRA_URL = "https://engjira.int.kronos.com";
-	private final String JIRA_ADMIN_USERNAME = "gaurav.garg@kronos.com";
+	private final String JIRA_URL = "https://engjira.int.gmail.com";
+	private final String JIRA_ADMIN_USERNAME = "gaurav.garg@gmail.com";
 	private final String JIRA_ADMIN_PASSWORD = "";
 	private XSSFWorkbook workbook;
 	private boolean skipSearchValidation = true;
 	private String developerInQuery = "";
-	private String jqlQuery = "project = CENG AND issuetype in (Defect) " 
+	private String jqlQuery = "project = CENG AND issuetype in (Defect) "
 			//	+ "AND status in (Closed) "
-			//+ "AND Team in (\"CE: UP: Timekeeping\")" 
-			+ "AND Developer in (\"gaurav.garg@kronos.com\")"
-			//+ "AND Assignee in (\"gaurav.garg@kronos.com\")"
+			//+ "AND Team in (\"CE: UP: \")"
+			+ "AND Developer in (\"gaurav.garg@gmail.com\")"
+			//+ "AND Assignee in (\"gaurav.garg@gmail.com\")"
 			// + "AND resolved > (\"2018-04-16T12:43:22.657-0400\") and resolved <
 			// (\\\"2019-04-16T12:43:22.657-0400\\\")"
 			+ "ORDER BY key desc";
@@ -67,23 +67,23 @@ public class JiraMainCall {
 		 */
 
 		Promise<SearchResult> searchJqlPromise = client.getSearchClient().
-				searchJql(jqlQuery, 100, 0, null);		
+				searchJql(jqlQuery, 100, 0, null);
 
 		int issueCount = 0;
 		int issueSearched = 0;
-		
-		for (Issue issue : searchJqlPromise.claim().getIssues()) {	
+
+		for (Issue issue : searchJqlPromise.claim().getIssues()) {
 			issueSearched++;
 			if (JiraUtil.searchIssue(issue.getSummary().toLowerCase(),searchFor(), skipSearchValidation)) {
 				issueCount++;
-				System.out.println(	issueCount + ") - " 
-					+ issue.getKey() + " - " 
+				System.out.println(	issueCount + ") - "
+					+ issue.getKey() + " - "
 					+ JiraUtil.getAffectedVersion(issue.getAffectedVersions()) + " - "
 					+ issue.getSummary() + " - "
 					+ JiraUtil.getCustomField(issue.getFieldByName("Developer")) + " - "
 					+ JiraUtil.getCustomField(issue.getFieldByName("Escalation Status")) + " - "
 					//+ issue.getFieldByName("Date Closed").getValue().toString().substring(0, 10) + " - "
-					+ issue.getStatus().getName() + " - " 
+					+ issue.getStatus().getName() + " - "
 					+ issue.getAssignee().getDisplayName() + " - "
 					+ JiraUtil.getCustomField(issue.getFieldByName("Product / Component")) + " - "
 					+ JiraUtil.getCustomField(issue.getFieldByName("Team"))
@@ -93,14 +93,14 @@ public class JiraMainCall {
 			}
 		}
 		System.out.println("Issue search completed with "
-				+ issueSearched + " issues searched and found " 
+				+ issueSearched + " issues searched and found "
 				+ issueCount + " similar issues.");
 	}
-	
+
 	public void callJiraAPIAndCreateExcel() {
-		try {			
+		try {
 			int columnSize = 9;
-			
+
 			// Construct the JRJC client
 			System.out.println("Logging in to " + JIRA_URL + " with username " + JIRA_ADMIN_USERNAME);
 			JiraRestClientFactory factory = new AsynchronousJiraRestClientFactory();
@@ -113,7 +113,7 @@ public class JiraMainCall {
 
 			int issueCount = 0;
 			int issueSearched = 0;
-			
+
 			workbook = new XSSFWorkbook();
 
 			// Create a blank sheet
@@ -122,7 +122,7 @@ public class JiraMainCall {
 			// Create row object
 			XSSFRow row;
 			row = spreadsheet.createRow(0);
-			
+
 			row.createCell(0).setCellValue("S No.");
 			row.createCell(1).setCellValue("Jira Id");
 			row.createCell(2).setCellValue("Affected Version");
@@ -133,8 +133,8 @@ public class JiraMainCall {
 			row.createCell(7).setCellValue("Assignee");
 			row.createCell(8).setCellValue("Product / Component");
 			row.createCell(9).setCellValue("Team");
-			
-			for (Issue issue : searchJqlPromise.claim().getIssues()) {		
+
+			for (Issue issue : searchJqlPromise.claim().getIssues()) {
 				issueSearched++;
 				List<Comparable> excelItems = new ArrayList<Comparable>();
 				if (JiraUtil.searchIssue(issue.getSummary().toLowerCase(),searchFor(), skipSearchValidation)) {
@@ -150,7 +150,7 @@ public class JiraMainCall {
 					excelItems.add(7, issue.getAssignee().getDisplayName());
 					excelItems.add(8, JiraUtil.getCustomField(issue.getFieldByName("Product / Component")));
 					excelItems.add(9, JiraUtil.getCustomField(issue.getFieldByName("Team")));
-					
+
 					int rowid = (int) excelItems.get(0);
 					row = spreadsheet.createRow(rowid++);
 					int cellid = 0;
@@ -158,29 +158,29 @@ public class JiraMainCall {
 						Cell cell = row.createCell(cellid++);
 						cell.setCellValue(excelItems.get(i).toString());
 					}
-				}			
-			}			
+				}
+			}
 			// Write the workbook in file system
-			String fileName = "C://Mine//Docs//JiraDetails_" + developerInQuery +"_" + 
+			String fileName = "C://Mine//Docs//JiraDetails_" + developerInQuery +"_" +
 									new SimpleDateFormat("MMddyyyyHHmmss").format(new Date()) + ".xlsx";
 			FileOutputStream out = new FileOutputStream(new File(fileName));
 			workbook.write(out);
 			out.close();
 			System.out.println("Excel created successfully");
 			System.out.println("Issue search completed with "
-					+ issueSearched + " issues searched and found " 
+					+ issueSearched + " issues searched and found "
 					+ issueCount + " similar issues.");
 		}
 		catch (Exception e) {
 			e.printStackTrace();
-		}		
+		}
 	}
-	
+
 	public List<String> searchFor(){
 		List<String> search = new ArrayList<String>();
 		search.add(("prorat").toLowerCase());
 		search.add(("historical correction").toLowerCase());
-		search.add(("BGP").toLowerCase());	
+		search.add(("BGP").toLowerCase());
 		return search;
-	}	
+	}
 }
