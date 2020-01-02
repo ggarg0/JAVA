@@ -24,17 +24,17 @@ import com.atlassian.util.concurrent.Promise;
 import com.jira.util.JiraUtil;
 
 public class JiraMainCall {
-	private final String JIRA_URL = "https://engjira.int.kronos.com";
-	private final String JIRA_ADMIN_USERNAME = "gaurav.garg@kronos.com";
+	private final String JIRA_URL = "https://engjira.int.gmail.com";
+	private final String JIRA_ADMIN_USERNAME = "gaurav.garg@gmail.com";
 	private final String JIRA_ADMIN_PASSWORD = "";
 	private XSSFWorkbook workbook;
 	private boolean skipSearchValidation = true;
 	private String developerInQuery = "";
 	private String jqlQuery = "project = CENG AND issuetype in (Defect) "
 			//	+ "AND status in (Closed) "
-			//+ "AND Team in (\"CE: UP: Timekeeping\")"
-			+ "AND Developer in (\"gaurav.garg@kronos.com\")"
-			//+ "AND Assignee in (\"gaurav.garg@kronos.com\")"
+			//+ "AND Team in (\"CE: UP: \")"
+			+ "AND Developer in (\"gaurav.garg@gmail.com\")"
+			//+ "AND Assignee in (\"gaurav.garg@gmail.com\")"
 			// + "AND resolved > (\"2018-04-16T12:43:22.657-0400\") and resolved <
 			// (\\\"2019-04-16T12:43:22.657-0400\\\")"
 			+ "ORDER BY key desc";
@@ -141,7 +141,6 @@ public class JiraMainCall {
 					issueCount++;
 					excelItems.add(0, issueCount);
 					excelItems.add(1, issue.getKey());
-					//excelItems.add(1, "https://engjira.int.kronos.com/browse/" +issue.getKey());
 					excelItems.add(2, JiraUtil.getAffectedVersion(issue.getAffectedVersions()));
 					excelItems.add(3, issue.getSummary());
 					excelItems.add(4, JiraUtil.getCustomField(issue.getFieldByName("Developer")));
