@@ -1,28 +1,31 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.locks.Lock;
+package Multithreading;
+
 import java.util.concurrent.locks.ReentrantLock;
 
 public class ThreadReentrantLock extends Thread {
-	private final Lock lock = new ReentrantLock();
+	private final ReentrantLock lock = new ReentrantLock();
 	private static int i = 0;
 
 	public void show(String name) {
-		lock.lock();
-		try {
-			i++;
 
-			System.out.println("Count : "+ i + " - thread : " + name);
-		} finally {
-			lock.unlock();
+		boolean ans = lock.tryLock();
+		if (ans) {
+			try {
+				i++;			
+				lock.lock();
+				System.out.println("Count : " + i + " - thread : " + name + " and hold " + lock.getHoldCount());
+				lock.unlock();
+			} finally {
+				lock.unlock();
+			}
 		}
 	}
 
 	public void run() {
-		while (i < 6) {
+		while (i < 10) {
 			show(Thread.currentThread().getName());
 			try {
-				Thread.sleep(10);
+				Thread.sleep(100);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

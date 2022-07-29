@@ -14,7 +14,7 @@ class Service2 implements Runnable{
     @Override
     public void run() {
         try {
-            int a = 10/0;
+            int a = 10/10;
             latch.countDown(); //reduce count of CountDownLatch by 1
             System.out.println( name + " is Up");
         } catch (Exception ex) {

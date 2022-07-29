@@ -1,7 +1,9 @@
+package Multithreading;
+
 import java.util.concurrent.Semaphore;
 
 public class ThreadSemaphore implements Runnable {
-	Semaphore binary = new Semaphore(2);
+	Semaphore binary = new Semaphore(1);
 
 	public static void main(String args[]) {
 		ThreadSemaphore test = new ThreadSemaphore();

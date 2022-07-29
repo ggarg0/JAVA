@@ -1,3 +1,4 @@
+package Threads;
 public class WaitThread implements Runnable{
 
 	@Override

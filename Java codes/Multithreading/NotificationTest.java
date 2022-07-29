@@ -1,3 +1,6 @@
+package Multithreading;
+import Threads.WaitThread;
+
 public class NotificationTest {
 
 	private volatile boolean go = false;
