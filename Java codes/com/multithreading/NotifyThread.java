@@ -1,3 +1,5 @@
+package com.multithreading;
+
 
 public class NotifyThread implements Runnable{
 

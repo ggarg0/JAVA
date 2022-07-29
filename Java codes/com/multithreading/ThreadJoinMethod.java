@@ -1,3 +1,5 @@
+package com.multithreading;
+
 class ThreadJoinMethod implements Runnable {
 
 	public void run() {
@@ -19,12 +21,16 @@ class ThreadJoinMethod implements Runnable {
 				threads[i].join();
 			}
 
-			/*
-			 * Thread t1 = new Thread(test,"IMP"); Thread t2 = new Thread(test,"FIRST");
-			 * Thread t3 = new Thread(test,"SECOND");
-			 *
-			 * t1.start(); t1.join(); t2.start(); t2.join(); t3.start();
-			 */
+			Thread t1 = new Thread(test, "IMP");
+			Thread t2 = new Thread(test, "FIRST");
+			Thread t3 = new Thread(test, "SECOND");
+
+			t1.start();
+			t1.join();
+			t2.start();
+			t2.join();
+			t3.start();
+
 		} catch (Exception e) {
 			System.out.println(e);
 		}

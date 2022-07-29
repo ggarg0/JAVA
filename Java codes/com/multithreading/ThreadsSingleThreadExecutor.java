@@ -1,3 +1,5 @@
+package com.multithreading;
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -10,6 +12,7 @@ class ThreadsSingleThreadExecutor extends  Thread{
 		}
 		System.out.println("Main thread running");
 		service.shutdown();
+		System.out.println("Main thread stopped");
 	}
 	public void run(){
 		System.out.println("Inside run method");

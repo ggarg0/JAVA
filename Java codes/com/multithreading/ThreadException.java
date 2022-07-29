@@ -1,3 +1,5 @@
+package com.multithreading;
+
 class ThreadException extends Thread{
 
 	int total = 50;
@@ -23,4 +25,3 @@ class ThreadException extends Thread{
 		}
 	}
 }
-

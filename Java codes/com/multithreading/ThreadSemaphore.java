@@ -1,3 +1,5 @@
+package com.multithreading;
+
 import java.util.concurrent.Semaphore;
 
 public class ThreadSemaphore implements Runnable {
