@@ -1,5 +1,3 @@
-package com.multithreading;
-
 class Account {
 	private int balance = 50;
 	public int getBalance() {

@@ -1,5 +1,3 @@
-package com.multithreading;
-
 class ThreadJoinMethod implements Runnable {
 
 	public void run() {

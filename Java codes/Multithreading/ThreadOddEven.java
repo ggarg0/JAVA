@@ -1,5 +1,3 @@
-package com.multithreading;
-
 public class ThreadOddEven {
 
 	static boolean turn = false;// false is even and true is odd

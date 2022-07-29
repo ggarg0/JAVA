@@ -1,5 +1,3 @@
-package com.multithreading;
-
 class ThreadWaitDemo extends Thread {
 	private int total;
 

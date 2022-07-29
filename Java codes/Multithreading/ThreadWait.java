@@ -1,4 +1,3 @@
-package com.multithreading;
 
 import java.util.*;
 

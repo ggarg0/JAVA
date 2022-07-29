@@ -1,6 +1,3 @@
-package com.multithreading;
-
-
 public class WaitThread implements Runnable{
 
 	@Override

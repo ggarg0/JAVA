@@ -1,5 +1,3 @@
-package com.multithreading;
-
 public class DeadLockThread {
 	public Object Lock1 = new Object();
 	public Object Lock2 = new Object();
