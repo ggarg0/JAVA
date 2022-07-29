@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry excluding="Core/|Strings/|ExceptionHandling/|Swings/|Implementations/|Java8/|Collections/" kind="src" path=""/>
+	<classpathentry kind="src" path="Collections"/>
+	<classpathentry kind="src" path="Core"/>
+	<classpathentry kind="src" path="ExceptionHandling"/>
+	<classpathentry kind="src" path="Implementations"/>
+	<classpathentry kind="src" path="Java8"/>
+	<classpathentry kind="src" path="Strings"/>
+	<classpathentry kind="src" path="Swings"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
