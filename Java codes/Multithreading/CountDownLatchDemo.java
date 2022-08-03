@@ -1,5 +1,5 @@
-import java.util.Date;
-import java.util.concurrent.*;
+package Multithreading;
+import java.util.concurrent.CountDownLatch;
 
 public class CountDownLatchDemo {
     public static void main(String args[]) {

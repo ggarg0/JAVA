@@ -46,4 +46,10 @@ f.pack();
 		f.setVisible(true);
 		f.setSize(600,600);
 	}
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
 }

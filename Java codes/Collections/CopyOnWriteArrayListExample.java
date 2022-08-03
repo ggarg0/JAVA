@@ -11,8 +11,16 @@ public class CopyOnWriteArrayListExample{
         //add, remove operator is not supported by CopyOnWriteArrayList iterator
         Iterator<String> failSafeIterator = threadSafeList.iterator();
         while(failSafeIterator.hasNext()){
-            System.out.printf("Read from CopyOnWriteArrayList : %s %n", failSafeIterator.next());
+          
             threadSafeList.remove("J2EE"); //not supported in CopyOnWriteArrayList in Java
+            System.out.printf("Read from CopyOnWriteArrayList : %s %n", failSafeIterator.next());
+        }
+        
+        Iterator<String> failSafeIterator1 = threadSafeList.iterator();
+        while(failSafeIterator1.hasNext()){
+          
+           
+            System.out.printf("Read from CopyOnWriteArrayList : %s %n", failSafeIterator1.next());
         }
     }
 }

@@ -1,3 +1,5 @@
+package Multithreading;
+
 class ThreadJoinMethod implements Runnable {
 
 	public void run() {

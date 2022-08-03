@@ -1,3 +1,5 @@
+package Multithreading;
+
 public class NotifyThread implements Runnable{
 
 	@Override

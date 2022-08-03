@@ -1,3 +1,5 @@
+package Multithreading;
+
 
 import java.util.*;
 
@@ -13,7 +15,7 @@ public class ThreadWait {
 class ThreadG {
 	static int total;
 
-	public synchronized void display() {
+	public  void display() {
 		try {
 			total = total + 10;
 			Thread.sleep(2000);

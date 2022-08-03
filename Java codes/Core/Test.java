@@ -1,46 +1,28 @@
-public class Test
-{
-public static void main(String arg[])
-{
+public class Test {
+	public String longestCommonPrefix(String[] strs) {
+		String compare = strs[0];
+		boolean match = false;
+		
+		while (compare.length() > 0) {
+			for (String str : strs) {
+				if (str.contains(compare)) {
+					compare = compare.substring(0, compare.length() - 1);
+					
+				} else {
+					
+				}
+				continue;
+			}
+			return compare;
+		}
 
-	 public static boolean isStringOnlyAlphabet(String str)
-	    {
-	        return ((str != null)
-	                && (!str.equals(""))
-	                && (str.matches("^[a-zA-Z]*$")));
-	    }
+		return "";
+	}
 
-	    // Main method
-	    public static void main(String[] args)
-	    {
+	public static void main(String arg[]) {
 
-	        // Checking for True case
-	        System.out.println("Test Case 1:");
+		String[] strs = { "flower", "flow", "flight" };
+		System.out.println(new Test().longestCommonPrefix(strs));
 
-	        String str1 = "GeeksforGeeks";
-	        System.out.println("Input: " + str1);
-	        System.out.println("Output: " + isStringOnlyAlphabet(str1));
-
-	        // Checking for String with numeric characters
-	        System.out.println("\nTest Case 2:");
-
-	        String str2 = "Geeks4Geeks";
-	        System.out.println("Input: " + str2);
-	        System.out.println("Output: " + isStringOnlyAlphabet(str2));
-
-	        // Checking for null String
-	        System.out.println("\nTest Case 3:");
-
-	        String str3 = null;
-	        System.out.println("Input: " + str3);
-	        System.out.println("Output: " + isStringOnlyAlphabet(str3));
-
-	        // Checking for empty String
-	        System.out.println("\nTest Case 4:");
-
-	        String str4 = "";
-	        System.out.println("Input: " + str4);
-	        System.out.println("Output: " + isStringOnlyAlphabet(str4));
-    }
-}
+	}
 }

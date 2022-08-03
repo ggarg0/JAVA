@@ -1,3 +1,5 @@
+package Multithreading;
+
 class ThreadWaitDemo extends Thread {
 	private int total;
 

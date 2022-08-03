@@ -1,5 +1,4 @@
 package Multithreading;
-import Threads.WaitThread;
 
 public class NotificationTest {
 

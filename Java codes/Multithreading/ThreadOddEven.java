@@ -1,3 +1,5 @@
+package Multithreading;
+
 public class ThreadOddEven {
 
 	static boolean turn = false;// false is even and true is odd

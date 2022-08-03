@@ -1,3 +1,5 @@
+package Multithreading;
+
 class ThreadA{
 	public static void main(String[] a)	{
 		ThreadB b=new ThreadB();

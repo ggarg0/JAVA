@@ -2,13 +2,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Comparator;
 
-class Country {
+class Country1 {
 	int countryId;
 	String countryName;
 
-	public Country(int countryId, String countryName) {
+	public Country1(int countryId, String countryName) {
 		super();
 		this.countryId = countryId;
 		this.countryName = countryName;
@@ -27,9 +26,9 @@ class Country {
 	}
 }
 
-class CountrySortByIdComparator implements Comparator<Country> {
+class CountrySortByIdComparator implements Comparator<Country1> {
 	@Override
-	public int compare(Country country1, Country country2) {
+	public int compare(Country1 country1, Country1 country2) {
 		return (country1.getCountryId() < country2.getCountryId()) ? -1
 				: (country1.getCountryId() > country2.getCountryId()) ? 1 : 0;
 	}
@@ -39,15 +38,15 @@ class CountrySortByIdComparator implements Comparator<Country> {
 public class ComparatorCountry {
 	public static void main(String[] args) {
 
-		List<Country> listOfCountries = new ArrayList<Country>();
-		listOfCountries.add(new Country(1, "India"));
-		listOfCountries.add(new Country(4, "China"));
-		listOfCountries.add(new Country(3, "Nepal"));
-		listOfCountries.add(new Country(2, "Bhutan"));
+		List<Country1> listOfCountries = new ArrayList<Country1>();
+		listOfCountries.add(new Country1(1, "India"));
+		listOfCountries.add(new Country1(4, "China"));
+		listOfCountries.add(new Country1(3, "Nepal"));
+		listOfCountries.add(new Country1(2, "Bhutan"));
 
 		System.out.println("Before Sort by id : ");
 		for (int i = 0; i < listOfCountries.size(); i++) {
-			Country country = (Country) listOfCountries.get(i);
+			Country1 country = (Country1) listOfCountries.get(i);
 			System.out.println("Country Id: " + country.getCountryId() + "||" + "Country name: " + country.getCountryName());
 		}
 
@@ -55,20 +54,20 @@ public class ComparatorCountry {
 
 		System.out.println("After Sort by id: ");
 		for (int i = 0; i < listOfCountries.size(); i++) {
-			Country country = (Country) listOfCountries.get(i);
+			Country1 country = (Country1) listOfCountries.get(i);
 			System.out.println("Country Id: " + country.getCountryId() + "|| " + "Country name: " + country.getCountryName());
 		}
 
-		Collections.sort(listOfCountries, new Comparator<Country>() {
+		Collections.sort(listOfCountries, new Comparator<Country1>() {
 			@Override
-			public int compare(Country o1, Country o2) {
+			public int compare(Country1 o1, Country1 o2) {
 				return o1.getCountryName().compareTo(o2.getCountryName());
 			}
 		});
 
 		System.out.println("After Sort by name: ");
 		for (int i = 0; i < listOfCountries.size(); i++) {
-			Country country = (Country) listOfCountries.get(i);
+			Country1 country = (Country1) listOfCountries.get(i);
 			System.out.println(
 					"Country Id: " + country.getCountryId() + "|| " + "Country name: " + country.getCountryName());
 		}

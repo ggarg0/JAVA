@@ -1,3 +1,5 @@
+package Multithreading;
+
 class ThreadException extends Thread{
 
 	int total = 50;

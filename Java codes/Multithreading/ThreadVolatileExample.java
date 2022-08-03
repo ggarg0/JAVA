@@ -1,3 +1,5 @@
+package Multithreading;
+
 class ExampleThread extends Thread {
 	private volatile int testValue;
 	public ExampleThread(String str){

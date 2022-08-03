@@ -1,11 +1,12 @@
+package Multithreading;
 import java.util.concurrent.CountDownLatch;
 
-class Service implements Runnable{
+class Service2 implements Runnable{
     private final String name;
     private final int timeToStart;
     private final CountDownLatch latch;
 
-    public Service(String name, int timeToStart, CountDownLatch latch){
+    public Service2(String name, int timeToStart, CountDownLatch latch){
         this.name = name;
         this.timeToStart = timeToStart;
         this.latch = latch;
@@ -14,11 +15,13 @@ class Service implements Runnable{
     @Override
     public void run() {
         try {
-            Thread.sleep(timeToStart);
-        } catch (InterruptedException ex) {
+            int a = 10/10;
+            latch.countDown(); //reduce count of CountDownLatch by 1
+            System.out.println( name + " is Up");
+        } catch (Exception ex) {
             System.out.println("EX : " + ex);;
         }
-        System.out.println( name + " is Up");
-        latch.countDown(); //reduce count of CountDownLatch by 1
+        
+        
     }
 }
