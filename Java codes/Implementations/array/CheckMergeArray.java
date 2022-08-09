@@ -1,4 +1,4 @@
-package Array;
+package Implementation.Array;
 
 public class CheckMergeArray {
 
