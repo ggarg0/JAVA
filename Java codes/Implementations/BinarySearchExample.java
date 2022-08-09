@@ -5,7 +5,7 @@ public class BinarySearchExample {
 		int start = 0;
 		int last = arr.length - 1;
 		int mid = (start + last) / 2;
-		
+
 		while (start <= last) {
 			if (arr[mid] < key) {
 				start = mid + 1;
@@ -23,8 +23,8 @@ public class BinarySearchExample {
 	}
 
 	public static void main(String args[]) {
-		int arr[] = { 10, 20, 30, 40, 50 };
-		int key = 30;
+		int arr[] = { -1, 5, 6, 8, 11, 15 };
+		int key = -1;
 		binarySearch(arr, key);
 	}
 }
