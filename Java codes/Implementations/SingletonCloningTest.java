@@ -1,6 +1,4 @@
-package com.test;
-
- class Singleton  implements Cloneable{
+class Singleton  implements Cloneable{
           private Singleton() {}
           private static Singleton INSTANCE;
           public static synchronized Singleton getInstance() {

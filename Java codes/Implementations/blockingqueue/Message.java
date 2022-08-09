@@ -1,4 +1,4 @@
-package com.test.blockingqueue;
+package blockingqueue;
 
 public class Message {
 private String msg;

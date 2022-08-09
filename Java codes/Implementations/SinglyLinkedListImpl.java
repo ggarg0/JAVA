@@ -1,5 +1,3 @@
-package com.test;
-
 public class SinglyLinkedListImpl<T> {
 	 
     private Node<T> head;

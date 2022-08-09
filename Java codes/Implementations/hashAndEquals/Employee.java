@@ -1,4 +1,4 @@
-package com.hashAndEquals;
+package hashAndEquals;
 
 public class Employee {
 

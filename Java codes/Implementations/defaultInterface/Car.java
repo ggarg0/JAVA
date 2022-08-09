@@ -1,4 +1,4 @@
-package com.defaultInterface;
+package defaultInterface;
 
 public class Car implements Vehicle//, Alarm
 {

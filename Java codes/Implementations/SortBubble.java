@@ -1,5 +1,3 @@
-package com.test;
-
 public class SortBubble {
 	public static void main(String[] args) {
 		int[] array = { 4, 2, 9, 6, 23, 12, 34, 0, 1 };

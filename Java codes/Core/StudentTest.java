@@ -1,4 +1,4 @@
-class Student
+class Student22
 {
 	private int rollNumber=10;
 	private String name="wqe";
@@ -20,8 +20,8 @@ public class StudentTest
 {
 public static void main(String arg[])
 {
-	Student s1=new Student();
-	Student s2=new Student();
+	Student22 s1=new Student22();
+	Student22 s2=new Student22();
 	s1.disp();
 	s1.setStudent(101,"Jack");
 	s2.setStudent(102,"Tom");

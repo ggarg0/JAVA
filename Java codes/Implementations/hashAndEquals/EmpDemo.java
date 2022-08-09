@@ -1,4 +1,4 @@
-package com.hashAndEquals;
+package hashAndEquals;
 
 public class EmpDemo {
 	public static void main(String[] a) {

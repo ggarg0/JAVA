@@ -1,4 +1,4 @@
-package com.defaultInterface;
+package defaultInterface;
 
 public interface Alarm {
 	default String turnAlarmOn() {

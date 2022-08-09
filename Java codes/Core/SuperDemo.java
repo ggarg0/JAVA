@@ -1,8 +1,8 @@
-class Parent{
+class Parent1{
 		protected int number=10;
 }
 
-class Child extends Parent{
+class Child1 extends Parent1{
 	private int number=100;
 
 	public void disp(){
@@ -13,7 +13,7 @@ class Child extends Parent{
 
 class SuperDemo{
 	public static void main(String args[]){
-		Child child=new Child();
+		Child1 child=new Child1();
 		child.disp();
 	}
 }

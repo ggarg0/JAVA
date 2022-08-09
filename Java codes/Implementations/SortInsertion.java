@@ -1,5 +1,3 @@
-package com.test;
-
 public class SortInsertion {
 	public static void main(String a[]) {
 		int[] input = { 10, 34, 2, 56, 7, 67, 88, 42 };
