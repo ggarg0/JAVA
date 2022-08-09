@@ -10,13 +10,12 @@ public class MyStack {
 	}
 
 	public void resizeStack() {
-		int newSize = maxSize * 2;
-		Object[] temp = new Object[newSize];
+		maxSize = maxSize * 2;
+		Object[] temp = new Object[maxSize];
 
 		for (int i = 0; i <= index; i++)
 			temp[i] = data[i];
-
-		this.maxSize = newSize;
+		
 		this.data = temp;
 	}
 
@@ -28,8 +27,7 @@ public class MyStack {
 		printStack();
 	}
 
-	public void pop() {
-		
+	public void pop() {		
 		if (isEmpty())
 			System.out.println("Stack is empty");
 		else {
