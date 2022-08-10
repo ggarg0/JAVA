@@ -1,3 +1,4 @@
+package Core;
 class StaticDemo
 {
 	static int number;

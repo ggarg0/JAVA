@@ -1,3 +1,4 @@
+package Core;
 class ReflectionTest{
 
 void printName(Object obj){

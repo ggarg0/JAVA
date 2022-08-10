@@ -1,3 +1,4 @@
+package Core;
 class Typecasting{
 	public static void main(String arg[]){
 

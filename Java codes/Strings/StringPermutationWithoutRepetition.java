@@ -1,3 +1,5 @@
+package Strings;
+
 public class StringPermutationWithoutRepetition {
 
  public static void main(String[] args) {

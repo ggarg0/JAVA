@@ -1,3 +1,5 @@
+package Collections;
+
 /* This dems shows the usage of arraylist without the support of
 Generics ( added from jdk1.5) onwards
 */

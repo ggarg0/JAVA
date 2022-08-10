@@ -1,3 +1,5 @@
+package ExceptionHandling;
+
 class NumberTest {
 	private int num;
 	public int divide(int n)  {

@@ -1,3 +1,4 @@
+package Core;
 import java.util.regex.*;
 
 class RegexSmall

@@ -1,3 +1,4 @@
+package Core;
 class GenNumber<T extends Number>{
 	T number;
 	GenNumber(T number){

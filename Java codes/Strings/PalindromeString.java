@@ -1,3 +1,5 @@
+package Strings;
+
 public class PalindromeString {
 	public static void main(String[] a) {
 		String str = "123321";

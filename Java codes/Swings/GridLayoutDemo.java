@@ -1,3 +1,4 @@
+package Swings;
 import java.awt.*;
 import javax.swing.*;
 

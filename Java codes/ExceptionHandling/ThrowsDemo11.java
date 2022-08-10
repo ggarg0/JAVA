@@ -1,3 +1,5 @@
+package ExceptionHandling;
+
 class NumberTest1 {
 	private int num;
 	public void accept(int n)  throws Exception{

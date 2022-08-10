@@ -1,3 +1,4 @@
+package Core;
 interface GenNumberInterface<T extends Number>{
 	void display(T number);
 }

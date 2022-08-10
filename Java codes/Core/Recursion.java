@@ -1,3 +1,4 @@
+package Core;
 public class Recursion {
 	public static void main(String a[]) {
 		System.out.println(new Recursion().factorialMethod(4));

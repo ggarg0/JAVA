@@ -1,3 +1,5 @@
+package Collections;
+
 class HDTV implements Comparable<HDTV> {
 	private int size;
 	private String brand;

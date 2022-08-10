@@ -1,4 +1,4 @@
-package defaultInterface;
+package Java8;
 
 public interface Alarm {
 	default String turnAlarmOn() {

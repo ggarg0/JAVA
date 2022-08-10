@@ -1,11 +1,12 @@
-abstract class Shape{
-	Shape(){}
+package Core;
+abstract class Shape11{
+	Shape11(){}
 	//abstract void draw();
 	void display(){
 		System.out.println("Shape Hello");
 	}
 }
-class Rectangle extends Shape{
+class Rectangle11 extends Shape11{
 	void display(){
 			System.out.println("Hello");
 	}
@@ -15,8 +16,8 @@ class Rectangle extends Shape{
 }
 class AbstractDemoTest{
 	public static void main(String args[]){
-		Shape s1=new Rectangle();
-		Rectangle s2=new Rectangle();
+		Shape11 s1=new Rectangle11();
+		Rectangle11 s2=new Rectangle11();
 		//s1.draw();
 		s1.display();
 		s2.draw();

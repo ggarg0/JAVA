@@ -1,3 +1,5 @@
+package Implementations;
+
 import java.util.*;
 
 public class DuplicateWordSearcher {

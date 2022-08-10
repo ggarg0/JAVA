@@ -1,3 +1,5 @@
+package Implementations;
+
 class Singleton  implements Cloneable{
           private Singleton() {}
           private static Singleton INSTANCE;

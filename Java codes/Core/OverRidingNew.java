@@ -1,3 +1,4 @@
+package Core;
 class Animal1 {
 	public void speak() throws NoSuchFieldException{}
 	// public void speak() throws NullPointerException{

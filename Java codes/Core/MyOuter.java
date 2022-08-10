@@ -1,3 +1,4 @@
+package Core;
 class MyOuter
 {
 	private int x=12;

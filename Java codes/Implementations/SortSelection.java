@@ -1,3 +1,5 @@
+package Implementations;
+
 public class SortSelection {
 	public static void main(String a[]) {
 		int[] arr = { 10, 34, 2, 56, 7, 67, 88, 42 };

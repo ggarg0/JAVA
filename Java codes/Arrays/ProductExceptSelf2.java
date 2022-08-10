@@ -1,4 +1,4 @@
-package array;
+package Arrays;
 
 public class ProductExceptSelf2 {
 	public static void main(String args[]) {

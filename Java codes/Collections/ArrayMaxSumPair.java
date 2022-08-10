@@ -1,3 +1,5 @@
+package Collections;
+
 class ArrayMaxSumPair {
 	public static void main(String[] args) {
 		int arr[] = { 12, 34, 60, 45, 40 };

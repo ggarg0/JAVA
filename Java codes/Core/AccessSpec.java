@@ -1,3 +1,4 @@
+package Core;
 class Access1 {
 	protected int a;
 	public int d;

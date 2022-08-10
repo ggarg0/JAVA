@@ -1,3 +1,4 @@
+package Core;
 class OverLoadingDemo1 {
 	private OverLoadingDemo1(Object o) {
 		System.out.println("Inside Object");

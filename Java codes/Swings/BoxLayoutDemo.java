@@ -1,3 +1,4 @@
+package Swings;
 /*
  * This demo shows how to specify alignments when you're using
  * a BoxLayout for components with maximum sizes and different

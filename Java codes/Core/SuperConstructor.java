@@ -1,28 +1,29 @@
-class Student11 {
+package Core;
+class Student111 {
 	protected int rollno;
 	protected String name;
 
-	Student11() {
+	Student111() {
 		System.out.println("Parent simple constructor");
 
 	}
 
-	Student11(int rno, String na) {
+	Student111(int rno, String na) {
 		rollno = rno;
 		name = na;
 		System.out.println("Parent overloaded constructor");
 	}
 }
 
-class PerceptionUser11 extends Student11 {
+class PerceptionUser111 extends Student111 {
 	String password;
 
-	PerceptionUser11() {
+	PerceptionUser111() {
 		System.out.println("PerceptionUser simple constructor");
 
 	}
 
-	PerceptionUser11(int rollno, String name, String pwd) {
+	PerceptionUser111(int rollno, String name, String pwd) {
 		// When you are invoking the parent class constructor super should be the first
 		// statement
 		super(rollno, name);
@@ -41,7 +42,7 @@ class SuperConstructor {
 	public static void main(String args[]) {
 		// PerceptionUser p=new PerceptionUser(101,"jack","infy@123");
 		// PerceptionUser p=new PerceptionUser();
-		PerceptionUser11 p = new PerceptionUser11();
+		PerceptionUser111 p = new PerceptionUser111();
 		// p.disp();
 	}
 }

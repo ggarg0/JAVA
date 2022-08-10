@@ -1,3 +1,4 @@
+package Core;
 class Swap
 {
 	public static void main (String []a1){

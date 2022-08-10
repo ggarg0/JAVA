@@ -1,3 +1,4 @@
+package Core;
 public class Test {
 	public String longestCommonPrefix(String[] strs) {
 		String compare = strs[0];

@@ -1,12 +1,13 @@
+package Core;
 import java.io.*;
 
-class Cat implements Serializable {}
+class Cat11 implements Serializable {}
 
 public class SerialCat
 {
 public static void main(String[] a)
 {
-	Cat c=new Cat();
+	Cat11 c=new Cat11();
 	try
 	{
 		FileOutputStream fs=new FileOutputStream("TestSer.dat");
@@ -17,7 +18,7 @@ public static void main(String[] a)
 
 		FileInputStream fis = new FileInputStream("TestSer.ser");
 		ObjectInputStream obi = new ObjectInputStream(fis);
-		c=(Cat) obi.readObject();
+		c=(Cat11) obi.readObject();
 		obi.close();
 	}
 	catch(Exception e)

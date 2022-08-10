@@ -1,12 +1,13 @@
-interface Rectangle{
+package Core;
+interface Rectangle77{
 	void draw();
 }
 
-abstract class Shape{
+abstract class Shape77{
 	abstract void draw();
 }
 
-class Square extends Shape implements Rectangle{
+class Square77 extends Shape77 implements Rectangle77{
 	public void draw(){
 		System.out.println("Inside draw");
 	}
@@ -17,7 +18,7 @@ class Square extends Shape implements Rectangle{
 
  class InterfaceDemoNew{
 	public static void main(String args[]){
-		Shape shape=new Square();
+		Shape77 shape=new Square77();
 		shape.draw();
 	}
 }

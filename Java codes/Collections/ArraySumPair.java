@@ -1,3 +1,5 @@
+package Collections;
+
 import java.util.HashSet;
 
 public class ArraySumPair {

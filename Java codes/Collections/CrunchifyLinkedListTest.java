@@ -1,3 +1,5 @@
+package Collections;
+
 public class CrunchifyLinkedListTest {
 	public static CrunchifyLinkedList crunchifyList;
  

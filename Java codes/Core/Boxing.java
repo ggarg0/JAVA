@@ -1,3 +1,4 @@
+package Core;
 class Boxing
 {
 	static Integer x=9;

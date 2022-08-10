@@ -1,4 +1,4 @@
-package blockingqueue;
+package BlockingQueue;
 
 public class Message {
 private String msg;

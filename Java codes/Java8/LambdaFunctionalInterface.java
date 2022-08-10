@@ -1,3 +1,5 @@
+package Java8;
+
 @FunctionalInterface
 interface Addable {
 	int add(int a, int b);

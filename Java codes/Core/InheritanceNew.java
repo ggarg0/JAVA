@@ -1,4 +1,5 @@
-class Student
+package Core;
+class Student55
 {
 	public void disp()
 		{
@@ -11,7 +12,7 @@ class Student
 			}
 }
 
-class PerceptionUser extends Student
+class PerceptionUser55 extends Student55
 {
 	public void disp()
 			{
@@ -25,7 +26,7 @@ class PerceptionUser extends Student
 }
 public class InheritanceNew{
 	public static void main(String arg[])	{
-		PerceptionUser p=new PerceptionUser();
+		PerceptionUser55 p=new PerceptionUser55();
 		//Student p=new PerceptionUser();
 		//Student p=new Student();
 		p.disp();

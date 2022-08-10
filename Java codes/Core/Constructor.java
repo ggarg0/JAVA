@@ -1,3 +1,4 @@
+package Core;
  class Student{
 	protected int rollno=12;
 	protected String name;

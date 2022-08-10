@@ -1,19 +1,20 @@
-abstract class Student{
+package Core;
+abstract class Student99{
 	protected String name;
-	Student(){
+	Student99(){
 		System.out.println("Student Base constructor");
 	}
-	Student(String name){
+	Student99(String name){
 		System.out.println("Student parameter constructor");
 	}
 }
 
-class PerceptionUser extends Student{
+class PerceptionUser99 extends Student99{
 	String password;
-	PerceptionUser(){
+	PerceptionUser99(){
 		System.out.println("PerceptionUser Base Constructor");
 	}
-	PerceptionUser(String name, String pwd){
+	PerceptionUser99(String name, String pwd){
 		super(name);
 		System.out.println("PerceptionUser parameter constructor");
 	}
@@ -21,8 +22,8 @@ class PerceptionUser extends Student{
 class ConstructorDemo{
 	public static void main(String args[]){
 	//	Student s = new Student();
-		Student s1 = new PerceptionUser();
-		PerceptionUser p=new PerceptionUser();
-		PerceptionUser p1=new PerceptionUser("jack","infy@123");
+		Student99 s1 = new PerceptionUser99();
+		PerceptionUser99 p=new PerceptionUser99();
+		PerceptionUser99 p1=new PerceptionUser99("jack","infy@123");
 	}
 }

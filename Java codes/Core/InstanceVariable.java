@@ -1,3 +1,4 @@
+package Core;
 class InstanceVariable
 {
 	int number;

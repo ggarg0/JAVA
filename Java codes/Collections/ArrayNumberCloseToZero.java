@@ -1,3 +1,5 @@
+package Collections;
+
 import java.util.Arrays;
 public class ArrayNumberCloseToZero {
 	public static void main(String[] a) {

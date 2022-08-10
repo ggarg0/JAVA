@@ -1,13 +1,14 @@
-class Student
+package Core;
+class Student11
 {
 	protected int rollno;
 	protected String name;
-Student()
+Student11()
 	{
 		System.out.println("Parent class Default Constructor");
 	}
 
-	Student(int rno,String na)
+	Student11(int rno,String na)
 	{
 				rollno=rno;
 				name=na;
@@ -15,15 +16,15 @@ Student()
 	}
 }
 
-class PerceptionUser extends Student
+class PerceptionUser11 extends Student11
 {
 	String password;
 
-	PerceptionUser()
+	PerceptionUser11()
 	{
 		System.out.println("Child class Default Constructor");
 	}
-	PerceptionUser(String pwd)
+	PerceptionUser11(String pwd)
 	{
 		super(123,"GAUARVA");
 		password=pwd;
@@ -38,7 +39,7 @@ class PerceptionUser extends Student
 }
 class Inheritance{
 	public static void main(String arg[])	{
-		PerceptionUser p=new PerceptionUser("infy@123");
+		PerceptionUser11 p=new PerceptionUser11("infy@123");
 		p.disp();
 	}
 }

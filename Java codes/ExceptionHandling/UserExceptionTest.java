@@ -1,3 +1,5 @@
+package ExceptionHandling;
+
  class InvalidAmount extends Exception{
 	public InvalidAmount(){
 		super("Inavlid Amount");

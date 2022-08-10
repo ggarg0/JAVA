@@ -1,3 +1,5 @@
+package Core;
+
 class AutoBoxing{
 	public static void main(String arg[]){
 

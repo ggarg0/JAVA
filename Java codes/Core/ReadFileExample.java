@@ -1,9 +1,9 @@
+package Core;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.io.IOException;
 
-public class ReadFileExample
-{
+public class ReadFileExample {
 
 	private static final String FILENAME = "D:\\GIT\\JAVA\\Java codes\\Test.txt";
 
@@ -12,8 +12,10 @@ public class ReadFileExample
 		BufferedReader br = null;
 		FileReader fr = null;
 
-			//br = new BufferedReader(new FileReader(FILENAME));
+		// br = new BufferedReader(new FileReader(FILENAME));
+		try {
 			fr = new FileReader(FILENAME);
+
 			br = new BufferedReader(fr);
 
 			String sCurrentLine;
@@ -21,7 +23,10 @@ public class ReadFileExample
 			while ((sCurrentLine = br.readLine()) != null) {
 				System.out.println(sCurrentLine);
 			}
-
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+		}
 	}
 
 }

@@ -1,3 +1,5 @@
+package Strings;
+
 class StringDemo{
 	public static void main(String arg[]){
 			String name=new String("Infosys");

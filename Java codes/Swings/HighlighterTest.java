@@ -1,3 +1,4 @@
+package Swings;
 import java.awt.Color;
 import javax.swing.*;
 import javax.swing.text.BadLocationException;

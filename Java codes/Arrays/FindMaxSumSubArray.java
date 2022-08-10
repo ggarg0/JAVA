@@ -1,4 +1,4 @@
-package array;
+package Arrays;
 
 public class FindMaxSumSubArray {
 	public static void main(String args[]) {

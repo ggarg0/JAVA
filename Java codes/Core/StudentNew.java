@@ -1,3 +1,4 @@
+package Core;
 class StudentNew
 {
 	private int rollNumber=34;

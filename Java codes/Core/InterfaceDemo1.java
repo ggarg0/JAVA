@@ -1,24 +1,28 @@
-interface First{
+package Core;
+
+interface First {
 	void disp();
 }
-interface Second extends First{
+
+interface Second extends First {
 	void show();
 }
 
-abstract class Shape{
+abstract class Shape22 {
 	abstract void draw();
 }
 
-class Rectangle extends Shape implements First{
-	void draw(){
+class Rectangle22 extends Shape22 implements First {
+	void draw() {
 		System.out.println("Inside draw");
 	}
-	void disp(){};
+
+	void disp() {	};
 }
 
-class InterfaceDemo1{
-	public static void main(String args[]){
-		Shape shape=new Rectangle();
+class InterfaceDemo1 {
+	public static void main(String args[]) {
+		Shape22 shape = new Rectangle22();
 		shape.draw();
 	}
 }

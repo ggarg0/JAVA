@@ -1,3 +1,5 @@
+package Implementations;
+
 public class StringPermutationWithoutRepetition {
 	public static void main(String[] args) {
 		permutation("123");

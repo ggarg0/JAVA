@@ -1,3 +1,5 @@
+package ExceptionHandling;
+
 public class ExceptionDemo{
 	public static void main(String argx[]){
 		try{

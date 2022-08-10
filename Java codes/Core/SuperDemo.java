@@ -1,3 +1,4 @@
+package Core;
 class Parent1{
 		protected int number=10;
 }
