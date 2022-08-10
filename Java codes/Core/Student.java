@@ -1,5 +1,5 @@
 package Core;
-class Student
+class Student1
 {
 	private int rollNumber;
 	private String name;
@@ -18,8 +18,8 @@ private void disp()
 
 public static void main(String arg[])
 {
-	Student s1=new Student();
-	Student s2=new Student();
+	Student1 s1=new Student1();
+	Student1 s2=new Student1();
 	s1.disp();
 	s1.setStudent(101,"Jack");
 	s2.setStudent(102,"Tom");

@@ -1,4 +1,8 @@
 package Core;
+
+import Serialization.Animal;
+import Serialization.Dog;
+
 abstract class Animal{
 	void speak(){
 			System.out.println("I am an  Animal");

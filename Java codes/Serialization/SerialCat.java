@@ -1,4 +1,4 @@
-package Core;
+package Serialization;
 import java.io.*;
 
 class Cat11 implements Serializable {}
