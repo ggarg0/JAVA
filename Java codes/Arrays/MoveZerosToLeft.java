@@ -21,12 +21,11 @@ public class MoveZerosToLeft {
 			arr[write] = 0;
 			write--;
 		}
-
 	}
 
 	public static void main(String[] args) {
-		int[][] numsList = {{1, 10, 20, 0, 59, 63, 0, 88, 0}, {1, 0, 2, 3, 0}, {0},
-				{-1, 0, 0, -2, 9}, {1, 2, 3, 4, 5}, {2}};
+		int[][] numsList = { { 1, 10, 20, 0, 59, 63, 0, 88, 0 }, { 1, 0, 2, 3, 0 }, { 0 }, { -1, 0, 0, -2, 9 },
+				{ 1, 2, 3, 4, 5 }, { 2 } };
 
 		for (int i = 0; i < numsList.length; i++) {
 			System.out.println((i + 1) + ". Before list:\t" + Arrays.toString(numsList[i]));
@@ -36,5 +35,4 @@ public class MoveZerosToLeft {
 					"----------------------------------------------------------------------------------------------------\n");
 		}
 	}
-
 }
