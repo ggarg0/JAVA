@@ -3,7 +3,7 @@ package Arrays;
 public class FindMaxSumSubArray {
 	public static void main(String args[]) {
 
-		int[] arr = {1, 7, -2 };
+		int[] arr = {1, 7, -8, -5 };
 		int max = 0;
 		int globalMax =0;
 		int len = arr.length;
