@@ -1,8 +1,10 @@
 package Arrays;
 
+import java.util.Arrays;
+
 public class ProductExceptSelf {
 	public static void main(String args[]) {
-		int[] arr = { 1,2,3,4};
+		int[] arr = { 1, 2, 3, 4 };
 		int[] result = new int[arr.length];
 		int size = arr.length;
 
@@ -17,8 +19,7 @@ public class ProductExceptSelf {
 			}
 			result[i] = temp;
 		}
-		for (int i = 0; i < result.length; i++) {
-			System.out.print(result[i] + ", ");
-		}
+
+		System.out.println(Arrays.toString(result));
 	}
 }

@@ -1,5 +1,7 @@
 package Arrays;
 
+import java.util.Arrays;
+
 public class ProductExceptSelf2 {
 	public static void main(String args[]) {
 		int[] arr = { 2, 3, 5 };
@@ -20,8 +22,6 @@ public class ProductExceptSelf2 {
 			temp = temp * arr[i];
 		}
 
-		for (int j = 0; j < n; j++) {
-			System.out.print(result[j] + ", ");
-		}
+		System.out.println(Arrays.toString(result));
 	}
 }

@@ -1,5 +1,6 @@
 package Arrays;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -21,11 +22,6 @@ public class FindTwoSum {
 				nums.add(arr[i]);
 			}
 		}
-
-		for (int i = 0; i < result.length; i++) {
-			System.out.print(result[i] + ", ");
-		}
-
+		System.out.println(Arrays.toString(result));
 	}
-
 }

@@ -1,5 +1,7 @@
 package Arrays;
 
+import java.util.Arrays;
+
 public class ReArrangePositiveAndNegative {
 	public static void main(String args[]) {
 
@@ -16,9 +18,6 @@ public class ReArrangePositiveAndNegative {
 				j++;
 			}
 		}
-
-		for (int l = 0; l < len; l++) {
-			System.out.print(arr[l] + ", ");
-		}
+		System.out.println(Arrays.toString(arr));
 	}
 }

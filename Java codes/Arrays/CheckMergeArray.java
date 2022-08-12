@@ -1,5 +1,7 @@
 package Arrays;
 
+import java.util.Arrays;
+
 public class CheckMergeArray {
 
 	public static void main(String[] args) {
@@ -28,8 +30,6 @@ public class CheckMergeArray {
 		while (j < s2)
 			result[n++] = arr2[j++];
 
-		for (int l = 0; l < result.length; l++) {
-			System.out.print(result[l] + ", ");
-		}
+		System.out.println(Arrays.toString(result));
 	}
 }

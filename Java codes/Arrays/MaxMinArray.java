@@ -1,5 +1,7 @@
 package Arrays;
 
+import java.util.Arrays;
+
 public class MaxMinArray {
 	public static void main(String args[]) {
 
@@ -20,8 +22,6 @@ public class MaxMinArray {
 			}
 			flag = !flag;
 		}
-		for (int l = 0; l < len; l++) {
-			System.out.print(result[l] + ", ");
-		}
+		System.out.println(Arrays.toString(result));
 	}
 }
