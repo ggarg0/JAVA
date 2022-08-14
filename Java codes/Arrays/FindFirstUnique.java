@@ -6,7 +6,7 @@ import java.util.Map;
 public class FindFirstUnique {
 	public static void main(String args[]) {
 
-		int[] arr = { 2, 9, 54, 2, 6, 54 };
+		int[] arr = { 2, 54, 7, 2, 6, 54};
 		Map<Integer, Integer> nums = new HashMap<Integer, Integer>();
 	
 		for (int i = 0; i < arr.length; i++) {

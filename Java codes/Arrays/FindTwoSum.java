@@ -8,9 +8,9 @@ public class FindTwoSum {
 
 	public static void main(String args[]) {
 		int[] arr = { 1, 21, 3, 14, 5, 60, 7, 6 };
-		int target = 19;
+		int target = 24;
 
-		int[] result = new int[2];
+		int[] result = new int[] { -1, -1 };
 
 		Set<Integer> nums = new HashSet<Integer>();
 

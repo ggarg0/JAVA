@@ -5,7 +5,7 @@ public class FindMinSubArray {
 	public static void main(String[] args) {
 
 		int[] arr = { 2, 1, 5 };
-		int key = 7;
+		int key = 11;
 		int sum = 0;
 		int count = 0;
 		int maxCount = arr.length;
