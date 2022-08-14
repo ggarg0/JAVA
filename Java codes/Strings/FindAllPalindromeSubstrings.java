@@ -21,9 +21,10 @@ public class FindAllPalindromeSubstrings {
 		List<String> result = new ArrayList<String>();
 
 		for (int i = 0; i < input.length(); i++) {
+		//	result.add(input.substring(i, i + 1));
 			for (int j = i + 1; j < input.length(); j++) {
 				if (isPalindrome(i, j, input)) {
-					result.add(input.substring(i, j+1));
+					result.add(input.substring(i, j + 1));
 				}
 			}
 		}
@@ -32,7 +33,7 @@ public class FindAllPalindromeSubstrings {
 	}
 
 	public static void main(String[] args) {
-		String[] inputStr = {"aabbbaa", "321230990", "educative"};
+		String[] inputStr = { "abdbca", "cddpd", "educative" };
 		for (int i = 0; i < inputStr.length; i++) {
 			List<String> result = findAllPalindromeSubstrings(inputStr[i]);
 			System.out.println((i + 1) + ".   Input string: " + inputStr[i]);
