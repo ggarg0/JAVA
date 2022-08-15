@@ -7,8 +7,8 @@ import java.util.Set;
 public class FindTwoSum {
 
 	public static void main(String args[]) {
-		int[] arr = { 1, 21, 3, 14, 5, 60, 7, 6 };
-		int target = 24;
+		int[] arr = { 2, 4, 5, 7, 8};
+		int target = 9;
 
 		int[] result = new int[] { -1, -1 };
 
