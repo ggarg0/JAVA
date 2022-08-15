@@ -3,7 +3,7 @@ package Implementations;
 
 public class BcryptExample {
 	public static void main(String[] args) {
-		String originalPassword = "allsomebody";
+		String originalPassword = "4321";
 		String generatedSecuredPasswordHash = BCrypt.hashpw(originalPassword, BCrypt.gensalt(10));
 		System.out.println(generatedSecuredPasswordHash);
 
