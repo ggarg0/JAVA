@@ -1,54 +1,65 @@
 package Arrays;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class MergeOverlappingIntervals {
 	public static void main(String args[]) {
-		Interval[] arr = { new Interval(1, 3), new Interval(2, 4),  new Interval(6, 8) };
-		//Interval[] result = new Interval[arr.length];
-		
+		Interval[] arr = { new Interval(3, 7), new Interval(6, 8), new Interval(10, 12), new Interval(11, 15) };
+
+		List<Interval> input = Arrays.asList(arr);
 		List<Interval> output = new ArrayList<Interval>();
-		
-		for (int i = 1; i <= arr.length; i++) {
-			if(arr[i-1].getSecond() > arr[i].getFirst()) {
-				output.add(new Interval(arr[i-1].getFirst(), arr[i].getSecond()));
-				//i++;
-			} else {
-				output.add(new Interval(arr[i-1].getFirst(), arr[i-1].getSecond()));
+		int outputCounter = 0;
+
+		output.add(new Interval(input.get(outputCounter).getX(), input.get(outputCounter).getY()));
+
+		if (input == null || input.size() == 0) {
+			System.out.println("Invalid intervals");
+		} else {
+			for (int i = 1; i < input.size(); i++) {
+				if (output.get(outputCounter).getY() >= input.get(i).getX()) {
+					output.get(outputCounter)
+							.setY(input.get(i).getY() > output.get(outputCounter).getY() ? input.get(i).getY()
+									: output.get(outputCounter).getY());
+				} else {
+					output.add(new Interval(input.get(i).getX(), input.get(i).getY()));
+					outputCounter++;
+				}
 			}
+			System.out.println(output);
 		}
-		System.out.println(output);
 	}
 }
 
 class Interval {
+	private int x;
+	private int y;
+
 	@Override
 	public String toString() {
-		return "Interval [first=" + first + ", second=" + second + "]";
+		return "Interval [x=" + x + ", y=" + y + "]";
 	}
-
-	private int first;
-	private int second;
 
 	public Interval(int x, int y) {
-		this.first = x;
-		this.second = y;
+		super();
+		this.x = x;
+		this.y = y;
 	}
 
-	public int getFirst() {
-		return first;
+	public int getX() {
+		return x;
 	}
 
-	public void setFirst(int first) {
-		this.first = first;
+	public void setX(int x) {
+		this.x = x;
 	}
 
-	public int getSecond() {
-		return second;
+	public int getY() {
+		return y;
 	}
 
-	public void setSecond(int second) {
-		this.second = second;
+	public void setY(int y) {
+		this.y = y;
 	}
 }
