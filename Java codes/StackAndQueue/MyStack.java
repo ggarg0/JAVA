@@ -2,26 +2,7 @@ package StackAndQueue;
 
 import java.util.Arrays;
 
-public class StackImplementation {
-
-	public static void main(String[] args) {
-		MyStack<Object> myStack = new MyStack<Object>(5);
-		System.out.println("Stack is full : " + myStack.isFull());
-		System.out.println("Stack is empty : " + myStack.isEmpty());
-
-		myStack.push(2);
-		myStack.push(false);
-		myStack.push(null);
-		System.out.println("Peek() called : " + myStack.peek());
-		myStack.pop();
-		myStack.push("stack");
-		myStack.push("add");
-		myStack.push(7);
-		myStack.push(true);
-	}
-}
-
-class MyStack<V> {
+public class MyStack<V> {
 
 	private int index = -1;
 	private int maxSize;
@@ -96,4 +77,19 @@ class MyStack<V> {
 		System.out.println(opertaion + Arrays.toString(stack));
 	}
 
+	public static void main(String[] args) {
+		MyStack<Object> myStack = new MyStack<Object>(5);
+		System.out.println("Stack is full : " + myStack.isFull());
+		System.out.println("Stack is empty : " + myStack.isEmpty());
+
+		myStack.push(2);
+		myStack.push(false);
+		myStack.push(null);
+		System.out.println("Peek() called : " + myStack.peek());
+		myStack.pop();
+		myStack.push("stack");
+		myStack.push("add");
+		myStack.push(7);
+		myStack.push(true);
+	}
 }

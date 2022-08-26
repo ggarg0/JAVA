@@ -2,25 +2,7 @@ package StackAndQueue;
 
 import java.util.Arrays;
 
-public class QueueImplementation {
-	public static void main(String[] args) {
-		MyQueue<Object> myQueue = new MyQueue<Object>(5);
-		System.out.println("Queue is full : " + myQueue.isFull());
-		System.out.println("Queue is empty : " + myQueue.isEmpty());
-
-		myQueue.enqueue(2);
-		myQueue.enqueue(false);
-		myQueue.enqueue(null);
-		System.out.println("first() called : " + myQueue.first());
-		myQueue.dequeue();
-		myQueue.enqueue("queue");
-		myQueue.enqueue("add");
-		myQueue.enqueue(7);
-		myQueue.enqueue(true);
-	}
-}
-
-class MyQueue<V> {
+public class MyQueue<V> {
 
 	private int maxSize;
 	private V[] queue;
@@ -75,7 +57,7 @@ class MyQueue<V> {
 			while (counter < index) {
 				queue[counter] = queue[counter + 1];
 				counter++;
-			}			
+			}
 			queue[index--] = null;
 			printQueue("After dequeue : ");
 		}
@@ -100,5 +82,21 @@ class MyQueue<V> {
 		}
 		queue = temp;
 		printQueue("After resizing : ");
+	}
+
+	public static void main(String[] args) {
+		MyQueue<Object> myQueue = new MyQueue<Object>(5);
+		System.out.println("Queue is full : " + myQueue.isFull());
+		System.out.println("Queue is empty : " + myQueue.isEmpty());
+
+		myQueue.enqueue(2);
+		myQueue.enqueue(false);
+		myQueue.enqueue(null);
+		System.out.println("first() called : " + myQueue.first());
+		myQueue.dequeue();
+		myQueue.enqueue("queue");
+		myQueue.enqueue("add");
+		myQueue.enqueue(7);
+		myQueue.enqueue(true);
 	}
 }

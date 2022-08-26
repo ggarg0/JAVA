@@ -10,18 +10,12 @@ public class SinglyLinkedListImpl<T> {
         Node<T> nd = new Node<T>();
         nd.setValue(element);
         System.out.println("Adding: "+element);
-        /**
-         * check if the list is empty
-         */
-        if(head == null){
-            //since there is only one element, both head and 
-            //tail points to the same object.
+     
+        if(head == null){     
             head = nd;
             tail = nd;
         } else {
-            //set current tail next link to new node
             tail.setNextRef(nd);
-            //set tail as newly created node
             tail = nd;
         }
     }
@@ -39,14 +33,12 @@ public class SinglyLinkedListImpl<T> {
                 break;
             }
             if(tmp.compareTo(after) == 0){
-                //found the target node, add after this node
                 refNode = tmp;
                 break;
             }
             tmp = tmp.getNextRef();
         }
         if(refNode != null){
-            //add element after the target node
             Node<T> nd = new Node<T>();
             nd.setValue(element);
             nd.setNextRef(tmp.getNextRef());
@@ -78,15 +70,12 @@ public class SinglyLinkedListImpl<T> {
         Node<T> tmp = head;
         Node<T> refNode = null;
         System.out.println("Traversing to all nodes..");
-        /**
-         * Traverse till given element
-         */
+     
         while(true){
             if(tmp == null){
                 break;
             }
             if(tmp.compareTo(after) == 0){
-                //found the target node, add after this node
                 refNode = tmp;
                 break;
             }
