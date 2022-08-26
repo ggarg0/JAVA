@@ -8,7 +8,6 @@ public class QueueUsingStack {
 	Stack<Object> stack2 = new Stack<Object>();
 
 	public boolean isEmpty() {
-
 		if (stack1.size() + stack2.size() == 0) {
 			return true;
 		}

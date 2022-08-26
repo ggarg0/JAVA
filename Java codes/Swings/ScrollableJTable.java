@@ -1,7 +1,9 @@
 package Swings;
- import javax.swing.*;
-import javax.swing.table.*;
-import java.awt.*;
+ import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JRootPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 
 public class ScrollableJTable{
   public static void main(String[] args) {

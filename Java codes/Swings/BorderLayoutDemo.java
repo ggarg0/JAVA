@@ -2,9 +2,9 @@ package Swings;
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 
 public class BorderLayoutDemo {
     public static boolean RIGHT_TO_LEFT = false;

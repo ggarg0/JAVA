@@ -9,7 +9,7 @@ public class GenerateBinaryNumbers {
 
 	public static String[] findBinaryNumbers(int number) {
 		String[] result = new String[number];
-		Queue<String> queue = new ArrayDeque<String>(number + 1);
+		Queue<String> queue = new ArrayDeque<String>();
 
 		queue.add("1");
 
@@ -26,7 +26,5 @@ public class GenerateBinaryNumbers {
 
 	public static void main(String[] args) {
 		System.out.println(Arrays.toString(findBinaryNumbers(8)));
-
 	}
-
 }

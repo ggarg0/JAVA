@@ -23,8 +23,8 @@ public class HashMapDemo {
 		stockPrice.put("Novartis", 43);
 		stockPrice.put("TCS", 23);
 
-		Set keys = stockPrice.keySet();
-		Iterator itr = keys.iterator();
+		Set<String> keys = stockPrice.keySet();
+		Iterator<String> itr = keys.iterator();
 
 		while (itr.hasNext()) {
 			String key = (String) itr.next();

@@ -1,8 +1,5 @@
 package Collections;
 
-import java.util.ArrayList;
-import java.util.List;
-
 class LinkedListImplementation {
 	// Class variables for the Linked List
 	private static Node head;

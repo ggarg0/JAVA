@@ -6,7 +6,7 @@ public class ArrayListDemo {
 	public static void main(String[] args) {
 		try {
 
-			List arraylist = new ArrayList();
+			List<Object> arraylist = new ArrayList<Object>();
 			for (int i = 0; i < 5; i++) {
 				arraylist.add(new Integer(i));
 			}
@@ -29,7 +29,7 @@ public class ArrayListDemo {
 			System.out.println();
 			System.out.println("Remove from list");
 
-			List remove = new ArrayList();
+			List<Object> remove = new ArrayList<Object>();
 			remove.add(2);
 			remove.add(3);
 

@@ -1,7 +1,5 @@
 package ExceptionHandling;
 
-import java.util.regex.Pattern;
-
 class TryFinally {
 	public int divide(int a) throws Exception {
 		int b = 0;

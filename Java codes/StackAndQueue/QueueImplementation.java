@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class QueueImplementation {
 	public static void main(String[] args) {
-		MyQueue myQueue = new MyQueue(5);
+		MyQueue<Object> myQueue = new MyQueue<Object>(5);
 		System.out.println("Queue is full : " + myQueue.isFull());
 		System.out.println("Queue is empty : " + myQueue.isEmpty());
 
@@ -20,77 +20,78 @@ public class QueueImplementation {
 	}
 }
 
-class MyQueue{
+class MyQueue<V> {
 
 	private int maxSize;
-	private Object[] queue;
+	private V[] queue;
 	private int index = -1;
 
-	public MyQueue(){
+	public MyQueue() {
 		this.maxSize = 0;
-		queue = new Object[0];
+		queue = (V[]) new Object[0];
 	}
 
-	public MyQueue(int maxSize){
+	public MyQueue(int maxSize) {
 		this.maxSize = maxSize;
-		queue = new Object[maxSize];
+		queue = (V[]) new Object[maxSize];
 	}
 
-	public boolean isEmpty(){
-		if(index == -1){
+	public boolean isEmpty() {
+		if (index == -1) {
 			System.out.println("Queue is empty");
 			return true;
 		}
 		return false;
 	}
 
-	public boolean isFull(){
-		if(index == maxSize - 1){
+	public boolean isFull() {
+		if (index == maxSize - 1) {
 			System.out.println("Queue is full");
 			return true;
 		}
 		return false;
 	}
 
-	public void printQueue(String operation){
+	public void printQueue(String operation) {
 		System.out.println(operation + Arrays.toString(queue));
 	}
 
-	public void enqueue(Object data){
-		if(isFull()){
+	public void enqueue(V data) {
+		if (isFull()) {
 			System.out.println("Queue is full and resizing Queue");
 			resizeQueue();
 		}
-		queue[++index]= data;
+		queue[++index] = data;
 		printQueue("After enqueue [" + data + "] : ");
 	}
 
-	public void dequeue(){
+	public V dequeue() {
+		V result = null;
 		if (isEmpty()) {
 			System.out.println("Queue is empty");
 		} else {
 			int counter = 0;
-			while (counter <= index){
+			result = queue[0];
+			while (counter < index) {
 				queue[counter] = queue[counter + 1];
 				counter++;
-			}
-
+			}			
 			queue[index--] = null;
 			printQueue("After dequeue : ");
 		}
+		return result;
 	}
 
-	public Object first(){
+	public V first() {
 		if (isEmpty()) {
 			System.out.println("Queue is empty");
-			return queue;
 		}
 		return queue[index];
 	}
-	
+
 	public void resizeQueue() {
 		maxSize = maxSize * 2;
-		Object[] temp = new Object[maxSize];
+		V[] temp = (V[]) new Object[maxSize];
 		int counter = 0;
 
 		while (counter <= index) {

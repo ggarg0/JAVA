@@ -7,9 +7,9 @@ public class Collection {
 	public static void main(String[] args) {
 		try {
 			final String[] a = { "gaurav", "garg", "vineet", "mahendra" };
-			List list = Arrays.asList(a);
-			List sublist = Arrays.asList("vineet");
-			List searchList = Arrays.asList("mahendra");
+			List<String> list = Arrays.asList(a);
+			List<String> sublist = Arrays.asList("vineet");
+			List<String> searchList = Arrays.asList("mahendra");
 			System.out.println("Elements in list : " + list);
 			System.out.println("Elements in sublist : " + sublist);
 			System.out.println("Elements in searchList : " + searchList);

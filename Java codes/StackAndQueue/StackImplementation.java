@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class StackImplementation {
 
 	public static void main(String[] args) {
-		MyStack myStack = new MyStack(5);
+		MyStack<Object> myStack = new MyStack<Object>(5);
 		System.out.println("Stack is full : " + myStack.isFull());
 		System.out.println("Stack is empty : " + myStack.isEmpty());
 
@@ -21,20 +21,20 @@ public class StackImplementation {
 	}
 }
 
-class MyStack {
+class MyStack<V> {
 
 	private int index = -1;
 	private int maxSize;
-	private Object[] stack;
+	private V[] stack;
 
 	public MyStack() {
 		this.maxSize = 0;
-		stack = new Object[0];
+		stack = (V[]) new Object[0];
 	}
 
 	public MyStack(int maxSize) {
 		this.maxSize = maxSize;
-		stack = new Object[maxSize];
+		stack = (V[]) new Object[maxSize];
 	}
 
 	public boolean isFull() {
@@ -51,7 +51,7 @@ class MyStack {
 		return false;
 	}
 
-	public void push(Object data) {
+	public void push(V data) {
 		if (isFull()) {
 			System.out.println("Stack is full and resizing stack");
 			resizeStack();
@@ -60,26 +60,28 @@ class MyStack {
 		printStack("After Push() : ");
 	}
 
-	public void pop() {
+	public V pop() {
+		V result = null;
 		if (isEmpty()) {
 			System.out.println("Stack is empty");
 		} else {
+			result = stack[index];
 			stack[index--] = null;
 			printStack("After Pop() : ");
 		}
+		return result;
 	}
 
-	public Object peek() {
+	public V peek() {
 		if (isEmpty()) {
 			System.out.println("Stack is empty");
-			return stack;
 		}
 		return stack[index];
 	}
 
 	public void resizeStack() {
 		maxSize = maxSize * 2;
-		Object[] temp = new Object[maxSize];
+		V[] temp = (V[]) new Object[maxSize];
 		int counter = 0;
 
 		while (counter <= index) {
