@@ -5,11 +5,10 @@ public class MySinglyLinkedList<V> {
 	public class Node<V> {
 		public V data;
 		public Node<V> nextNode;
-
 	}
 
-	public Node<V> headNode;
 	public int size;
+	public Node<V> headNode;
 
 	public MySinglyLinkedList() {
 		headNode = null;
@@ -20,13 +19,43 @@ public class MySinglyLinkedList<V> {
 		return (headNode == null ? true : false);
 	}
 
+	public int length() {
+		int count = 0;
+		if (isEmpty()) {
+			System.out.println("List is empty");
+			return 0;
+		}
+
+		Node<V> currentNode = headNode;
+		while (currentNode != null) {
+			count++;
+			currentNode = currentNode.nextNode;
+		}
+		System.out.println("Length of list is [" + count + "]");
+		return count;
+	}
+
+	public void printList(String operation) {
+		if (isEmpty()) {
+			System.out.println("List is empty");
+		}
+
+		System.out.print(operation);
+		Node<V> currentNode = headNode;
+		while (currentNode != null) {
+			System.out.print(" |" + currentNode.data + "|");
+			currentNode = currentNode.nextNode;
+		}
+		System.out.println();
+	}
+
 	public void insertAtHead(V data) {
-		Node<V> newNode = new Node<V>();
-		newNode.data = data;
-		newNode.nextNode = headNode;
-		headNode = newNode;
+		Node<V> currentNode = new Node<V>();
+		currentNode.data = data;
+		currentNode.nextNode = headNode;
+		headNode = currentNode;
 		size++;
-		printList("Insert At Head (" + data + ") : ");
+		printList("Insert At Head (" + data + ") :");
 	}
 
 	public void insertAtEnd(V data) {
@@ -39,78 +68,143 @@ public class MySinglyLinkedList<V> {
 		newNode.data = data;
 		newNode.nextNode = null;
 
-		Node<V> last = headNode;
-		while (last.nextNode != null) {
-			last = last.nextNode;
+		Node<V> lastNode = headNode;
+
+		while (lastNode.nextNode != null) {
+			lastNode = lastNode.nextNode;
 		}
-		
-		last.nextNode = newNode;
+		lastNode.nextNode = newNode;
 		size++;
-		printList("Insert At End (" + data + ") : ");
+		printList("Insert At End (" + data + ") :");
 	}
 
-	public int length() {
-		int counter = 0;
-		if (!isEmpty()) {
-			Node<V> newNode = new Node<V>();
-			newNode.nextNode = headNode;
+	public void insertAfter(V data, V previous) {
+		Node<V> newNode = new Node<V>();
+		newNode.data = data;
 
-			while (newNode.nextNode != null) {
-				newNode = newNode.nextNode;
-				counter++;
+		Node<V> currentNode = headNode;
+		while (currentNode != null) {
+			if (currentNode.data.equals(previous)) {
+				newNode.nextNode = currentNode.nextNode;
+				currentNode.nextNode = newNode;
+				size++;
+				break;
 			}
+			currentNode = currentNode.nextNode;
 		}
-		printList("Length of list is [" + counter + "] : ");
-		return counter;
+		printList("Insert after (" + previous + ") value (" + data + ") : ");
 	}
-	
+
+	public void deleteAtHead() {
+		if (isEmpty()) {
+			System.out.println("List is empty");
+			return;
+		}
+
+		headNode = headNode.nextNode;
+		size--;
+		printList("Delete at head : ");
+	}
+
+	public void deleteByValue(V data) {
+
+		if (isEmpty()) {
+			System.out.println("List is empty");
+			return;
+		}
+
+		Node<V> deleteNode = headNode;
+		Node<V> prevNode = new Node<V>();
+		if (deleteNode.data.equals(data)) {
+			deleteAtHead();
+			return;
+		}
+
+		while (deleteNode != null) {
+			if (deleteNode.data.equals(data)) {
+				prevNode.nextNode = deleteNode.nextNode;
+				break;
+			}
+			prevNode = deleteNode;
+			deleteNode = deleteNode.nextNode;
+		}
+		size--;
+		printList("Delete value (" + data + ") from list : ");
+	}
+
+	public void deleteByNode(Node<V> node) {
+		Node<V> deleteNode = headNode;
+		Node<V> prevNode = null;
+
+		if (deleteNode == node) {
+			deleteAtHead();
+			return;
+		}
+
+		while (deleteNode != null) {
+			if (deleteNode == node) {
+				prevNode.nextNode = deleteNode.nextNode;
+				break;
+			}
+			prevNode = deleteNode;
+			deleteNode = deleteNode.nextNode;
+		}
+		size--;
+		printList("Delete node (" + node.data + ") from list : ");
+	}
+
 	public boolean searchNode(V data) {
 		boolean result = false;
-		if (isEmpty()) {
-			System.out.println("List is Empty");
-			return result;
-		}
-		
-		Node<V> current = headNode;
-		while(current != null) {
-			if(current.data.equals(data)) {
+
+		Node<V> currentNode = headNode;
+		while (currentNode != null) {
+			if (currentNode.data.equals(data)) {
 				result = true;
 				break;
 			}
-			current = current.nextNode;
+			currentNode = currentNode.nextNode;
 		}
 		System.out.println("Search list for (" + data + ") : " + result);
 		return result;
 	}
 
-	public void printList(String opertaion) {
-		if (isEmpty()) {
-			System.out.println("List is Empty");
-			return;
-		}
+	public void reverse(MySinglyLinkedList<V> list) {
+		Node<V> previous = null;
+		Node<V> current = list.headNode;
+		Node<V> next = null;
 
-		Node<V> nextNode = headNode;
-		System.out.print(opertaion);
-		while (nextNode != null) {
-			System.out.print("|" + nextNode.data.toString() + "| ");
-			nextNode = nextNode.nextNode;
+		while (current != null) {
+			next = current.nextNode;
+			current.nextNode = previous;
+			previous = current;
+			current = next;
 		}
-		System.out.println();
+		list.headNode = previous;
+		printList("Reversed list : ");
 	}
 
 	public static void main(String args[]) {
 		MySinglyLinkedList<Object> list = new MySinglyLinkedList<Object>();
+
 		list.length();
 		list.insertAtHead(1);
 		list.insertAtHead("One");
 		list.insertAtHead(true);
-		list.insertAtHead(new String());		
-		list.insertAtHead(9);		
+		list.deleteByValue(1);
+		list.insertAtHead(new String());
+		list.deleteAtHead();
+		list.insertAtHead(9);
 		list.searchNode(11);
 		list.insertAtEnd(11);
-		list.searchNode(11);		
+		list.searchNode(11);
+		list.insertAfter(99, 9);
 		list.insertAtEnd("Eleven");
-		list.length();		
+
+		list.length();
+		list.deleteAtHead();
+		list.deleteByValue(99);
+
+		list.reverse(list);
 	}
 
 }
