@@ -2,7 +2,7 @@ package LinkedList;
 
 import LinkedList.MySinglyLinkedList.Node;
 
-public class nthElementFromEndLinkedList {
+public class NthElementFromEndLinkedList {
 
 	public static Object nthElementFromEnd(MySinglyLinkedList<Integer> list, int n) {
 		int result = 0;
