@@ -34,6 +34,10 @@ public class MySinglyLinkedList<V> {
 		System.out.println("Length of list is [" + count + "]");
 		return count;
 	}
+	
+	public void printList() {
+		printList("List :");
+	}
 
 	public void printList(String operation) {
 		if (isEmpty()) {

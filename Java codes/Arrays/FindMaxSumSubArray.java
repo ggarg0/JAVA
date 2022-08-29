@@ -3,30 +3,27 @@ package Arrays;
 public class FindMaxSumSubArray {
 	public static void main(String args[]) {
 
-		int[] arr = {1, 7, -8, -5 };
-		int max = 0;
-		int globalMax =0;
-		int len = arr.length;
+		int[] arr = { -2, 10, 7, -5, 15, 6 };
+		int currMax = arr[0];
+		int max = arr[0];
 
-		for (int i = 0; i < len; i++) {
-			if (max < 0) {
-				max = arr[i];
+		for (int i = 1; i < arr.length; i++) {
+			currMax = Math.max(arr[i], currMax + arr[i]);
+			max = Math.max(max, currMax);
+		}
+		/*
+		for (int i = 1; i < size; i++) {
+			if (currMax < 0) {
+				currMax = arr[i];
 			} else {
-				max = max + arr[i];
+				currMax = currMax + arr[i];
 			}
 
-			if (max > globalMax) {
-				globalMax = max;
+			if (currMax > maxSoFar) {
+				maxSoFar = currMax;
 			}
 		}
-		System.out.println("Last : " + globalMax);
-		// display(arr);
+		*/
+		System.out.println("Max Sum : " + max);
 	}
-
-	public static void display(int[] arr) {
-		for (int i = 0; i < arr.length; i++) {
-			System.out.print(arr[i] + ", ");
-		}
-	}
-
 }
