@@ -3,7 +3,7 @@ package Arrays;
 public class BuySellStockPrice {
 
 	public static void main(String[] args) {
-		int[] stockNums = { 12, 30, 40 };
+		int[] stockNums = { 12, 5, 15, 2, 10, 40 };
 
 		if (stockNums.length < 2) {
 			System.out.println("Invalid stock values");
