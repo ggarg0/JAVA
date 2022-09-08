@@ -21,7 +21,7 @@ public class FindAllPalindromeSubstrings {
 		List<String> result = new ArrayList<String>();
 
 		for (int i = 0; i < input.length(); i++) {
-		//	result.add(input.substring(i, i + 1));
+			result.add(input.substring(i, i + 1));
 			for (int j = i + 1; j < input.length(); j++) {
 				if (isPalindrome(i, j, input)) {
 					result.add(input.substring(i, j + 1));

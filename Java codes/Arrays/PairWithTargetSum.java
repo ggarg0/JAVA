@@ -7,7 +7,7 @@ import java.util.Map;
 public class PairWithTargetSum {
 
 	public static void main(String[] args) {
-		int[] arr = new int[] { 2, 5, 9, 11};
+		int[] arr = new int[] { 2, 5, 9,6, 11};
 		int target =11;
 		int[] result = new int[2];
 
