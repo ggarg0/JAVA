@@ -2,7 +2,7 @@ package LinkedList;
 
 public class MySinglyLinkedList<V> {
 
-	public class Node<V> {
+	public static class Node<V> {
 		public V data;
 		public Node<V> nextNode;
 	}
