@@ -27,7 +27,7 @@ class ProxyInternet implements Internet {
 
 }
 
-public class ProxyClient {
+public class ProxyPattern {
 
 	public static void main(String[] args) {
 		Internet internet = new ProxyInternet();
