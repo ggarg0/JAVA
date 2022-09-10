@@ -40,7 +40,7 @@ public class RotateLinkedList {
 		list.insertAtEnd(4);
 		list.insertAtEnd(5);
 		rotate(list, -2);
-		list.printList();
+		list.printList("After rotate by -2 : ");
 		list.length();
 
 	}

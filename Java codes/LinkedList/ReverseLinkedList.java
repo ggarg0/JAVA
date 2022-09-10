@@ -5,9 +5,9 @@ import LinkedList.MySinglyLinkedList.Node;
 public class ReverseLinkedList {
 
 	public static void reverse(MySinglyLinkedList<Object> list) {
-		Node previous = null;
-		Node current = list.headNode;
-		Node next = null;
+		Node<Object> previous = null;
+		Node<Object> current = list.headNode;
+		Node<Object> next = null;
 		while (current != null) {
 			next = current.nextNode;
 			current.nextNode = previous;

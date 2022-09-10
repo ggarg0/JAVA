@@ -17,6 +17,9 @@ public class LongestPalindromicSubstring {
 		if (s == null || s.isEmpty())
 			return "";
 		
+		if (s.length() == 1)
+			return s;
+		
 		String longestOne = "";
 		for (int i = 0; i < s.length(); i++) {
 			for (int j = s.length() - 1; j > 0; j--) {
@@ -36,7 +39,7 @@ public class LongestPalindromicSubstring {
 	}
 
 	public static void main(String[] args) {
-		String[] inputs = { "", "abc", "1010", "aaccbababcbc", null };
+		String[] inputs = { "a"};
 
 		int index = 0;
 		for (String input : inputs) {
