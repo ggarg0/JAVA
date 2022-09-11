@@ -27,7 +27,7 @@ public class LongestSubstringWithDistinctCharacter {
 	}
 
 	public static void main(String[] args) {
-		System.out.println("Length of the longest substring: " + findLongestSubstring("aabccbb"));
+		System.out.println("Length of the longest substring: " + findLongestSubstring("abcabcbb"));
 		System.out.println("Length of the longest substring: " + findLongestSubstring("abbbb"));
 		System.out.println("Length of the longest substring: " + findLongestSubstring("abccde"));
 	}
