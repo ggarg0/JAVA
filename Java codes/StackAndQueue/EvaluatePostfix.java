@@ -42,6 +42,8 @@ public class EvaluatePostfix {
 
 	public static void main(String[] args) {
 		String expression = "921*-8-4+";
+		String[] arr = { "9", "4", "2", "+", "*", "6", "14", "7", "/", "+", "*" };
+
 		System.out.println(evaluatePostFix(expression));
 	}
 }
