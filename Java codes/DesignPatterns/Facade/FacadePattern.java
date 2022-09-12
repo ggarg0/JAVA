@@ -1,41 +1,41 @@
 package DesignPatterns.Facade;
 
-interface DBConnection {
-	abstract String getDBConnection();
+interface Report {
+	abstract void printReport();
 }
 
-class MySqlConnection implements DBConnection {
+class PDFReport implements Report {
 	@Override
-	public String getDBConnection() {
-		return "MySqlConnection";
+	public void printReport() {
+		System.out.println("PDF Report");		
 	}
 }
 
-class OracleConnection implements DBConnection {
+class ExcelReport implements Report {
 	@Override
-	public String getDBConnection() {
-		return "OracleConnection";
+	public void printReport() {
+		System.out.println("Excel Report");		
 	}
 }
 
-class HelperFacade {
-	public static DBConnection getDBConnection(String dbType) {
-		switch (dbType) {
-		case "MYSQL":
-			return new MySqlConnection();
-		case "ORACLE":
-			return new OracleConnection();
+class ReportFacade {
+	public static void printReport(String type) {
+		switch (type) {
+		case "PDF":
+			new PDFReport().printReport();
+			break;
+		case "EXCEL":
+			new ExcelReport().printReport();
+			break;
 		default:
-			return null;
+			break;			
 		}
 	}
 }
 
 public class FacadePattern {
 	public static void main(String[] args) {
-		DBConnection con = HelperFacade.getDBConnection("MYSQL");
-		System.out.println(con.getDBConnection());
-		con = HelperFacade.getDBConnection("ORACLE");
-		System.out.println(con.getDBConnection());
+		ReportFacade.printReport("PDF");
+		ReportFacade.printReport("EXCEL");
 	}
 }
