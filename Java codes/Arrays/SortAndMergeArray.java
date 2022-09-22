@@ -2,7 +2,7 @@ package Arrays;
 
 import java.util.Arrays;
 
-public class CheckMergeArray {
+public class SortAndMergeArray {
 
 	public static void main(String[] args) {
 

@@ -25,7 +25,6 @@ public class FindSubsetArrayWithoutDuplicates {
 			}
 		}
 		return subsets;
-
 	}
 
 	public static void main(String[] args) {

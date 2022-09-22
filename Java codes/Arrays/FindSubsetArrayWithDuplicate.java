@@ -16,9 +16,7 @@ public class FindSubsetArrayWithDuplicate {
 				list.add(num);
 				subsets.add(list);
 			}
-
 		}
-
 		return subsets;
 	}
 
