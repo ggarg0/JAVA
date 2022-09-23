@@ -2,7 +2,7 @@ package Arrays;
 
 import java.util.Arrays;
 
-public class SortAndMergeArray {
+public class MergeTwoSortedArray {
 
 	public static void main(String[] args) {
 

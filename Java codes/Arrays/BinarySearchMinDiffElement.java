@@ -28,7 +28,7 @@ public class BinarySearchMinDiffElement {
 	}
 
 	public static void main(String[] args) {
-		System.out.println(searchMinDiffElement(new int[] { 4, 6, 10 }, 7));
+		System.out.println(searchMinDiffElement(new int[] { 3, 5, 7, 9, 11, 17 }, 10));
 		System.out.println(searchMinDiffElement(new int[] { 4, 6, 10 }, 4));
 		System.out.println(searchMinDiffElement(new int[] { 1, 3, 8, 10, 15 }, 12));
 		System.out.println(searchMinDiffElement(new int[] { 4, 6, 10 }, 17));
