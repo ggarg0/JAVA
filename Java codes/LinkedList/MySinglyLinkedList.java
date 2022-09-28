@@ -3,12 +3,12 @@ package LinkedList;
 public class MySinglyLinkedList<V> {
 
 	public static class Node<V> {
-		public V data;
-		public Node<V> nextNode;
+		V data;
+		Node<V> nextNode;
 	}
 
-	public int size;
-	public Node<V> headNode;
+	int size;
+	Node<V> headNode;
 
 	public MySinglyLinkedList() {
 		headNode = null;
@@ -34,7 +34,7 @@ public class MySinglyLinkedList<V> {
 		System.out.println("Length of list is [" + count + "]");
 		return count;
 	}
-	
+
 	public void printList() {
 		printList("List :");
 	}
@@ -47,10 +47,10 @@ public class MySinglyLinkedList<V> {
 		System.out.print(operation);
 		Node<V> currentNode = headNode;
 		while (currentNode != null) {
-			System.out.print(" |" + currentNode.data + "|");
+			System.out.print(" |" + currentNode.data + "| ->");
 			currentNode = currentNode.nextNode;
 		}
-		System.out.println();
+		System.out.println(" null");
 	}
 
 	public void insertAtHead(V data) {
@@ -83,12 +83,16 @@ public class MySinglyLinkedList<V> {
 	}
 
 	public void insertAfter(V data, V previous) {
-		Node<V> newNode = new Node<V>();
-		newNode.data = data;
+		if (isEmpty()) {
+			insertAtHead(data);
+			return;
+		}
 
 		Node<V> currentNode = headNode;
 		while (currentNode != null) {
 			if (currentNode.data.equals(previous)) {
+				Node<V> newNode = new Node<V>();
+				newNode.data = data;
 				newNode.nextNode = currentNode.nextNode;
 				currentNode.nextNode = newNode;
 				size++;
@@ -96,7 +100,13 @@ public class MySinglyLinkedList<V> {
 			}
 			currentNode = currentNode.nextNode;
 		}
-		printList("Insert after (" + previous + ") value (" + data + ") : ");
+
+		if (currentNode == null) {
+			insertAtEnd(data);
+			return;
+		}
+
+		printList("Insert after (" + previous + ") value (" + data + ") :");
 	}
 
 	public void deleteAtHead() {
@@ -107,7 +117,7 @@ public class MySinglyLinkedList<V> {
 
 		headNode = headNode.nextNode;
 		size--;
-		printList("Delete at head : ");
+		printList("Delete at head :");
 	}
 
 	public void deleteByValue(V data) {
@@ -133,7 +143,7 @@ public class MySinglyLinkedList<V> {
 			deleteNode = deleteNode.nextNode;
 		}
 		size--;
-		printList("Delete value (" + data + ") from list : ");
+		printList("Delete value (" + data + ") from list :");
 	}
 
 	public void deleteByNode(Node<V> node) {
@@ -154,7 +164,7 @@ public class MySinglyLinkedList<V> {
 			deleteNode = deleteNode.nextNode;
 		}
 		size--;
-		printList("Delete node (" + node.data + ") from list : ");
+		printList("Delete node (" + node.data + ") from list :");
 	}
 
 	public boolean searchNode(V data) {
@@ -184,7 +194,7 @@ public class MySinglyLinkedList<V> {
 			current = next;
 		}
 		list.headNode = previous;
-		printList("Reversed list : ");
+		printList("Reversed list :");
 	}
 
 	public static void main(String args[]) {

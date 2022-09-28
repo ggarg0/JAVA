@@ -13,7 +13,7 @@ public class NthElementFromEndLinkedList {
 			return -1;
 		}
 
-		Node current = list.headNode;
+		Node<Integer> current = list.headNode;
 
 		while (current != null) {
 			if (++result == counter) {

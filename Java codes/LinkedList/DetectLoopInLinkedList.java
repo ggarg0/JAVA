@@ -8,8 +8,8 @@ public class DetectLoopInLinkedList {
 
 	public static boolean detectLoopUsingTwoPointers(MySinglyLinkedList<Integer> list) {
 		boolean result = false;
-		Node current = list.headNode;
-		Node next = list.headNode;
+		Node<Integer> current = list.headNode;
+		Node<Integer> next = list.headNode;
 
 		while (current != null && next != null && next.nextNode != null) {
 			current = current.nextNode;
@@ -26,8 +26,8 @@ public class DetectLoopInLinkedList {
 
 	public static boolean detectLoopUsingSet(MySinglyLinkedList<Integer> list) {
 		boolean result = false;
-		HashSet<Node> set = new HashSet<Node>();
-		Node node = list.headNode;
+		HashSet<Node<Integer>> set = new HashSet<Node<Integer>>();
+		Node<Integer> node = list.headNode;
 
 		while (node != null) {
 			if (set.contains(node)) {

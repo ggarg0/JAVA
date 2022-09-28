@@ -8,8 +8,8 @@ public class RemoveDuplicateLinkedList {
 
 	public static Object removeDuplicateUsingSet(MySinglyLinkedList<Integer> list) {
 		Object result = null;
-		HashSet<Object> set = new HashSet<Object>();
-		Node current = list.headNode;
+		HashSet<Integer> set = new HashSet<Integer>();
+		Node<Integer> current = list.headNode;
 		
 		while(current != null) {
 			if(!set.add(current.data)) {

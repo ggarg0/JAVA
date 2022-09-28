@@ -12,7 +12,7 @@ public class UnionIntersectionLinkedList {
 		MySinglyLinkedList<Object> result = new MySinglyLinkedList<Object>();
 		Set<Object> set = new HashSet<Object>();
 
-		Node current = list1.headNode;
+		Node<Object> current = list1.headNode;
 		while (current != null) {
 
 			if (set.add(current.data)) 
@@ -39,7 +39,7 @@ public class UnionIntersectionLinkedList {
 		MySinglyLinkedList<Object> result = new MySinglyLinkedList<Object>();
 
 		Set<Object> set = new HashSet<Object>();
-		Node current = list1.headNode;
+		Node<Object> current = list1.headNode;
 
 		while (current != null) {
 			if (!set.add(current.data)) 
