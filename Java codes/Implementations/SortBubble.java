@@ -1,23 +1,25 @@
 package Implementations;
 
+import java.util.Arrays;
+
 public class SortBubble {
-	public static void main(String[] args) {
-		int[] array = { 4, 2, 9, 6, 23, 12, 34, 0, 1 };
-		int n = array.length;
-		int k;
-		for (int m = n; m >= 0; m--) {
-			for (int i = 0; i < n - 1; i++) {
-				k = i + 1;
-				if (array[i] > array[k]) {
-					int temp;
-					temp = array[i];
-					array[i] = array[k];
-					array[k] = temp;
+	public static void bubbleSort(int arr[]) {
+		int n = arr.length;
+		for (int i = 0; i < n - 1; i++) {
+			for (int j = 0; j < n - 1 - i; j++) {
+				if (arr[j] > arr[j + 1]) {
+					int temp = arr[j];
+					arr[j] = arr[j + 1];
+					arr[j + 1] = temp;
 				}
 			}
+			System.out.println("Iteration : " + i + " - " + Arrays.toString(arr));
 		}
-		for (int i = 0; i < array.length; i++) {
-			System.out.print(array[i] + ", ");
-		}
+	}
+
+	public static void main(String[] args) {
+		int[] arr = { 14, 9, 23, 12 };
+		System.out.println("Before sort : " + Arrays.toString(arr));
+		bubbleSort(arr);
 	}
 }

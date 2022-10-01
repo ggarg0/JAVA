@@ -6,7 +6,7 @@ import java.util.Map.Entry;
 public class HashMapSortValuesInteger {
 	public static void main(String a[]){
 		//Map<String, Integer> map = new HashMap<String, Integer>();
-		Map map=new HashMap();
+		Map<String, Integer> map=new HashMap<String, Integer>();
 
 		map.put("java", 20);
 		map.put("C++", 45);

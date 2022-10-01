@@ -3,12 +3,12 @@ package LinkedList;
 public class MySinglyLinkedList<V> {
 
 	public static class Node<V> {
-		V data;
-		Node<V> nextNode;
+		public V data;
+		public Node<V> nextNode;
 	}
 
-	int size;
-	Node<V> headNode;
+	public int size;
+	public Node<V> headNode;
 
 	public MySinglyLinkedList() {
 		headNode = null;

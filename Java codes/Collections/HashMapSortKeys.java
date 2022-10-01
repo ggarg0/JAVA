@@ -17,8 +17,8 @@ public class HashMapSortKeys {
          hmap.put(77, "Y");
 
          System.out.println("Before Sorting by keys :");
-         Set set = hmap.keySet();
-         Iterator iterator = set.iterator();
+         Set<Integer> set = hmap.keySet();
+         Iterator<Integer> iterator = set.iterator();
          while(iterator.hasNext()) {
 			   Integer key=(Integer)iterator.next();
 			   System.out.print(key);
@@ -38,8 +38,8 @@ public class HashMapSortKeys {
               System.out.print(me2.getKey() + ": ");
               System.out.println(me2.getValue());
          }*/
-          Set set1 = map.keySet();
-          Iterator iterator1 = set1.iterator();
+          Set<Integer> set1 = map.keySet();
+          Iterator<Integer> iterator1 = set1.iterator();
 		  	while(iterator1.hasNext()) {
 		 	   Integer key=(Integer)iterator1.next();
 		 	   System.out.print(key);

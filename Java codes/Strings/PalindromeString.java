@@ -2,7 +2,7 @@ package Strings;
 
 public class PalindromeString {
 	public static void main(String[] a) {
-		String str = "123321";
+		String str = "122221";
 		char[] arr = str.toCharArray();
 		boolean isPalindrome = true;
 		int left = 0;

@@ -25,7 +25,7 @@ void setEmp(){
 }
 
 public static void main(String arg[]){
-	Set hashset=new HashSet();
+	Set<HashSetEmp> hashset=new HashSet<HashSetEmp>();
 
 	HashSetEmp emp1=new HashSetEmp(10,"Mary");
 	emp1.disp();
@@ -40,7 +40,7 @@ public static void main(String arg[]){
 	hashset.add(emp2);
 	emp1.setEmp();
 
-	Iterator iterator = hashset.iterator();
+	Iterator<HashSetEmp> iterator = hashset.iterator();
     while (iterator.hasNext()){
 		HashSetEmp o= (HashSetEmp) iterator.next();
 		 System.out.println("emp = "+o.getName());

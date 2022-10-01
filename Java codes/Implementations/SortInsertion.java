@@ -1,20 +1,25 @@
 package Implementations;
 
+import java.util.Arrays;
+
 public class SortInsertion {
-	public static void main(String a[]) {
-		int[] input = { 10, 34, 2, 56, 7, 67, 88, 42 };
+	static void insertionSort(int arr[]) {
 		int temp;
-		for (int i = 1; i < input.length; i++) {
+		for (int i = 1; i < arr.length; i++) {
 			for (int j = i; j > 0; j--) {
-				if (input[j] < input[j - 1]) {
-					temp = input[j];
-					input[j] = input[j - 1];
-					input[j - 1] = temp;
+				if (arr[j] < arr[j - 1]) {
+					temp = arr[j];
+					arr[j] = arr[j - 1];
+					arr[j - 1] = temp;
 				}
 			}
+			System.out.println("Iteration : " + i + " - " + Arrays.toString(arr));
 		}
-		for (int i = 0; i < input.length; i++) {
-			System.out.print(input[i] + ", ");
-		}
+	}
+
+	public static void main(String a[]) {
+		int[] arr = { 10, 34, 2, 56, 7, 67, 88, 42 };
+		System.out.println("Before sort : " + Arrays.toString(arr));
+		insertionSort(arr);
 	}
 }
