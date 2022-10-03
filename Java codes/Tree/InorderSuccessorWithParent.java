@@ -5,30 +5,34 @@ import java.util.List;
 
 import Tree.MyBinaryTree.Node;
 
-public class InorderSuccessor {
-	static Node treeMin(Node node) {
-		while (node.left != null)
-			node = node.left;
+public class InorderSuccessorWithParent {
 
-		return node;
-	}
-
-	static Node findInorderSuccessor(Node node, int nodeValue) {
+	static Node findSuccessor(Node node, int nodeValue) {
 		if (node == null)
 			return null;
 
-		Node successor = null;
+		if (node.right != null) {
+			Node temp = node.right;
+			while (temp.left != null)
+				temp = temp.left;
+
+			return temp;
+		} else {
+			if (node.parent.left == node)
+				return node.parent;
+
+			return null;
+		}
+	}
+
+	static Node findInorderSuccessor(Node node, int nodeValue) {
 		while (node != null) {
-			if (nodeValue > node.data) {
-				node = node.right;
-			} else if (nodeValue < node.data) {
-				successor = node;
+			if (nodeValue < node.data) {
 				node = node.left;
+			} else if (nodeValue > node.data) {
+				node = node.right;
 			} else {
-				if (node.right != null) {
-					successor = treeMin(node.right);
-				}
-				break;
+				return findSuccessor(node, nodeValue);
 			}
 
 			if (node == null) {
@@ -36,7 +40,7 @@ public class InorderSuccessor {
 				return temp;
 			}
 		}
-		return successor;
+		return null;
 	}
 
 	public static void main(String[] args) {
@@ -51,17 +55,16 @@ public class InorderSuccessor {
 		input.add(12);
 		input.add(35);
 		input.add(60);
-		// Collections.sort(input);
-		// Collections.sort(input, Collections.reverseOrder());
 
 		MyBinaryTree tree = new MyBinaryTree(input);
+		tree.populateParents();
 
 		System.out.println("Binary Tree:");
 		System.out.print("---------------------------------------------------------------------\n");
 		tree.printTree();
 		System.out.print("---------------------------------------------------------------------\n");
 		System.out.print("findInorderSuccessor: ");
-		int data = 50;
+		int data = 66;
 		Node successor = findInorderSuccessor(tree.root, data);
 		System.out.println(successor == null ? "Successor not found for [" + data + "]"
 				: "Successor [" + successor.data + "] found for [" + data + "]");

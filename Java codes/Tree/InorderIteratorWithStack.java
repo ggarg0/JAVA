@@ -6,18 +6,18 @@ import java.util.Stack;
 
 import Tree.MyBinaryTree.Node;
 
-public class InorderIterator {
+public class InorderIteratorWithStack {
 
 	Stack<Node> stack = new Stack<Node>();
 
-	public InorderIterator(Node root) {
-		populateStack(root);
+	public InorderIteratorWithStack(Node node) {
+		populateStack(node);
 	}
 
-	public void populateStack(Node root) {
-		while (root != null) {
-			stack.push(root);
-			root = root.left;
+	public void populateStack(Node node) {
+		while (node != null) {
+			stack.push(node);
+			node = node.left;
 		}
 	}
 
@@ -29,39 +29,30 @@ public class InorderIterator {
 		if (stack.isEmpty())
 			return null;
 
-		Node rVal = stack.pop();
-		Node temp = rVal.right;
-		populateStack(temp);
-		return rVal;
+		Node node = stack.pop();
+
+		// We now populate the stack again from root till the left-most node in the
+		// sub-tree of the right child of the node we just extracted
+		populateStack(node.right);
+		return node;
 	}
 
-	public static String inorderUsingIterator(Node root) {
-		InorderIterator iter = new InorderIterator(root);
+	public static void inOrderUsingIterator(Node node) {
+		InorderIteratorWithStack iterator = new InorderIteratorWithStack(node);
 		String result = "";
-		while (iter.hasNext()) {
-			result += iter.getNext().data;
-			if (iter.hasNext()) {
-				result += ", ";
-			}
+		while (iterator.hasNext()) {
+			result += iterator.getNext().data + ", ";
 		}
-		if (result == "") {
-			result = "null";
-		} else if (result.contains(", ")) {
-			result.substring(0, result.length() - 2);
-		}
-		return result;
+		System.out.println(result.isBlank() ? "null" : result.substring(0, result.length() - 2));
 	}
 
 	public static void main(String[] args) {
 		// Creating a binary tree
 		List<Integer> input = new ArrayList<Integer>();
-		input.add(100);
+		input.add(40);
 		input.add(50);
-		input.add(200);
 		input.add(25);
 		input.add(75);
-		input.add(125);
-		input.add(300);
 		input.add(12);
 		input.add(35);
 		input.add(60);
@@ -75,7 +66,7 @@ public class InorderIterator {
 		tree.printTree();
 		System.out.print("---------------------------------------------------------------------\n");
 		System.out.print("InorderUsingIterator: ");
-		System.out.println(inorderUsingIterator(tree.root));
+		inOrderUsingIterator(tree.root);
 		System.out.print("---------------------------------------------------------------------\n");
 	}
 }

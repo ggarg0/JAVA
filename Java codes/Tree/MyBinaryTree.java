@@ -65,31 +65,6 @@ public class MyBinaryTree {
 		}
 	}
 
-	public void insertBT(int key) {
-		Queue<Node> tempQueue = new LinkedList<Node>();
-		Node temp = this.root;
-		tempQueue.add(temp);
-
-		while (!tempQueue.isEmpty()) {
-			temp = tempQueue.peek();
-			tempQueue.remove();
-
-			if (temp.left == null) {
-				temp.left = new Node(key);
-				break;
-			} else {
-				tempQueue.add(temp.left);
-			}
-
-			if (temp.right == null) {
-				temp.right = new Node(key);
-				break;
-			} else {
-				tempQueue.add(temp.right);
-			}
-		}
-	}
-
 	private Node findInBSTRec(Node node, int nodeData) {
 		if (node == null)
 			return null;
@@ -104,28 +79,6 @@ public class MyBinaryTree {
 
 	public Node findInBST(int nodeData) {
 		Node temp = findInBSTRec(root, nodeData);
-		System.out.println(temp == null ? "[" + nodeData + "] Node not found"
-				: "[" + nodeData + "] Node found and subTree count is : " + getSubTreeNodeCount(temp));
-		return temp;
-	}
-
-	private Node findInBTRec(Node node, int nodeData) {
-		if (node == null)
-			return null;
-
-		if (node.data == nodeData)
-			return node;
-
-		Node leftNode = findInBTRec(node.left, nodeData);
-		if (leftNode != null)
-			return leftNode;
-
-		Node rightNode = findInBTRec(node.right, nodeData);
-		return rightNode;
-	}
-
-	public Node findInBT(int nodeData) {
-		Node temp = findInBTRec(this.root, nodeData);
 		System.out.println(temp == null ? "[" + nodeData + "] Node not found"
 				: "[" + nodeData + "] Node found and subTree count is : " + getSubTreeNodeCount(temp));
 		return temp;
@@ -184,6 +137,51 @@ public class MyBinaryTree {
 		}
 	}
 
+	void printPreorder(Node node) {
+		if (node == null)
+			return;
+
+		System.out.print(node.data + " ");
+		printPreorder(node.left);
+		printPreorder(node.right);
+	}
+
+	void printPreorder() {
+		System.out.print("PreOrder: ");
+		printPreorder(root);
+		System.out.println();
+	}
+
+	void printInorder(Node node) {
+		if (node == null)
+			return;
+
+		printInorder(node.left);
+		System.out.print(node.data + " ");
+		printInorder(node.right);
+	}
+
+	void printInorder() {
+		System.out.print("InOrder: ");
+		printInorder(root);
+		System.out.println();
+	}
+
+	void printPostorder(Node node) {
+		if (node == null)
+			return;
+
+		printPostorder(node.left);
+		printPostorder(node.right);
+		System.out.print(node.data + " ");
+	}
+
+	void printPostorder() {
+		System.out.print("PostOrder: ");
+		printPostorder(root);
+		System.out.println();
+	}
+
 	public void printTree() {
 		System.out.println();
 		printTree("", root);
@@ -211,7 +209,10 @@ public class MyBinaryTree {
 		tree.populateParents();
 
 		tree.findInBST(24);
-		tree.findInBT(26);
+		tree.findInBST(26);
+		tree.printInorder();
+		tree.printPreorder();
+		tree.printPostorder();
 
 	}
 }
