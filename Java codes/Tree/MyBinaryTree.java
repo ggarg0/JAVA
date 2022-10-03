@@ -1,6 +1,5 @@
 package Tree;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -37,26 +36,27 @@ public class MyBinaryTree {
 
 	public MyBinaryTree(List<Integer> nodeDataList) {
 		this.root = null;
-		for (Integer nodeData : nodeDataList) {
+
+		for (Integer nodeData : nodeDataList)
 			insert(nodeData);
-		}
 	}
 
 	public void insert(int data) {
 		Node newNode = new Node(data);
-		if (this.root == null) {
-			this.root = newNode;
+		if (root == null) {
+			root = newNode;
 		} else {
 			Node parent = null;
-			Node temp = this.root;
+			Node temp = root;
 			while (temp != null) {
 				parent = temp;
-				if (data <= temp.data) {
-					temp = temp.left;
+				if (data <= parent.data) {
+					temp = parent.left;
 				} else {
-					temp = temp.right;
+					temp = parent.right;
 				}
 			}
+
 			if (data <= parent.data) {
 				parent.left = newNode;
 			} else {
@@ -94,17 +94,41 @@ public class MyBinaryTree {
 		if (node == null)
 			return null;
 
-		if (node.data == nodeData) {
+		if (node.data == nodeData)
 			return node;
-		} else if (node.data > nodeData) {
+		else if (nodeData < node.data)
 			return findInBSTRec(node.left, nodeData);
-		} else {
+		else
 			return findInBSTRec(node.right, nodeData);
-		}
 	}
 
 	public Node findInBST(int nodeData) {
-		return findInBSTRec(this.root, nodeData);
+		Node temp = findInBSTRec(root, nodeData);
+		System.out.println(temp == null ? "[" + nodeData + "] Node not found"
+				: "[" + nodeData + "] Node found and subTree count is : " + getSubTreeNodeCount(temp));
+		return temp;
+	}
+
+	private Node findInBTRec(Node node, int nodeData) {
+		if (node == null)
+			return null;
+
+		if (node.data == nodeData)
+			return node;
+
+		Node leftNode = findInBTRec(node.left, nodeData);
+		if (leftNode != null)
+			return leftNode;
+
+		Node rightNode = findInBTRec(node.right, nodeData);
+		return rightNode;
+	}
+
+	public Node findInBT(int nodeData) {
+		Node temp = findInBTRec(this.root, nodeData);
+		System.out.println(temp == null ? "[" + nodeData + "] Node not found"
+				: "[" + nodeData + "] Node found and subTree count is : " + getSubTreeNodeCount(temp));
+		return temp;
 	}
 
 	private void populateParentsRec(Node node, Node parent) {
@@ -123,7 +147,7 @@ public class MyBinaryTree {
 		if (node == null) {
 			return 0;
 		} else {
-			return 1 + getSubTreeNodeCount(node.left) + getSubTreeNodeCount(node.right);
+			return (1 + getSubTreeNodeCount(node.left) + getSubTreeNodeCount(node.right));
 		}
 	}
 
@@ -151,7 +175,7 @@ public class MyBinaryTree {
 	}
 
 	public MyBinaryTree getTreeDeepCopy() {
-		if (this.root == null) {
+		if (root == null) {
 			return null;
 		} else {
 			MyBinaryTree treeCopy = new MyBinaryTree();
@@ -160,32 +184,10 @@ public class MyBinaryTree {
 		}
 	}
 
-	private Node findInBTRec(Node node, int nodeData) {
-		if (node == null) {
-			return null;
-		}
-
-		if (node.data == nodeData) {
-			return node;
-		}
-
-		Node leftNode = findInBTRec(node.left, nodeData);
-		if (leftNode != null) {
-			return leftNode;
-		}
-
-		Node rightNode = findInBTRec(node.right, nodeData);
-		return rightNode;
-	}
-
-	public Node findInBT(int nodeData) {
-		return findInBTRec(this.root, nodeData);
-	}
-
 	public void printTree() {
-		System.out.println("");
+		System.out.println();
 		printTree("", root);
-		System.out.println("");
+		System.out.println();
 	}
 
 	public void printTree(String prefix, Node node) {
@@ -197,30 +199,6 @@ public class MyBinaryTree {
 	}
 
 	public static void main(String[] args) {
-		List<Integer> input1 = new ArrayList<Integer>();
-		input1.add(100);
-		input1.add(50);
-		input1.add(200);
-		input1.add(25);
-		input1.add(125);
-		input1.add(350);
-		input1.add(200);
-		input1.add(25);
-		input1.add(28);
-		input1.add(26);
-		MyBinaryTree tree1 = new MyBinaryTree(input1);
-		tree1.printTree();
-
-
-		MyBinaryTree tree2 = new MyBinaryTree();
-		tree2.insert(25);
-		tree2.insert(27);
-		tree2.insertBT(24);
-		tree2.insert(29);
-		tree2.insertBT(28);
-		tree2.insert(22);
-		tree2.printTree();
-		
 		MyBinaryTree tree = new MyBinaryTree();
 		tree.insert(25);
 		tree.insert(27);
@@ -229,6 +207,11 @@ public class MyBinaryTree {
 		tree.insert(28);
 		tree.insert(22);
 		tree.printTree();
-	}
+		tree.populateCount();
+		tree.populateParents();
 
+		tree.findInBST(24);
+		tree.findInBT(26);
+
+	}
 }
