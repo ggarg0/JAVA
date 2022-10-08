@@ -27,10 +27,10 @@ public class SearchMatrixInSortedArray {
 	}
 
 	public static void main(String args[]) {
-		int[][] matrix = { { 10, 11, 12, 13 }, { 14, 15, 16, 17 }, { 27, 29, 30, 31 }, { 32, 33, 39, 50 } };
+		int[][] matrix = { { 1,3}};
 
-		Object x = findKey(matrix, 80);
-		System.out.println("Search for 80 returned: " + x);
+		Object x = findKey(matrix, 1);
+		System.out.println("Search for 1 returned: " + x);
 
 		x = findKey(matrix, 32);
 		System.out.println("Search for 15 returned: " + x);
