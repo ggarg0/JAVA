@@ -10,7 +10,7 @@ public class TripletSumCloseToTarget {
 		Arrays.sort(arr);
 		int smallestSum = Integer.MAX_VALUE;
 		List<List<Integer>> triplets = new ArrayList<>();
-		for (int i = 0; i < arr.length - 1; i++) {
+		for (int i = 0; i < arr.length - 2; i++) {
 			int left = i + 1;
 			int right = arr.length - 1;
 
@@ -42,7 +42,7 @@ public class TripletSumCloseToTarget {
 	}
 
 	public static void main(String[] args) {
-		searchTriplet(new int[] { -2, 0, 1, 2 }, 2);
+		searchTriplet(new int[] { -2, 0, 1, 2, -1 }, 0);
 		searchTriplet(new int[] { -3, -1, 1, 2 }, 1);
 		searchTriplet(new int[] { 1, 0, 1, 1 }, 1);
 	}

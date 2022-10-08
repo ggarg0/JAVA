@@ -34,7 +34,7 @@ public class BinarySearchFindRangeArray {
 	}
 
 	public static void main(String[] args) {
-		int[] result = findRange(new int[] { 4, 6, 6, 6, 9 }, 6);
+		int[] result = findRange(new int[] { 5,7,7,8,8,10 }, 8);
 		System.out.println("Range: [" + result[0] + ", " + result[1] + "]");
 		result = findRange(new int[] { 1, 3, 10, 10, 15 }, 10);
 		System.out.println("Range: [" + result[0] + ", " + result[1] + "]");

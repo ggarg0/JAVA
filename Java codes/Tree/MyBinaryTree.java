@@ -33,7 +33,7 @@ public class MyBinaryTree {
 	public MyBinaryTree(int nodeData) {
 		this.root = new Node(nodeData);
 	}
-
+	
 	public MyBinaryTree(List<Integer> nodeDataList) {
 		this.root = null;
 
@@ -41,6 +41,31 @@ public class MyBinaryTree {
 			insert(nodeData);
 	}
 
+	public void insertBT(int key) {
+        Queue<Node> tempQueue = new LinkedList<Node>();
+        Node temp = this.root;
+        tempQueue.add(temp);
+
+        while (!tempQueue.isEmpty()) {
+            temp = tempQueue.peek();
+            tempQueue.remove();
+
+            if (temp.left == null) {
+                temp.left = new Node(key);
+                break;
+            } else {
+                tempQueue.add(temp.left);
+            }
+
+            if (temp.right == null) {
+                temp.right = new Node(key);
+                break;
+            } else {
+                tempQueue.add(temp.right);
+            }
+        }
+    }
+	
 	public void insert(int data) {
 		Node newNode = new Node(data);
 		if (root == null) {
@@ -187,7 +212,7 @@ public class MyBinaryTree {
 		printTree("", root);
 		System.out.println();
 	}
-
+	
 	public void printTree(String prefix, Node node) {
 		if (node != null) {
 			printTree(prefix + "|    ", node.right);

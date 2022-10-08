@@ -20,7 +20,7 @@ public class TripletSumToZeroArray {
 	private static void searchPair(int[] arr, int targetSum, int start, List<List<Integer>> triplets) {
 		int end = arr.length - 1;
 		while (start < end) {
-			System.out.println(-targetSum + ", " + arr[start] + ", " + arr[end]);
+		//	System.out.println(-targetSum + ", " + arr[start] + ", " + arr[end]);
 			int currentSum = arr[start] + arr[end];
 			if (currentSum == targetSum && !triplets.contains(Arrays.asList(-targetSum, arr[start], arr[end]))) {
 				triplets.add(Arrays.asList(-targetSum, arr[start], arr[end]));
