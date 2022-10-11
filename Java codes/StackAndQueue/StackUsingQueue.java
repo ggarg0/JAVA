@@ -20,12 +20,6 @@ public class StackUsingQueue {
 		printQueue("Push");
 	}
 
-	public void swapQueue() {
-		Queue<Object> queueTemp = queue1;
-		queue1 = queue2;
-		queue2 = queueTemp;
-	}
-
 	public Object pop() {
 		Object result = -1;
 
@@ -41,7 +35,10 @@ public class StackUsingQueue {
 
 		queue1.remove();
 
-		swapQueue();
+		Queue<Object> queueTemp = queue1;
+		queue1 = queue2;
+		queue2 = queueTemp;
+		
 		printQueue("Pop");
 		return result;
 	}

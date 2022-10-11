@@ -9,7 +9,12 @@ public class AnagramProgram {
 	}
 
 	public static boolean isAnagramCheck(String s, String t) {
+		if(s.length() != t.length())
+			return false;
+		
 		int[] arr = new int[26];
+		
+		
 		for (int i = 0; i < s.length(); i++) {
 			arr[s.charAt(i) - 'a']++;
 		}
@@ -27,7 +32,7 @@ public class AnagramProgram {
 		if (word != null && anagram != null && word.length() == anagram.length()) {
 			char[] arr = word.toCharArray();
 			StringBuilder temp = new StringBuilder(anagram);
-
+			  String temp1 = word.substring(0, 3);
 			for (char ch : arr) {
 				int index = temp.indexOf(String.valueOf(ch));
 				if (index != -1) {

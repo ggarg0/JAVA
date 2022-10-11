@@ -1,16 +1,14 @@
 package Core;
+
 import java.util.regex.*;
 
-class RegexSmall
-{
-	private static final String EMAIL_PATTERN =
-			"^[_F-Zf-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
-		+ "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+class RegexSmall {
+	private static final String PATTERN = "^[0-9]{2}.[0-9]{2}.[0-9]{2}$";
 
-	public static void main(String [] a)
-	{
-		Pattern p=Pattern.compile(EMAIL_PATTERN);
-		Matcher m=p.matcher("fah@gmail.com");
-		System.out.println(m.matches());
-}
+	public static void main(String[] a) {
+		String test = "08.01.09";
+		String test1 = "08.01.09 LANGUAGE PACK";
+		System.out.println(test1.contains("PACK"));
+		System.out.println(Pattern.compile(PATTERN).matcher(test1).find() && !test1.contains("PACK"));
+	}
 }
