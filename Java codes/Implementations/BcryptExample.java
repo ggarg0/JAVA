@@ -7,7 +7,7 @@ public class BcryptExample {
 		String generatedSecuredPasswordHash = BCrypt.hashpw(originalPassword, BCrypt.gensalt(10));
 		System.out.println(generatedSecuredPasswordHash);
 
-		boolean matched = BCrypt.checkpw(originalPassword, generatedSecuredPasswordHash);
+		boolean matched = BCrypt.checkpw("1234", generatedSecuredPasswordHash);
 		System.out.println(matched);
 	}
 }

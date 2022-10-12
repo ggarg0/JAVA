@@ -1,0 +1,19 @@
+package Implementations;
+
+import org.jasypt.util.text.AES256TextEncryptor;
+
+public class JasyptDemo {
+	public static void main(String[] args) {
+		String password = "Custom@Property";
+
+		AES256TextEncryptor encryptor = new AES256TextEncryptor();
+		encryptor.setPassword("jiraanalytics");
+		String myEncryptedText = encryptor.encrypt(password);
+		System.out.println("Encrypted: " + myEncryptedText);
+
+		String plainText = encryptor.decrypt(myEncryptedText);
+		System.out.println("Decrypted: " + plainText);
+
+	}
+
+}
