@@ -25,7 +25,7 @@ public class SortedArraySquares {
 	}
 
 	public static void main(String[] args) {
-		int[] arr = { -3, -1, 0, 1, 2 };
+		int[] arr = { -4, -1, 0, 3, 10 };
 		System.out.println(Arrays.toString(makeSquares(arr)));
 
 	}
