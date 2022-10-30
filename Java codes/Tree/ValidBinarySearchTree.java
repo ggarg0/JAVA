@@ -26,7 +26,7 @@ public class ValidBinarySearchTree {
 		tree.insert(25);
 		tree.insert(75);
 		tree.insert(110);
-		tree.insertBT(90);
+	//	tree.insertBT(90);
 		tree.insert(125);
 
 		System.out.println("Binary Tree:");

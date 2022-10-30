@@ -3,13 +3,13 @@ package LinkedList;
 public class MyDoublyLinkedList<T> {
 
 	public static class Node<T> {
-		T data;
-		Node<T> next;
-		Node<T> previous;
+		public T data;
+		public Node<T> next;
+		public Node<T> previous;
 	}
 
-	int size;
-	Node<T> head;
+	public int size;
+	public Node<T> head;
 
 	public MyDoublyLinkedList() {
 		this.size = 0;
