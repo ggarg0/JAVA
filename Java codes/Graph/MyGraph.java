@@ -1,13 +1,13 @@
 package Graph;
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
 public class MyGraph {
 
-	public Map<Integer, List<Integer>> map = new HashMap<>();
+	public Map<Integer, List<Integer>> map = new LinkedHashMap<>();
 
 	public void addVertex(int vertex) {
 		map.put(vertex, new LinkedList<Integer>());
@@ -46,37 +46,28 @@ public class MyGraph {
 	}
 
 	public void hasVertex(int source) {
-		if (map.containsKey(source))
-			System.out.println("The graph contains " + source + " as a vertex.");
-		else
-			System.out.println("The graph does not contain " + source + " as a vertex.");
+		System.out.println("Vertex found : " + map.containsKey(source));
 	}
 
 	public void hasEdge(int source, int destination) {
-		if (map.get(source).contains(destination)) {
-			System.out.println("The graph has an edge between " + source + " and " + destination + ".");
-		} else {
-			System.out.println("The graph has no edge between " + source + " and " + destination + ".");
-		}
+		System.out.println("Edge found : " + map.get(source).contains(destination) + " between " + source + " and "
+				+ destination + ".");
 	}
 
 	public void printGraph() {
-		StringBuilder builder = new StringBuilder();
 		for (int vertex : map.keySet()) {
-			builder.append(vertex + ": ");
-			for (int w : map.get(vertex)) {
-				builder.append("|" + w + "| -> ");
-			}
-			builder.append("null\n");
+			System.out.print("Vertex [" + vertex + "] : ");
+			for (int w : map.get(vertex)) 
+				System.out.print("|" + w + "| -> ");
+			System.out.print("null\n");
 		}
-		System.out.println(builder.toString());
 	}
-	
+
 	public static void main(String args[]) {
 
 		MyGraph g = new MyGraph();
 		boolean isDirected = true;
-		g.addEdge(0, 2);
+		g.addEdge(1, 2);
 		g.addEdge(0, 5);
 		g.addEdge(2, 3);
 		g.addEdge(2, 4);

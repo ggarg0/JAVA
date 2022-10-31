@@ -1,51 +1,53 @@
 package Graph;
 
+import java.util.LinkedHashMap;
 import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 
 public class MyWeightedGraph {
 
 	static class Edge {
-		int source;
 		int destination;
 		int weight;
 
-		public Edge(int source, int destination, int weight) {
-			this.source = source;
+		public Edge(int destination, int weight) {
 			this.destination = destination;
 			this.weight = weight;
 		}
 	}
 
-	int vertices;
-	LinkedList<Edge>[] adjacencylist;
+	public Map<Integer, List<Edge>> map = new LinkedHashMap<>();
 
-	MyWeightedGraph(int vertices) {
-		this.vertices = vertices;
-		adjacencylist = new LinkedList[vertices];
-		for (int i = 0; i < vertices; i++) {
-			adjacencylist[i] = new LinkedList<Edge>();
-		}
+	public void addVertex(int vertex) {
+		map.put(vertex, new LinkedList<Edge>());
 	}
 
 	public void addEgde(int source, int destination, int weight) {
-		Edge edge = new Edge(source, destination, weight);
-		adjacencylist[source].addFirst(edge); // for directed graph
+		if (!map.containsKey(source))
+			addVertex(source);
+
+		if (!map.containsKey(destination))
+			addVertex(destination);
+
+		map.get(source).add(new Edge(destination, weight));
+		//map.get(destination).add(new Edge(source, weight));
 	}
 
 	public void printGraph() {
-		for (int i = 0; i < vertices; i++) {
-			LinkedList<Edge> list = adjacencylist[i];
-			for (int j = 0; j < list.size(); j++) {
-				System.out.println("vertex - " + i + " is connected to " + list.get(j).destination + " with weight "
-						+ list.get(j).weight);
+		for (int vertex : map.keySet()) {
+			System.out.println("Vertex [" + vertex + "]");
+			for (Edge w : map.get(vertex)) {
+				System.out.println("connected to vertex [" + w.destination + "] with weight [" + w.weight + "]");
 			}
+			System.out.print("\n");
 		}
 	}
 
 	public static void main(String[] args) {
-		MyWeightedGraph graph = new MyWeightedGraph(6);
+		MyWeightedGraph graph = new MyWeightedGraph();
 		graph.addEgde(0, 1, 4);
-		graph.addEgde(0, 2, 3);
+		graph.addEgde(5, 2, 3);
 		graph.addEgde(1, 3, 2);
 		graph.addEgde(1, 2, 5);
 		graph.addEgde(2, 3, 7);
@@ -53,6 +55,7 @@ public class MyWeightedGraph {
 		graph.addEgde(4, 0, 4);
 		graph.addEgde(4, 1, 4);
 		graph.addEgde(4, 5, 6);
+		graph.addVertex(7);
 		graph.printGraph();
 	}
 }

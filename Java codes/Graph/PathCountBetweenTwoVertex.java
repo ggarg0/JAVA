@@ -32,9 +32,9 @@ public class PathCountBetweenTwoVertex {
 		MyGraph g2 = new MyGraph();
 		g2.addEdge(0, 1);
 		g2.addEdge(1, 2);
-		g2.addEdge(1, 3);
+		g2.addEdge(1, 2);
 		g2.addEdge(2, 3);
 		g2.printGraph();
-        System.out.println("Path exists: " + countPaths(0, 2, g2));
+        System.out.println("Path exists: " + countPaths(0, 3, g2));
 	}
 }

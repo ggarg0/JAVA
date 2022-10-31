@@ -1,27 +1,25 @@
 package Graph;
 
-import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Map;
 
 public class BFSTraversalDisconnectedGraph {
 
-	public static void BFSUtil(int v, MyGraph g, ArrayList<Boolean> visited) {
-		LinkedList<Integer> queue = new LinkedList<>();
-		queue.add(v);
-		visited.set(v, true);
+	public static void BFSUtil(int vertex, MyGraph g, Map<Integer, Boolean> visited) {
+		LinkedList<Integer> list = new LinkedList<Integer>();
+		visited.put(vertex, true);
+		list.add(vertex);
 
-		while (!queue.isEmpty()) {
-			int s = queue.poll();
-			System.out.print(s + " ");
+		while (!list.isEmpty()) {
+			vertex = list.poll();
+			System.out.print(vertex + " ");
 
-			if (g.map.containsKey(s)) {
-				Iterator<Integer> i = g.map.get(s).listIterator();
-				while (i.hasNext()) {
-					int n = i.next();
-					if (!visited.get(n)) {
-						visited.set(n, true);
-						queue.add(n);
+			if (g.map.containsKey(vertex)) {
+				for (int v : g.map.get(vertex)) {
+					if (!visited.get(v)) {
+						visited.put(v, true);
+						list.add(v);
 					}
 				}
 			}
@@ -29,11 +27,11 @@ public class BFSTraversalDisconnectedGraph {
 	}
 
 	public static void BFS(MyGraph g) {
-		ArrayList<Boolean> visited = new ArrayList<Boolean>();
-		for (int i = 0; i < g.getVertexCount(); i++)
-			visited.add(i, false);
+		Map<Integer, Boolean> visited = new HashMap<Integer, Boolean>();
+		for (int i : g.map.keySet())
+			visited.put(i, false);
 
-		for (int i = 0; i < g.getVertexCount(); i++) {
+		for (int i : g.map.keySet()) {
 			if (!visited.get(i))
 				BFSUtil(i, g, visited);
 		}
@@ -41,13 +39,14 @@ public class BFSTraversalDisconnectedGraph {
 
 	public static void main(String[] args) {
 		MyGraph g = new MyGraph();
-		boolean isDirected = true;
-		g.addEdge(0, 1, isDirected);
-		g.addEdge(0, 4, isDirected);
-		g.addEdge(1, 2, isDirected);
-		g.addEdge(4, 3, isDirected);
+		g.addEdge(0, 1);
+		g.addEdge(0, 4);
+		g.addEdge(1, 2);
+		g.addEdge(4, 6);
+		g.addEdge(3, 5); // disconnected nodes
+		g.addEdge(6, 7);
 		g.printGraph();
-		System.out.println("Following is Breadth First Traversal ");
+		System.out.println("BFS for disconnected graph ");
 		BFS(g);
 	}
 }
