@@ -24,6 +24,7 @@ public class BFSTraversalDisconnectedGraph {
 				}
 			}
 		}
+
 	}
 
 	public static void BFS(MyGraph g) {
@@ -32,8 +33,10 @@ public class BFSTraversalDisconnectedGraph {
 			visited.put(i, false);
 
 		for (int i : g.map.keySet()) {
-			if (!visited.get(i))
+			if (!visited.get(i)) {
+				System.out.println("\nGraph\n======");
 				BFSUtil(i, g, visited);
+			}
 		}
 	}
 

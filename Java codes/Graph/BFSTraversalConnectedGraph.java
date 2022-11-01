@@ -6,7 +6,7 @@ import java.util.Map;
 
 public class BFSTraversalConnectedGraph {
 
-	public static void BFSUtil(int vertex, MyGraph g, Map<Integer, Boolean> visited) {
+	public static void BFSTraversal1(int vertex, MyGraph g, Map<Integer, Boolean> visited) {
 		LinkedList<Integer> list = new LinkedList<Integer>();
 		visited.put(vertex, true);
 		list.add(vertex);
@@ -31,7 +31,7 @@ public class BFSTraversalConnectedGraph {
 			visited.put(i, false);
 
 		if (!visited.isEmpty())
-			BFSUtil(vertex, g, visited);
+			g.BFSTraversal(vertex, g, visited);
 	}
 
 	public static void main(String[] args) {
@@ -45,6 +45,6 @@ public class BFSTraversalConnectedGraph {
 		g.addEdge(6, 7);
 		g.printGraph();
 		System.out.println("BFS for connected graph ");
-		BFS(1, g);
+		BFS(0, g);
 	}
 }

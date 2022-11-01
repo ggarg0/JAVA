@@ -5,13 +5,13 @@ import java.util.Map;
 
 public class DFSTraversalConnectedGraph {
 
-	public static void DFSUtil(int vertex, MyGraph g, Map<Integer, Boolean> visited) {
+	public static void DFSTraversal(int vertex, MyGraph g, Map<Integer, Boolean> visited) {
 		visited.put(vertex, true);		
 		if (g.map.containsKey(vertex)) {
 			System.out.print(vertex + " ");
 			for (int v : g.map.get(vertex)) {
 				if (!visited.get(v))
-					DFSUtil(v, g, visited);
+					DFSTraversal(v, g, visited);
 			}
 		}
 	}
@@ -22,7 +22,7 @@ public class DFSTraversalConnectedGraph {
 			visited.put(i, false);
 
 		if (!visited.isEmpty())
-			DFSUtil(vertex, g, visited);
+			g.DFSTraversal(vertex, g, visited);
 	}
 
 	public static void main(String[] args) {

@@ -53,7 +53,46 @@ public class MyGraph {
 		System.out.println("Edge found : " + map.get(source).contains(destination) + " between " + source + " and "
 				+ destination + ".");
 	}
+	
+	public MyGraph getTranspose(MyGraph g) {
+		MyGraph transposedGraph = new MyGraph();
+		for (int v = 0; v < g.getVertexCount(); v++) {
+			for (int i : g.map.get(v)) 
+				transposedGraph.addEdge(i, v);			
+		}
+		return transposedGraph;
+	}
 
+	public void BFSTraversal(int vertex, MyGraph g, Map<Integer, Boolean> visited) {
+		LinkedList<Integer> list = new LinkedList<Integer>();
+		visited.put(vertex, true);
+		list.add(vertex);
+
+		while (!list.isEmpty()) {
+			vertex = list.poll();
+			if (g.map.containsKey(vertex)) {
+				System.out.print(vertex + " ");
+				for (int v : g.map.get(vertex)) {
+					if (!visited.get(v)) {
+						visited.put(v, true);
+						list.add(v);
+					}
+				}
+			}
+		}
+	}
+	
+	public void DFSTraversal(int vertex, MyGraph g, Map<Integer, Boolean> visited) {
+		visited.put(vertex, true);		
+		if (g.map.containsKey(vertex)) {
+			System.out.print(vertex + " ");
+			for (int v : g.map.get(vertex)) {
+				if (!visited.get(v))
+					DFSTraversal(v, g, visited);
+			}
+		}
+	}
+	
 	public void printGraph() {
 		for (int vertex : map.keySet()) {
 			System.out.print("Vertex [" + vertex + "] : ");

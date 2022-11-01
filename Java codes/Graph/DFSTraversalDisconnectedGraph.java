@@ -21,8 +21,11 @@ public class DFSTraversalDisconnectedGraph {
 			visited.put(i, false);
 
 		for (int i : g.map.keySet())
-			if (!visited.get(i))
+			if (!visited.get(i)) {
+				System.out.println("\nGraph\n======");
 				DFSUtil(i, g, visited);
+			}
+				
 	}
 
 	public static void main(String[] args) {
