@@ -63,6 +63,15 @@ public class MyGraph {
 		return transposedGraph;
 	}
 
+	public static MyGraph getClone(MyGraph g) {
+		MyGraph copy = new MyGraph();
+		for (int v = 0; v < g.getVertexCount(); v++) {
+			for (int i : g.map.get(v)) 
+				copy.addEdge(v, i);			
+		}
+		return copy;
+	}
+	
 	public void BFSTraversal(int vertex, MyGraph g, Map<Integer, Boolean> visited) {
 		LinkedList<Integer> list = new LinkedList<Integer>();
 		visited.put(vertex, true);

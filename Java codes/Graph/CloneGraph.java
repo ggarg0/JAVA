@@ -1,16 +1,17 @@
 package Graph;
 
-public class TransposedGraph {
-	public static MyGraph getTranspose(MyGraph g) {
-		MyGraph transposedGraph = new MyGraph();
+public class CloneGraph {
+
+	public static MyGraph getClone(MyGraph g) {
+		MyGraph copy = new MyGraph();
 		for (int v = 0; v < g.getVertexCount(); v++) {
 			for (int i : g.map.get(v)) 
-				transposedGraph.addEdge(i, v);			
+				copy.addEdge(v, i);			
 		}
-		return transposedGraph;
+		return copy;
 	}
-
-	public static void main(String args[]) {
+	
+	public static void main(String[] args) {
 		MyGraph g1 = new MyGraph();
 		g1.addEdge(0, 1);
 		g1.addEdge(1, 2);
@@ -20,6 +21,8 @@ public class TransposedGraph {
 		g1.addEdge(4, 2);
 		g1.printGraph();
 		System.out.println("Transpose of given Graph: ");
-		getTranspose(g1).printGraph();
+		getClone(g1).printGraph();
+
 	}
+
 }
