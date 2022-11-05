@@ -50,7 +50,7 @@ public class NodeCountAtLevels {
 		g.addEdge(3, 5);
 		g.addEdge(2, 4);
 
-		for (int v : g.map.keySet())
+		for (int v = 0; v < g.map.keySet().size(); v++)
 			System.out.println("Nodes at level " + v + " : [" + numberOfNodesInGivenLevel(g, 0, v) + "]");
 	}
 }
