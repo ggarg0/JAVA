@@ -41,6 +41,15 @@ public class StronglyConnectedGraph {
 	}
 
 	public static void main(String[] args) {
+
+		MyGraph g = new MyGraph();
+		g.addEdge(1, 0);
+		g.addEdge(0, 2);
+		g.addEdge(2, 1);
+		g.addEdge(0, 3);
+		g.addEdge(3, 4);
+		System.out.println("Graph g is strongly connected? " + isStronglyConnected(0, g));
+
 		MyGraph g1 = new MyGraph();
 		g1.addEdge(0, 1);
 		g1.addEdge(1, 2);

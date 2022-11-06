@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class DetectCycleDirectedGraph {
 
-	private static boolean isCyclicUtil(int vertex, MyGraph g, Map<Integer, Boolean> visited,
+	private static boolean isCyclicUtil(int vertex, MyGraph graph, Map<Integer, Boolean> visited,
 			Map<Integer, Boolean> recStack) {
 		if (recStack.get(vertex))
 			return true;
@@ -16,8 +16,8 @@ public class DetectCycleDirectedGraph {
 		visited.put(vertex, true);
 		recStack.put(vertex, true);
 
-		for (int v : g.map.get(vertex)) {
-			if (isCyclicUtil(v, g, visited, recStack))
+		for (int v : graph.map.get(vertex)) {
+			if (isCyclicUtil(v, graph, visited, recStack))
 				return true;
 		}
 
@@ -25,17 +25,17 @@ public class DetectCycleDirectedGraph {
 		return false;
 	}
 
-	private static boolean isCyclic(MyGraph g) {
+	private static boolean isCyclic(MyGraph graph) {
 
 		Map<Integer, Boolean> visited = new HashMap<Integer, Boolean>();
 		Map<Integer, Boolean> recStack = new HashMap<Integer, Boolean>();
-		for (int i : g.map.keySet()) {
+		for (int i : graph.map.keySet()) {
 			visited.put(i, false);
 			recStack.put(i, false);
 		}
 
-		for (int i : g.map.keySet()) {
-			if (isCyclicUtil(i, g, visited, recStack))
+		for (int vertex : graph.map.keySet()) {
+			if (isCyclicUtil(vertex, graph, visited, recStack))
 				return true;
 		}
 		return false;

@@ -8,7 +8,7 @@ public class FormWordFromDictionary {
 		if (word.length() < 2 || dict.length < 2) 
 			return false;
 		
-		MyTrieWithArray trie = new MyTrieWithArray();
+		MyTrieWithMap trie = new MyTrieWithMap();
 
 		for (String dictWord : dict)
 			trie.insert(dictWord);

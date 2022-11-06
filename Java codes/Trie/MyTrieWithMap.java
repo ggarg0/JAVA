@@ -59,7 +59,7 @@ public class MyTrieWithMap {
 	}
 
 	public static void main(String[] args) {
-		String keys[] = { "the", "a*", "there", "answer", "any", "by", "bye", "their", "abc" };
+		String keys[] = { "bad", "dad", "mad"};
 		MyTrieWithMap t = new MyTrieWithMap();
 		System.out.println("Keys to insert: " + Arrays.toString(keys) + "\n");
 
@@ -68,7 +68,7 @@ public class MyTrieWithMap {
 			t.insert(word);
 
 		System.out.println("===========Search======================");
-		String searchWord = "a*";
+		String searchWord = "ba.";
 		if (t.search(searchWord) == true)
 			System.out.println(searchWord + " : Found");
 		else
