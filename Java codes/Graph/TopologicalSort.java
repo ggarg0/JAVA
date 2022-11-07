@@ -26,7 +26,7 @@ public class TopologicalSort {
 			visited.put(i, false);
 
 		for (int i : g.map.keySet())
-			if (!visited.get(i)) 
+			if (!visited.get(i))
 				topologicalSortUtil(i, g, visited, stack);
 
 		while (stack.empty() == false)
@@ -37,9 +37,9 @@ public class TopologicalSort {
 		MyGraph g = new MyGraph();
 
 		g.addEdge(3, 2);
-		  g.addEdge(3, 0);
-		  g.addEdge(2, 0);
-		  g.addEdge(2, 1);
+		g.addEdge(3, 0);
+		g.addEdge(2, 0);
+		g.addEdge(2, 1);
 		g.printGraph();
 		System.out.println("TopologicalSort ");
 		topologicalSort(g);

@@ -92,10 +92,7 @@ public class MyWeightedGraphWithList {
 		graph.addEgde(1, 2, 5);
 		graph.addEgde(2, 3, 7);
 		graph.addEgde(3, 4, 2);
-
 		graph.printGraph();
 		graph.getTotalDirectedCost();
-
 	}
-
 }

@@ -44,8 +44,8 @@ public class MinimumSpanningTree {
 		graph.addEgde(4, 7, 2);
 		graph.printGraph();
 		graph.getTotalDirectedCost();
-
 		System.out.println();
+		System.out.println("\nMinimum Spanning Tree");
 		MyWeightedGraphWithList mst = findMinSpanningTree(graph);
 		mst.printGraph();
 		mst.getTotalDirectedCost();
