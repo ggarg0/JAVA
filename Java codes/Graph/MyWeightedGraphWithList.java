@@ -18,14 +18,14 @@ public class MyWeightedGraphWithList {
 	static class Edge {
 		int weight;
 		boolean visited;
-		Vertex src;
-		Vertex dest;
+		Vertex source;
+		Vertex destination;
 
-		public Edge(int weight, boolean visited, Vertex src, Vertex dest) {
+		public Edge(int weight, boolean visited, Vertex source, Vertex destination) {
 			this.weight = weight;
 			this.visited = visited;
-			this.src = src;
-			this.dest = dest;
+			this.source = source;
+			this.destination = destination;
 		}
 	}
 
@@ -59,7 +59,7 @@ public class MyWeightedGraphWithList {
 		//edges.add(new Edge(weight, false, dest, src));
 	}
 
-	int getTotalCost() {
+	int getTotalUndirectedCost() {
 		int totalCost = 0;
 		for (Edge edge : edges) {
 			totalCost += edge.weight;
@@ -68,7 +68,7 @@ public class MyWeightedGraphWithList {
 		return totalCost;
 	}
 	
-	int getTotalCostForMST() {
+	int getTotalDirectedCost() {
 		int totalCost = 0;
 		for (Edge edge : edges) {
 			totalCost += edge.weight;
@@ -79,8 +79,8 @@ public class MyWeightedGraphWithList {
 
 	public void printGraph() {
 		for (int i = 0; i < this.edges.size(); i++) {
-			System.out.println("Edge : " + this.edges.get(i).src.id + "--(" + this.edges.get(i).weight + ")--"
-					+ this.edges.get(i).dest.id);
+			System.out.println("Edge : " + this.edges.get(i).source.id + "--(" + this.edges.get(i).weight + ")--"
+					+ this.edges.get(i).destination.id);
 		}
 	}
 
@@ -94,7 +94,7 @@ public class MyWeightedGraphWithList {
 		graph.addEgde(3, 4, 2);
 
 		graph.printGraph();
-		graph.getTotalCost();
+		graph.getTotalDirectedCost();
 
 	}
 
