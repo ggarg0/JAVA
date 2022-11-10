@@ -33,7 +33,11 @@ public class MyBinaryTree {
 	public MyBinaryTree(int nodeData) {
 		this.root = new Node(nodeData);
 	}
-	
+
+	public MyBinaryTree(Node node) {
+		this.root = node;
+	}
+
 	public MyBinaryTree(List<Integer> nodeDataList) {
 		this.root = null;
 
@@ -42,30 +46,30 @@ public class MyBinaryTree {
 	}
 
 	public void insertBT(int key) {
-        Queue<Node> tempQueue = new LinkedList<Node>();
-        Node temp = this.root;
-        tempQueue.add(temp);
+		Queue<Node> tempQueue = new LinkedList<Node>();
+		Node temp = this.root;
+		tempQueue.add(temp);
 
-        while (!tempQueue.isEmpty()) {
-            temp = tempQueue.peek();
-            tempQueue.remove();
+		while (!tempQueue.isEmpty()) {
+			temp = tempQueue.peek();
+			tempQueue.remove();
 
-            if (temp.left == null) {
-                temp.left = new Node(key);
-                break;
-            } else {
-                tempQueue.add(temp.left);
-            }
+			if (temp.left == null) {
+				temp.left = new Node(key);
+				break;
+			} else {
+				tempQueue.add(temp.left);
+			}
 
-            if (temp.right == null) {
-                temp.right = new Node(key);
-                break;
-            } else {
-                tempQueue.add(temp.right);
-            }
-        }
-    }
-	
+			if (temp.right == null) {
+				temp.right = new Node(key);
+				break;
+			} else {
+				tempQueue.add(temp.right);
+			}
+		}
+	}
+
 	public void insert(int data) {
 		Node newNode = new Node(data);
 		if (root == null) {
@@ -75,18 +79,17 @@ public class MyBinaryTree {
 			Node temp = root;
 			while (temp != null) {
 				parent = temp;
-				if (data <= parent.data) {
+				if (data <= parent.data)
 					temp = parent.left;
-				} else {
+				else
 					temp = parent.right;
-				}
 			}
 
-			if (data <= parent.data) {
+			if (data <= parent.data)
 				parent.left = newNode;
-			} else {
+			else
 				parent.right = newNode;
-			}
+
 		}
 	}
 
@@ -127,6 +130,34 @@ public class MyBinaryTree {
 		} else {
 			return (1 + getSubTreeNodeCount(node.left) + getSubTreeNodeCount(node.right));
 		}
+	}
+
+	public int maxDepth(Node root) {
+		return maxDepthRec(root);
+	}
+
+	public int maxDepthRec(Node node) {
+		if (node == null)
+			return 0;
+
+		return (1 + Math.max(maxDepthRec(node.left), maxDepthRec(node.right)));
+	}
+
+	public int minDepth(Node root) {
+		return minDepthRec(root);
+	}
+
+	public int minDepthRec(Node node) {
+		if (node == null)
+			return 0;
+
+		if (node.left == null)
+			return minDepth(node.right) + 1;
+
+		if (node.right == null)
+			return minDepth(node.left) + 1;
+
+		return Math.min(minDepth(node.left), minDepth(node.right)) + 1;
 	}
 
 	private void populateCountRec(Node node) {
@@ -180,10 +211,13 @@ public class MyBinaryTree {
 	void printInorder(Node node) {
 		if (node == null)
 			return;
+		if (node.left != null)
+			printInorder(node.left);
 
-		printInorder(node.left);
 		System.out.print(node.data + " ");
-		printInorder(node.right);
+
+		if (node.right != null)
+			printInorder(node.right);
 	}
 
 	void printInorder() {
@@ -212,7 +246,7 @@ public class MyBinaryTree {
 		printTree("", root);
 		System.out.println();
 	}
-	
+
 	public void printTree(String prefix, Node node) {
 		if (node != null) {
 			printTree(prefix + "|    ", node.right);
@@ -222,7 +256,7 @@ public class MyBinaryTree {
 	}
 
 	public static void main(String[] args) {
-		MyBinaryTree tree = new MyBinaryTree();
+		MyBinaryTree tree = new MyBinaryTree(26);
 		tree.insert(25);
 		tree.insert(27);
 		tree.insert(24);
@@ -230,14 +264,18 @@ public class MyBinaryTree {
 		tree.insert(28);
 		tree.insert(22);
 		tree.printTree();
+
 		tree.populateCount();
 		tree.populateParents();
 
 		tree.findInBST(24);
 		tree.findInBST(26);
+
+		MyBinaryTree treeCopy = tree.getTreeDeepCopy();
+		treeCopy.printTree();
+
 		tree.printInorder();
 		tree.printPreorder();
 		tree.printPostorder();
-
 	}
 }

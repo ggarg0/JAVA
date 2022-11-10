@@ -30,9 +30,6 @@ public class InorderIteratorWithStack {
 			return null;
 
 		Node node = stack.pop();
-
-		// We now populate the stack again from root till the left-most node in the
-		// sub-tree of the right child of the node we just extracted
 		populateStack(node.right);
 		return node;
 	}
