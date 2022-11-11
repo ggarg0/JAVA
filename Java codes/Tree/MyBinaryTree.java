@@ -136,7 +136,7 @@ public class MyBinaryTree {
 		return maxDepthRec(root);
 	}
 
-	public int maxDepthRec(Node node) {
+	private int maxDepthRec(Node node) {
 		if (node == null)
 			return 0;
 
@@ -147,7 +147,7 @@ public class MyBinaryTree {
 		return minDepthRec(root);
 	}
 
-	public int minDepthRec(Node node) {
+	private int minDepthRec(Node node) {
 		if (node == null)
 			return 0;
 
@@ -193,7 +193,7 @@ public class MyBinaryTree {
 		}
 	}
 
-	void printPreorder(Node node) {
+	private void printPreorder(Node node) {
 		if (node == null)
 			return;
 
@@ -202,13 +202,13 @@ public class MyBinaryTree {
 		printPreorder(node.right);
 	}
 
-	void printPreorder() {
+	public void printPreorder() {
 		System.out.print("PreOrder: ");
 		printPreorder(root);
 		System.out.println();
 	}
 
-	void printInorder(Node node) {
+	private void printInorder(Node node) {
 		if (node == null)
 			return;
 		if (node.left != null)
@@ -220,13 +220,13 @@ public class MyBinaryTree {
 			printInorder(node.right);
 	}
 
-	void printInorder() {
+	public void printInorder() {
 		System.out.print("InOrder: ");
 		printInorder(root);
 		System.out.println();
 	}
 
-	void printPostorder(Node node) {
+	private void printPostorder(Node node) {
 		if (node == null)
 			return;
 
@@ -235,7 +235,7 @@ public class MyBinaryTree {
 		System.out.print(node.data + " ");
 	}
 
-	void printPostorder() {
+	public void printPostorder() {
 		System.out.print("PostOrder: ");
 		printPostorder(root);
 		System.out.println();
@@ -247,10 +247,10 @@ public class MyBinaryTree {
 		System.out.println();
 	}
 
-	public void printTree(String prefix, Node node) {
+	private void printTree(String prefix, Node node) {
 		if (node != null) {
 			printTree(prefix + "|    ", node.right);
-			System.out.println(prefix + ("|----") + node.data);
+			System.out.println(prefix + ("|----[") + node.data + "]");
 			printTree(prefix + "|    ", node.left);
 		}
 	}
