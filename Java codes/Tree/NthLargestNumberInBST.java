@@ -4,11 +4,11 @@ import java.util.Stack;
 
 import Tree.MyBinaryTree.Node;
 
-public class NthSmallestNumberInBST {
+public class NthLargestNumberInBST {
 
-	public static int nthSmallest(Node root, int n) {
+	public static int nthLargest(Node root, int n) {
 		if (root == null)
-			return Integer.MIN_VALUE;
+			return Integer.MAX_VALUE;
 
 		Stack<Node> stack = new Stack<>();
 		Node current = root;
@@ -16,17 +16,17 @@ public class NthSmallestNumberInBST {
 		while (!stack.isEmpty() || current != null) {
 			if (current != null) {
 				stack.push(current);
-				current = current.left;
+				current = current.right;
 			} else {
 				current = stack.pop();
 				n = n - 1;
 				if (n == 0)
 					return current.data;
 
-				current = current.right;
+				current = current.left;
 			}
 		}
-		return Integer.MIN_VALUE;
+		return Integer.MAX_VALUE;
 	}
 
 	public static void main(String[] args) {
@@ -38,6 +38,8 @@ public class NthSmallestNumberInBST {
 		tree.insert(9);
 		tree.insert(6);
 		tree.printTree();
-		System.out.println(nthSmallest(tree.root, 4));
+		System.out.println(nthLargest(tree.root, 3));
+
 	}
+
 }
