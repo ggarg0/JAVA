@@ -2,44 +2,40 @@ package Tree;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
 import Tree.MyBinaryTree.Node;
 
-public class LevelOrderTraversal {
+public class LevelOrderTraversalUsingBFS {
 
-	public static void levelOrderTraversal(Node root) {
-
+	public static List<List<Integer>> levelOrderBFS(Node root) {
+		List<List<Integer>> result = new ArrayList<>();
 		if (root == null) {
-			System.out.print("null");
+			return result;
 		} else {
 			Queue<Node> queue = new ArrayDeque<Node>();
-			Node dummy = new Node(1);
 			queue.add(root);
-			queue.add(dummy);
+			while (queue.size() > 0) {
+				List<Integer> level = new ArrayList<>();
+				int levelNumber = queue.size();
 
-			while (!queue.isEmpty()) {
-				Node temp = queue.poll();
-				System.out.print(temp.data);
+				for (int i = 0; i < levelNumber; i++) {
+					Node node = queue.poll();
+					level.add(node.data);
 
-				if (temp.left != null) 
-					queue.add(temp.left);
-				
-				if (temp.right != null) 
-					queue.add(temp.right);
-			
-				if (queue.peek() == dummy) {
-					queue.remove();
-					if (!queue.isEmpty()) {
-						System.out.print(" : ");
-						queue.add(dummy);
-					}
-				} else {
-					System.out.print(", ");
+					if (node.left != null)
+						queue.add(node.left);
+
+					if (node.right != null)
+						queue.add(node.right);
+
 				}
+				result.add(level);
 			}
 		}
+		return result;
 	}
 
 	public static void main(String[] args) {
@@ -56,7 +52,7 @@ public class LevelOrderTraversal {
 		System.out.print("-----------------------------------------------------------------------------------------");
 		tree.printTree();
 		System.out.print("-----------------------------------------------------------------------------------------\n");
-		levelOrderTraversal(tree.root);
+		System.out.println(levelOrderBFS(tree.root));
 		System.out.print("\n-----------------------------------------------------------------------------------------");
 	}
 }
