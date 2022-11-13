@@ -39,7 +39,5 @@ public class BalancedBinaryTree {
 			System.out.println("Tree is balanced");
 		else
 			System.out.println("Tree is not balanced");
-
 	}
-
 }
