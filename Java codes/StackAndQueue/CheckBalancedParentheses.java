@@ -1,44 +1,24 @@
 package StackAndQueue;
 
 public class CheckBalancedParentheses {
-	public static boolean isBalanced(String exp) {
-		boolean result = true;
-		MyStack<Character> stack = new MyStack<Character>(exp.length());
+	public static boolean isBalanced(String s) {
+		MyStack<Character> stack = new MyStack<Character>(s.length());
 
-		for (int i = 0; i < exp.length(); i++) {
-			if (exp.charAt(i) == '{' || exp.charAt(i) == '[' || exp.charAt(i) == '(') {
-				stack.push(exp.charAt(i));
-			} else {
-				switch (exp.charAt(i)) {
-				case '}':
-					if (stack.pop() != '{') {
-						result = false;
-					}
-					break;
-
-				case ']':
-					if (stack.pop() != '[') {
-						result = false;
-					}
-					break;
-
-				case ')':
-					if (stack.pop() != '(') {
-						result = false;
-					}
-					break;
-
-				default:
-					System.out.println("Invalid Parentheses");
-					break;
-				}
-			}
+		for (char c : s.toCharArray()) {
+			if (c == '(')
+				stack.push(')');
+			else if (c == '{')
+				stack.push('}');
+			else if (c == '[')
+				stack.push(']');
+			else if (stack.isEmpty() || stack.pop() != c)
+				return false;
 		}
-		return result;
+		return stack.isEmpty();
 	}
 
 	public static void main(String[] args) {
 		System.out.println(isBalanced("{[({})]}"));
-		System.out.println(isBalanced("[{(}]"));
+		System.out.println(isBalanced("]"));
 	}
 }
