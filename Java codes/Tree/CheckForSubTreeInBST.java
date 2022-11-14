@@ -8,16 +8,14 @@ import Tree.MyBinaryTree.Node;
 public class CheckForSubTreeInBST {
 	static List<Node> nodes = new ArrayList<Node>();
 
-	static int height_of_tree(Node root) {
+	static int depthTree(Node root) {
 		if (root == null)
 			return 0;
 
-		int left = height_of_tree(root.left);
-		int right = height_of_tree(root.right);
-		return 1 + Math.max(left, right);
+		return 1 + Math.max(depthTree(root.left), depthTree(root.right));
 	}
 
-	static boolean CheckSubTree(Node T, Node S) {
+	static boolean CheckSubTreeValid(Node T, Node S) {
 		if (S == null && T == null)
 			return true;
 
@@ -27,15 +25,15 @@ public class CheckForSubTreeInBST {
 		if (T.data != S.data)
 			return false;
 
-		return CheckSubTree(T.left, S.left) && CheckSubTree(T.right, S.right);
+		return CheckSubTreeValid(T.left, S.left) && CheckSubTreeValid(T.right, S.right);
 	}
 
-	static int subtree_height(Node root, int h) {
+	static int subtreeHeight(Node root, int h) {
 		if (root == null)
 			return 0;
 		else {
-			int left = subtree_height(root.left, h);
-			int right = subtree_height(root.right, h);
+			int left = subtreeHeight(root.left, h);
+			int right = subtreeHeight(root.right, h);
 			int height = Math.max(left, right) + 1;
 
 			if (height == h)
@@ -52,14 +50,14 @@ public class CheckForSubTreeInBST {
 		if (T == null || S == null)
 			return false;
 
-		int h = height_of_tree(S);
-		int h1 = subtree_height(T, h);
+		int h = depthTree(S);
+		int h1 = subtreeHeight(T, h);
 		boolean result = false;
 		int n = nodes.size();
 
 		for (int i = 0; i < n; i++) {
 			if (nodes.get(i).data == S.data)
-				result = CheckSubTree(nodes.get(i), S);
+				result = CheckSubTreeValid(nodes.get(i), S);
 			if (result)
 				return true;
 		}
