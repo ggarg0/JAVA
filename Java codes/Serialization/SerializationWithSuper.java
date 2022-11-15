@@ -1,11 +1,11 @@
 package Serialization;
+
 import java.io.*;
 
 class SerializationWithSuper {
 	public static void main(String[] a) {
 		Dog d = new Dog(12, 12, "Gaurav");
-		System.out.println("Before Serial name : " + "Id : " + d.id + " named : " +
-		d.name + " & weight : " + d.weight);
+		System.out.println("Before Serial name : " + "Id : " + d.id + " named : " + d.name + " & weight : " + d.weight);
 		try {
 			FileOutputStream fos = new FileOutputStream("SuperNotSerial.txt");
 			ObjectOutputStream bos = new ObjectOutputStream(fos);
@@ -16,11 +16,10 @@ class SerializationWithSuper {
 		}
 
 		try {
-			 d.name="Garg";
-			 d.id=111;
-			d.weight=123;
-			System.out.println("Before object : "
-					+ "Id : " + d.id + " named : " + d.name + " & weight : " + d.weight);
+			d.name = "Garg";
+			d.id = 111;
+			d.weight = 123;
+			System.out.println("Before object : " + "Id : " + d.id + " named : " + d.name + " & weight : " + d.weight);
 			FileInputStream fis = new FileInputStream("SuperNotSerial.txt");
 			ObjectInputStream bis = new ObjectInputStream(fis);
 			d = (Dog) bis.readObject();
@@ -28,12 +27,11 @@ class SerializationWithSuper {
 		} catch (Exception e) {
 			System.out.println("EXP : " + e);
 		}
-		System.out.println("Recovered object : "
-			+ "Id : " + d.id + " named : " + d.name + " & weight : " + d.weight);
+		System.out.println("Recovered object : " + "Id : " + d.id + " named : " + d.name + " & weight : " + d.weight);
 	}
 }
 
-class Dog extends Animal  {
+class Dog extends Animal {
 	String name;
 	int weight;
 
@@ -44,9 +42,9 @@ class Dog extends Animal  {
 	}
 }
 
-class Animal implements Serializable{
-
+class Animal implements Serializable {
 	static int id;
+
 	public Animal(int id2) {
 		id = id2;
 	}
