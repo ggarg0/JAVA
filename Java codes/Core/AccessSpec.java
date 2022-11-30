@@ -9,6 +9,5 @@ class AccessSpec {
 		Access1 access = new Access1();
 		System.out.println(access.a);
 		System.out.println(access.d);
-
 	}
 }
