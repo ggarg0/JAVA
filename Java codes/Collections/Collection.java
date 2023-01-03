@@ -1,7 +1,6 @@
 package Collections;
 
 import java.util.*;
-import java.util.Collections;
 
 public class Collection {
 	public static void main(String[] args) {
@@ -60,7 +59,7 @@ public class Collection {
 			 * ncopies() returns immutable list consisting of copies of the specified
 			 * object.
 			 */
-			List raviList = Collections.nCopies(2, sublist);
+			List<List<String>> raviList = Collections.nCopies(2, sublist);
 			System.out.println("List created by ncopy() " + raviList);
 			Collections.reverse(sublist);
 			System.out.println("raviList in reverse order: " + raviList);

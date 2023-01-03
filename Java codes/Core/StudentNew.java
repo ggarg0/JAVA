@@ -14,7 +14,7 @@ StudentNew()
 StudentNew(int rollNumber,String name)
 {
 	System.out.println("OverLoaded Constructor");
-	rollNumber=rollNumber;
+	this.rollNumber=rollNumber;
 	this.name=name;
 }
 

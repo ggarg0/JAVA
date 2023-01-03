@@ -6,8 +6,8 @@ package Core;
 		System.out.println("Student Base constructor");
 	}
 	Student(int rollno,String name){
-		rollno=this.rollno;
-		name=name;
+		this.rollno=rollno;
+		this.name=name;
 		System.out.println("Student Parameter constructor - Roll No : "+ rollno + " and Name : "+ name);
 	}
 	void show()

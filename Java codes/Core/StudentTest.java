@@ -6,7 +6,7 @@ class Student22
 
 void setStudent(int rollNumber,String name)
 {
-	rollNumber=rollNumber;
+	this.rollNumber=rollNumber;
 	this.name=name;
 }
 
