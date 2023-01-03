@@ -5,7 +5,7 @@ class Static
 	private final static int num = 10;
 
 	public static void disp(){
-		//System.out.println("Static count : " + count);
+		System.out.println("Static count : " + count);
 		System.out.println("Static num : " + num);
 	}
 	public void show(){
