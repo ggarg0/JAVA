@@ -38,6 +38,8 @@ public class TransientExample{
 		ObjectInputStream in =new ObjectInputStream( 
                 new FileInputStream("nameStore")); 
 		NameStore nameStore1 = (NameStore)in.readObject();
+		
 		System.out.println(nameStore1);
+		in.close();
 	}
 }
