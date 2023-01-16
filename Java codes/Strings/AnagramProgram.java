@@ -4,7 +4,7 @@ public class AnagramProgram {
 
 	public static void main(String[] args) {
 		String input1 = "ab";
-		String input2 = "a";
+		String input2 = "ca";
 		System.out.println(input1 + " and " + input2 + " : isAnagram => " + isAnagramCheck(input1, input2));
 	}
 
@@ -31,7 +31,6 @@ public class AnagramProgram {
 		if (word != null && anagram != null && word.length() == anagram.length()) {
 			char[] arr = word.toCharArray();
 			StringBuilder temp = new StringBuilder(anagram);
-			  String temp1 = word.substring(0, 3);
 			for (char ch : arr) {
 				int index = temp.indexOf(String.valueOf(ch));
 				if (index != -1) {
