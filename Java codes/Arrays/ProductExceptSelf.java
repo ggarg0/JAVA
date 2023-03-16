@@ -4,22 +4,20 @@ import java.util.Arrays;
 
 public class ProductExceptSelf {
 	public static void main(String args[]) {
-		int[] arr = { 1, 2, 3, 4 };
+		int[] arr = { 1, 2, 6, 4 };
 		int[] result = new int[arr.length];
-		int size = arr.length;
 
-		for (int i = 0; i < size; i++) {
-			int temp = 1;
-			int n = 0;
-			while (n < size) {
-				if (i != n) {
-					temp = temp * arr[n];
-				}
-				n++;
+		for (int i = 0; i < arr.length; i++) {
+			int product = 1;
+			int counter = 0;
+			while (counter < arr.length) {
+				if (counter != i) 
+					product *= arr[counter];
+				
+				counter++;
 			}
-			result[i] = temp;
+			result[i] = product;
 		}
-
 		System.out.println(Arrays.toString(result));
 	}
 }
