@@ -37,6 +37,6 @@ public class AutoCompleteWithMyTrie {
 		t.insert("amazed");
 		t.insert("apple");
 
-		System.out.println(autocomplete("app", t.root));
+		System.out.println(autocomplete("amazi", t.root));
 	}
 }
