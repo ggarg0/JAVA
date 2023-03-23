@@ -1,6 +1,6 @@
-package Arrays;
+package Matrix;
 
-public class SearchMatrixInSortedArray {
+public class SearchInSortedMatrix {
 
 	public static boolean findKey(int[][] matrix, int target) {
 		int start = 0;
@@ -22,18 +22,12 @@ public class SearchMatrixInSortedArray {
 				return true;
 			}
 		}
-
 		return false;
 	}
 
 	public static void main(String args[]) {
-		int[][] matrix = { { 1,3}};
-
-		Object x = findKey(matrix, 1);
-		System.out.println("Search for 1 returned: " + x);
-
-		x = findKey(matrix, 32);
-		System.out.println("Search for 15 returned: " + x);
+		int matrix[][] = { { 1, 2, 3, 4 }, { 5, 6, 7, 8 }, { 9, 10, 11, 12 }, { 13, 14, 15, 16 } };
+		System.out.println("Search for 1 returned: " + findKey(matrix, 1));
+		System.out.println("Search for 15 returned: " + findKey(matrix, 18));
 	}
-
 }
