@@ -1,6 +1,6 @@
 package Matrix;
 
-public class RotateRowiTimesClockwise {
+public class RotateRowKTimesClockwise {
 	static void printMatrix(String str, int mat[][]) {
 		System.out.println(str + "Matrix\n===========================");
 		for (int i = 0; i < mat.length; i++) {
