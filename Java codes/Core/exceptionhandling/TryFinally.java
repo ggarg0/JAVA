@@ -7,7 +7,7 @@ class TryFinally {
 			b = 10 / a;
 			return b;
 		} finally {
-			System.out.println("Finally");
+			System.out.println("Finally called");
 			return 3;
 		}
 	}

@@ -3,13 +3,16 @@ package Java8;
 @FunctionalInterface
 interface Addable {
 	int add(int a, int b);
+
 	default String show() {
 		return "Default method";
 	}
+
 	static String display() {
 		return "Static method";
 	}
 }
+
 public class LambdaFunctionalInterface {
 	public static void main(String[] args) {
 

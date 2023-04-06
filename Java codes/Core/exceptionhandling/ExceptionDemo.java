@@ -5,8 +5,8 @@ public class ExceptionDemo {
 		try {
 			int a[] = { 1, 2 };
 			int b = 0;
-			int c = 5 / b; // line 9
-			System.out.println("TESTing");// line 10
+			int c = 5 / b;
+			System.out.println("TESTing");
 		} catch (ArithmeticException ae) {
 			System.out.println("Divided by zero" + ae);
 		} catch (Exception e) {
