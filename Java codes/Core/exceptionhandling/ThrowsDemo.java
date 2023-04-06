@@ -5,17 +5,16 @@ class NumberTest {
 
 	public int divide(int n) {
 		int a = 0;
-		int b = 100;
 		try {
 			a = 10 / n;
 			return a;
 		} catch (ArithmeticException e) {
+			System.out.println("from ArithmeticException : " + e.getMessage());
 			throw e;
-			// return a;
+		} finally {
+			System.out.println("from finally : " + num);
+			// return 100;
 		}
-		/*
-		 * finally{ return b; }
-		 */
 	}
 }
 

@@ -3,7 +3,6 @@ package Core.exceptionhandling;
 public class ExceptionDemo {
 	public static void main(String argx[]) {
 		try {
-			int a[] = { 1, 2 };
 			int b = 0;
 			int c = 5 / b;
 			System.out.println("TESTing");
