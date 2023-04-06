@@ -7,7 +7,7 @@ class SerializationWithSuper {
 		Dog d = new Dog(12, 12, "Gaurav");
 		System.out.println("Before Serial name : " + "Id : " + d.id + " named : " + d.name + " & weight : " + d.weight);
 		try {
-			FileOutputStream fos = new FileOutputStream("SuperNotSerial.txt");
+			FileOutputStream fos = new FileOutputStream("C:\\Mine\\GIT\\JAVA\\Java codes\\Core\\serialization\\SuperNotSerial.txt");
 			ObjectOutputStream bos = new ObjectOutputStream(fos);
 			bos.writeObject(d);
 			bos.close();

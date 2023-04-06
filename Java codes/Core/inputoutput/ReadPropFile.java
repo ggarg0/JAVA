@@ -19,10 +19,11 @@ public class ReadPropFile {
 			// get the property value and print it out
 			System.out.println("Details from properties file");
 			System.out.println("----------------------------");
-			System.out.println(props.getProperty("db.schema"));
-			System.out.println(props.getProperty("db.user"));
-			System.out.println(props.getProperty("db.password"));
+			System.out.println(props.getProperty("database"));
+			System.out.println(props.getProperty("dbuser"));
+			System.out.println(props.getProperty("dbpassword"));
 
+			System.out.println();
 			// Load XML file
 			input = new FileInputStream("C:\\Mine\\GIT\\JAVA\\Java codes\\Core\\inputoutput\\config.xml");
 			props.loadFromXML(input);

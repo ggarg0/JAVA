@@ -6,20 +6,20 @@ import java.io.ObjectOutputStream;
 
 public class SerializaitonClass {
 	public static void main(String[] args) {
-		EmployeeSerialization emp = new EmployeeSerialization("Vivekanand","Gautam");
-		emp.firstName = "Vivekanand";
-		emp.lastName = "Gautam";
+		EmployeeSerialization emp = new EmployeeSerialization("Steve", "Mason");
+		emp.firstName = "Steven";
+		emp.lastName = "Kelly";
 		emp.companyName = "JBT";
 		emp.email = "testme";
-		// Below part needs to be removed in case address field is made final
 		emp.companyCEO = "ME CEO";
 		try {
-			FileOutputStream fileOut = new FileOutputStream("./employee.txt");
+			FileOutputStream fileOut = new FileOutputStream(
+					"C:\\Mine\\GIT\\JAVA\\Java codes\\Core\\serialization\\employee.txt");
 			ObjectOutputStream out = new ObjectOutputStream(fileOut);
 			out.writeObject(emp);
 			out.close();
 			fileOut.close();
-			System.out.printf("Serialized data is saved in ./employee.txt file");
+			System.out.printf("Serialized data is saved in employee.txt file");
 		} catch (IOException i) {
 			i.printStackTrace();
 		}

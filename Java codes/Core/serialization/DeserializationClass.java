@@ -8,7 +8,8 @@ public class DeserializationClass {
 	public static void main(String[] args) {
 		EmployeeSerialization emp = null;
 		try {
-			FileInputStream fileIn = new FileInputStream("./employee.txt");
+			FileInputStream fileIn = new FileInputStream(
+					"C:\\Mine\\GIT\\JAVA\\Java codes\\Core\\serialization\\employee.txt");
 			ObjectInputStream in = new ObjectInputStream(fileIn);
 			emp = (EmployeeSerialization) in.readObject();
 			in.close();

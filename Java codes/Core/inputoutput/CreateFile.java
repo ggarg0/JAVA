@@ -7,7 +7,7 @@ class CreateFile {
 
 		try {
 			boolean newFile;
-			File file = new File("Test.txt");
+			File file = new File("C:\\Mine\\GIT\\JAVA\\Java codes\\Core\\inputoutput\\Test.txt");
 			System.out.println(file.exists());
 			newFile = file.createNewFile();
 			System.out.println(newFile);

@@ -7,19 +7,21 @@ class Writer2 {
 		char[] in = new char[50];
 		int size = 0;
 		try {
-			File file = new File("Mine.txt");
+			File file = new File("C:\\Mine\\GIT\\JAVA\\Java codes\\Core\\inputoutput\\Mine.txt");
 			FileWriter fw = new FileWriter(file);
 			fw.write("Javafolks");
 			fw.flush();
 			fw.close();
+
 			FileReader fr = new FileReader(file);
 			size = fr.read(in);
-
-			System.out.println(size);
+			System.out.println("Size : " + size);
 			for (char c : in)
 				System.out.print(c);
 			fr.close();
 		} catch (IOException e) {
+			System.out.println(e.getMessage());
+			e.printStackTrace();
 		}
 	}
 }

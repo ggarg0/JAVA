@@ -7,16 +7,18 @@ class Parent {
 }
 
 class Child extends Parent {
-	void disp() {
+	final void disp() {
 		System.out.println("Child Final disp method");
 	}
 }
 
 class FinalDemo {
 	public static final void main(String args[]) {
-		Parent child = new Child();
+		final Parent child = new Child();
+		Parent child1;
+		
 		child.disp();
+		child1 = child;
+		child1.disp();
 	}
 }
-
-/* Note: Identify the error, rectify it and get the output. */

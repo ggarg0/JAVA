@@ -11,9 +11,11 @@ class FinalVariable {
 
 	void disp() {
 		// pi=3.2;
+		// count = 14;
 		final int x = 12;
-
+		
 		System.out.println("Inside disp pi " + pi);
+		System.out.println("Inside disp count " + count);
 		System.out.println("Inside disp x " + x);
 
 	}

@@ -10,11 +10,8 @@ public class SavePropFile {
 
 		Properties prop = new Properties();
 		OutputStream output = null;
-
 		try {
-
-			output = new FileOutputStream("config.properties");
-
+			output = new FileOutputStream("C:\\Mine\\GIT\\JAVA\\Java codes\\Core\\inputoutput\\config.properties");
 			// set the properties value
 			prop.setProperty("database", "localhost");
 			prop.setProperty("dbuser", "user");
