@@ -1,7 +1,7 @@
 package Core.core;
 
 class Access1 {
-	protected int a;
+	int a;
 	public int d;
 }
 
