@@ -1,6 +1,6 @@
 package Core.core;
 
-public class ControlStatements {
+public class Java_ControlStatements {
 
 	public static void main(String[] args) {
 

@@ -1,6 +1,6 @@
 package Core.core;
 
-class Operators {
+class Java_Operators {
 	public static void main(String arg[]) {
 
 		// declare variables
