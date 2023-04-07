@@ -1,9 +1,19 @@
 package Core.core;
 
-class Student1 {
-	private int rollNumber;
-	private String name;
+public class Student {
+	protected int rollNumber;
+	protected String name;
 
+	protected Student() {
+		System.out.println("Parent class Default Constructor from Core.core");
+	}
+
+	protected Student(int rno, String na) {
+		rollNumber = rno;
+		name = na;
+		System.out.println("Parent overloaded constructor from Core.core");
+	}
+	
 	void setStudent(int rno, String sname) {
 		rollNumber = rno;
 		name = sname;
@@ -15,8 +25,8 @@ class Student1 {
 	}
 
 	public static void main(String arg[]) {
-		Student1 s1 = new Student1();
-		Student1 s2 = new Student1();
+		Student s1 = new Student();
+		Student s2 = new Student();
 		s1.disp();
 		s1.setStudent(101, "Jack");
 		s2.setStudent(102, "Tom");
