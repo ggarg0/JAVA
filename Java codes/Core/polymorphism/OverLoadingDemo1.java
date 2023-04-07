@@ -14,11 +14,11 @@ class OverLoadingDemo1 {
 	}
 
 	public static void main(String arg[]) {
-		System.out.println(new OverLoadingDemo1(12));
-		System.out.println(new OverLoadingDemo1(new Object()));
-		System.out.println(new OverLoadingDemo1(new String("s1")));
-		System.out.println(new OverLoadingDemo1(new StringBuffer("Asa")));
-		System.out.println(new OverLoadingDemo1(""));
-		System.out.println(new OverLoadingDemo1(null));
+		new OverLoadingDemo1(12);
+		new OverLoadingDemo1(new Object());
+		new OverLoadingDemo1(new String("s1"));
+		new OverLoadingDemo1(new StringBuffer("Asa"));
+		new OverLoadingDemo1("");
+		new OverLoadingDemo1(null);
 	}
 }
