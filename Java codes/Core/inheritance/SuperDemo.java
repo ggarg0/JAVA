@@ -1,10 +1,10 @@
 package Core.inheritance;
 
-class Parent1 {
+class Parent {
 	protected int number = 10;
 }
 
-class Child1 extends Parent1 {
+class Child extends Parent {
 	private int number = 100;
 
 	public void disp() {
@@ -15,7 +15,7 @@ class Child1 extends Parent1 {
 
 class SuperDemo {
 	public static void main(String args[]) {
-		Child1 child = new Child1();
+		Child child = new Child();
 		child.disp();
 	}
 }

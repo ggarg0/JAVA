@@ -1,41 +1,28 @@
 package Core.inheritance;
 
-class Student33 {
-	protected int rollno;
-	protected String name;
+import Core.core.Student;
 
-	Student33() {
-		System.out.println("Parent class Default Constructor");
-	}
-
-	Student33(int rno, String na) {
-		rollno = rno;
-		name = na;
-		System.out.println("Parent overloaded constructor");
-	}
-}
-
-class PerceptionUser33 extends Student33 {
+class PerceptionUsers extends Student {
 	String password;
 
-	PerceptionUser33() {
+	PerceptionUsers() {
 		System.out.println("Child class Default Constructor");
 	}
 
-	PerceptionUser33(String pwd) {
+	PerceptionUsers(String pwd) {
 		password = pwd;
 		System.out.println("Child class overloaded Constructor");
 	}
 
-	PerceptionUser33(int rollno, String name, String pwd) {
-		this.rollno = rollno;
+	PerceptionUsers(int rollno, String name, String pwd) {
+		this.rollNumber = rollno;
 		this.name = name;
 		password = pwd;
 		System.out.println("Child class, Overloaded constructor for initializing all");
 	}
 
 	void disp() {
-		System.out.println(rollno);
+		System.out.println(rollNumber);
 		System.out.println(name);
 		System.out.println(password);
 	}
@@ -43,9 +30,9 @@ class PerceptionUser33 extends Student33 {
 
 class InheritanceDemo {
 	public static void main(String arg[]) {
-		PerceptionUser33 p1 = new PerceptionUser33("infy@123");
+		PerceptionUsers p1 = new PerceptionUsers("password");
 		p1.disp();
-		PerceptionUser33 p2 = new PerceptionUser33(101, "Jack", "infy@123");
+		PerceptionUsers p2 = new PerceptionUsers(101, "Jack", "password");
 		p2.disp();
 	}
 }

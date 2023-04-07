@@ -1,9 +1,8 @@
 package Core.inheritance;
 
-class Student55 {
+class StudentShow {
 	public void disp() {
 		System.out.println("Student Disp");
-
 	}
 
 	private void show() {
@@ -11,10 +10,9 @@ class Student55 {
 	}
 }
 
-class PerceptionUser55 extends Student55 {
+class Perception extends StudentShow {
 	public void disp() {
 		System.out.println("User Disp1");
-
 	}
 
 	void show() {
@@ -24,7 +22,7 @@ class PerceptionUser55 extends Student55 {
 
 public class InheritanceNew {
 	public static void main(String arg[]) {
-		PerceptionUser55 p = new PerceptionUser55();
+		Perception p = new Perception();
 		// Student p=new PerceptionUser();
 		// Student p=new Student();
 		p.disp();
