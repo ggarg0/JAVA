@@ -10,7 +10,7 @@ Data Structures
 <LI>Trie - https://github.com/ggarg0/JAVA/tree/master/Java%20codes/Trie</LI>
 <LI>Strings - https://github.com/ggarg0/JAVA/tree/master/Java%20codes/Strings</LI>
 <LI>LinkedList - https://github.com/ggarg0/JAVA/tree/master/Java%20codes/LinkedList</LI>
-<LI>Multithreading - https://github.com/ggarg0/JAVA/tree/master/Java%20codes/Multithreading</LI>
+<LI>Multithreading - https://github.com/ggarg0/JAVA/tree/master/Java%20codes/Core/Multithreading</LI>
 <LI>Recursion - https://github.com/ggarg0/JAVA/tree/master/Java%20codes/Recursion</LI>
 <LI>BlockingQueue - https://github.com/ggarg0/JAVA/tree/master/Java%20codes/BlockingQueue</LI>
 <LI>Collections - https://github.com/ggarg0/JAVA/tree/master/Java%20codes/Collections</LI>
