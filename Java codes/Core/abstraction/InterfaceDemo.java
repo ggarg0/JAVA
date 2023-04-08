@@ -11,7 +11,7 @@ abstract interface color {
 
 class Square implements Shapes, color {
 	public void draw() {
-		System.out.println("Drawing Square from Shapes interface");
+		System.out.println("Drawing Square");
 	}
 
 	public void drawFromClass() {
@@ -23,7 +23,7 @@ class Square implements Shapes, color {
 	}
 
 	public void drawSides() {
-		System.out.println("Drawing sides from Shapes interface");
+		System.out.println("Drawing sides");
 	}
 }
 
@@ -31,5 +31,14 @@ class InterfaceDemo {
 	public static void main(String args[]) {
 		Shapes shape = new Square();
 		shape.draw();
+
+		color color = new Square();
+		color.fill();
+
+		Square square = new Square();
+		square.draw();
+		square.drawFromClass();
+		square.fill();
+		square.drawSides();
 	}
 }
