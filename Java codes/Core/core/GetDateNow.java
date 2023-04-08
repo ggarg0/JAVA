@@ -12,7 +12,7 @@ public class GetDateNow {
 		Calendar currentDate = Calendar.getInstance();
 		System.out.println("Calendar Object without Formatter :=>  " + currentDate.getTime());
 
-		SimpleDateFormat formatter = new SimpleDateFormat("MMddyyyyHHmmss");
+		SimpleDateFormat formatter = new SimpleDateFormat("MM-dd-yyyy HH:mm:ss");
 
 		String dateNow = formatter.format(d1);
 		System.out.println("Date Object with Formatter:=>  " + dateNow.toString());

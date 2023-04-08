@@ -5,12 +5,12 @@ import java.util.concurrent.*;
 
 public class ThreadCallable implements Callable<String> {
 	public String call() throws Exception {
-		Thread.sleep(100);
+		Thread.sleep(5000);
 		return Thread.currentThread().getName();
 	}
 
 	public static void main(String args[]) {
-		ExecutorService executor = Executors.newFixedThreadPool(6);
+		ExecutorService executor = Executors.newFixedThreadPool(2);
 		List<Future<String>> list = new ArrayList<Future<String>>();
 		Callable<String> callable = new ThreadCallable();
 		for (int i = 0; i < 5; i++) {
