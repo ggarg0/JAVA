@@ -24,5 +24,3 @@ class InterfaceDemoNew {
 		shape.draw();
 	}
 }
-
-/* Note: Analyze the code and undersatnd the output. */

@@ -1,35 +1,35 @@
 package Core.abstraction;
 
-abstract interface Shape55 {
+abstract interface Shapes {
 	public void draw();
-
-	public void draw1();
-	// public void draw2();
-
+//	public void drawSides();
 }
 
-abstract interface Shape56 {
-	public void draw();
-
-	public void draw1();
-
+abstract interface color {
+	public void fill();
 }
 
-class Rectangle55 implements Shape55, Shape56 {
+class Square implements Shapes, color {
 	public void draw() {
-		System.out.println("Drawing Rectangle");
+		System.out.println("Drawing Square from Shapes interface");
 	}
 
-	public void draw1() {
-		System.out.println("Drawing Rectangle1");
+	public void drawFromClass() {
+		System.out.println("Drawing Square from drawFromClass");
+	}
+
+	public void fill() {
+		System.out.println("Fill color");
+	}
+
+	public void drawSides() {
+		System.out.println("Drawing sides from Shapes interface");
 	}
 }
 
 class InterfaceDemo {
 	public static void main(String args[]) {
-		Shape55 shape = new Rectangle55();
-		shape.draw1();
+		Shapes shape = new Square();
+		shape.draw();
 	}
 }
-
-/* Note: Identify the error, rectify it and get the output. */

@@ -6,7 +6,7 @@ public class ClassLoaderTest {
 		try {
 			// printing ClassLoader of this class
 			System.out
-					.println("ClassLoaderTest.getClass().getClassLoader() : " + ClassLoaderTest.class.getClassLoader());
+					.println("ClassLoaderTest.getClass() : " + ClassLoaderTest.class.getClassLoader());
 
 			// trying to explicitly load this class again using Extension class loader
 			// Class.forName("test.ClassLoaderTest", true,
