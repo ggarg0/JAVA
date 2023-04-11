@@ -7,7 +7,7 @@ public class Java_Enum {
 	}
 
 	public static void main(String[] args) {
-		System.out.println(Color.GREEN);
+		System.out.println(Color.BLUE);
 		System.out.println(Color.valueOf("RED"));
 
 	}

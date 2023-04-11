@@ -2,12 +2,12 @@ package Core.constructors;
 
 class StudentNew {
 	private int rollNumber = 34;
-	private String name = "Gau";
+	private String name = "Jim";
 
 	StudentNew() {
 		System.out.println("Default Constructor");
-		rollNumber = 0;
-		name = "";
+		//rollNumber = 0;
+		//name = "";
 	}
 
 	StudentNew(int rollNumber, String name) {
@@ -23,9 +23,10 @@ class StudentNew {
 
 	public static void main(String arg[]) {
 		StudentNew s2 = new StudentNew();
+		s2.disp();
 		StudentNew s1 = new StudentNew(101, "Jack");
 		s1.disp();
-		s2.disp();
+		
 	}
 }
 

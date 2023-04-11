@@ -4,20 +4,24 @@ public class Java_ClassExample {
 	// defining the variables of class
 	int a = 20;
 	int b = 10;
-	int c;
-
+	
 	// defining the methods of class
 	public void add() {
-		int c = a + b;
-		System.out.println("Addition of numbers is: " + c);
+		int add = a + b; // local variable
+		System.out.println("Addition of numbers is: " + add);
 	}
-
+	
 	public void sub() {
-		int c = a - b;
-		System.out.println("Subtraction of numbers is: " + c);
+		int sub = a - b;
+		System.out.println("Subtraction of numbers is: " + sub);
+	}
+	
+	public void mul() {
+		int mul = a * b;
+		System.out.println("Mul of numbers is: " + mul);
 	}
 
-// main method  
+	// main method  
 	public static void main(String[] args) {
 		// creating the object of class
 		Java_ClassExample obj = new Java_ClassExample();

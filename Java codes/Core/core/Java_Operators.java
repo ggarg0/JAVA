@@ -16,11 +16,11 @@ class Java_Operators {
 		System.out.println("var using =: " + var);
 
 		// assign value using =+
-		var += a;
+		var += a; 
 		System.out.println("var using +=: " + var);
 
 		// assign value using =*
-		var *= a;
+		var *= a; 
 		System.out.println("var using *=: " + var);
 
 		// Arithmetic operator
@@ -69,13 +69,13 @@ class Java_Operators {
 
 		// ! operator
 		System.out.println(!(a == b)); // true
-		System.out.println(!(a > b)); // false
+		System.out.println(!(a > b)); //
 		
 		// Ternary Operator
-		System.out.println();
+		System.out.println( a + " and " + b);
 		System.out.println("Ternary operator");
 		System.out.println("=====================");
-		System.out.println((a > b) ? "a > b" : "a < b");
+		System.out.println((6 > 9) ? "a > b" : "a < b");
 		
 		// increment operator
 		System.out.println();

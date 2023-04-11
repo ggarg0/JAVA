@@ -5,12 +5,14 @@ class StudentConstructor {
 	private String name;
 
 	StudentConstructor(int rollNumber, String name) {
+		System.out.println("Parameterized constructor");
 		this.rollNumber = rollNumber;
 		this.name = name;
 	}
 
 	StudentConstructor() {
-		System.out.println("base constructor");
+		this(10,"Abc");
+		System.out.println("Base constructor");
 	}
 
 	void disp() {
@@ -19,9 +21,9 @@ class StudentConstructor {
 	}
 
 	public static void main(String arg[]) {
-		StudentConstructor s1 = new StudentConstructor(101, "Jack");
+	//	StudentConstructor s1 = new StudentConstructor(101, "Jack");
+	//	s1.disp();
 		StudentConstructor s2 = new StudentConstructor();
-		s1.disp();
 		s2.disp();
 	}
 }
