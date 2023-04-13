@@ -8,11 +8,11 @@ public class Java_ControlStatements {
 		System.out.println("if statement");
 		System.out.println("=====================");
 		int i = 10;
-		if (i < 15) {
-			System.out.println("Inside If block");
-		}
-
+		if (i > 15) 
+			System.out.println("Inside If block");		
+			
 		System.out.println("10 is less than 15");
+		
 
 		// If else statement
 		System.out.println();
@@ -41,7 +41,7 @@ public class Java_ControlStatements {
 		System.out.println();
 		System.out.println("If else if statement");
 		System.out.println("=====================");
-		int j = 20;
+		int j = 23;
 		if (j == 10)
 			System.out.println("j is 10");
 		else if (j == 15)
@@ -55,7 +55,7 @@ public class Java_ControlStatements {
 		System.out.println();
 		System.out.println("switch statement");
 		System.out.println("=====================");
-		int num = 20;
+		int num = 15;
 		switch (num) {
 		case 5:
 			System.out.println("It is 5");

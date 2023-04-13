@@ -7,9 +7,9 @@ public class Java_LoopStatement {
 		// for statement
 		System.out.println("for loop");
 		System.out.println("=====================");
-		for (int i = 0; i <= 10; i++) {
+		for (int i = 0; i <= 10; i++)
 			System.out.print("| " + i + " | ");
-		}
+
 		System.out.println();
 
 		// for each statement
@@ -17,6 +17,11 @@ public class Java_LoopStatement {
 		System.out.println("for each loop");
 		System.out.println("=====================");
 		int arr[] = { 10, 50, 60, 80, 90 };
+
+		for (int i = 0; i < arr.length; i++)
+			System.out.print(arr[i] + " ");
+
+		System.out.println("*********");
 		for (int element : arr)
 			System.out.print(element + " ");
 
@@ -26,7 +31,7 @@ public class Java_LoopStatement {
 		System.out.println();
 		System.out.println("while loop");
 		System.out.println("=====================");
-		int a = 1;
+		int a = 0;
 		// test expression
 		while (a > 0) {
 			System.out.println("Hello World");
@@ -48,9 +53,9 @@ public class Java_LoopStatement {
 		System.out.println("continue statement");
 		System.out.println("=====================");
 		for (int i = 0; i < 10; i++) {
-			if (i == 4 || i == 7) {
+			if (i == 4 || i == 7) 
 				continue;
-			}
+			
 			System.out.print(i + "  ");
 		}
 		System.out.println();
@@ -77,6 +82,10 @@ public class Java_LoopStatement {
 
 	static int sum(int a, int b) {
 		int sum = 0;
+		
+		if(a == 0)
+			return 0;
+		
 		sum = (a + b);
 		return sum;
 	}
