@@ -1,26 +1,26 @@
 package Core.abstraction;
 
-interface Rectangle77 {
+interface One {
 	void draw();
 }
 
-abstract class Shape77 {
-	abstract void draw();
+interface Two {
+	void draw();
 }
 
-class Square77 extends Shape77 implements Rectangle77 {
+class Show implements One, Two {
 	public void draw() {
 		System.out.println("Inside draw");
 	}
 
 	private void draw1() {
-		System.out.println("Inside draw");
+		System.out.println("Inside draw1");
 	}
 }
 
 class InterfaceDemoNew {
 	public static void main(String args[]) {
-		Shape77 shape = new Square77();
+		Show shape = new Show();
 		shape.draw();
 	}
 }

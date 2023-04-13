@@ -17,7 +17,6 @@ class Rectangle22 extends Shape22 implements First {
 		System.out.println("Inside draw");
 	}
 
-	// uncomment the line 22
 	public void disp() {
 	};
 	// void disp() { };
@@ -29,5 +28,3 @@ class InterfaceDemo1 {
 		shape.draw();
 	}
 }
-
-/* Note: Identify the error, rectify it and get the output. */

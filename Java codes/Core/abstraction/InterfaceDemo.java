@@ -1,11 +1,11 @@
 package Core.abstraction;
 
-abstract interface Shapes {
+interface Shapes {
 	public void draw();
 //	public void drawSides();
 }
 
-abstract interface color {
+interface color {
 	public void fill();
 }
 

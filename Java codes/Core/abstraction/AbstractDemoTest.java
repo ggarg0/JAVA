@@ -1,8 +1,6 @@
 package Core.abstraction;
 
 abstract class Shape11 {
-	Shape11() {	}
-
 	// abstract void draw();
 	void display() {
 		System.out.println("Shape Hello");
@@ -30,4 +28,3 @@ class AbstractDemoTest {
 	}
 }
 
-/* Note: Analyze the program and understand the output. */
