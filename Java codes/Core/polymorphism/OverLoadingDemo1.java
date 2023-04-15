@@ -1,19 +1,20 @@
 package Core.polymorphism;
 
 class OverLoadingDemo1 {
-	private OverLoadingDemo1(Object o) {
+	OverLoadingDemo1(Object o) {
 		System.out.println("Inside Object");
 	}
 
-	private OverLoadingDemo1(String o) {
+	OverLoadingDemo1(String o) {
 		System.out.println("Inside String");
 	}
 
-	private OverLoadingDemo1(int s) {
+	OverLoadingDemo1(int s) {
 		System.out.println("Inside int");
 	}
 
 	public static void main(String arg[]) {
+		//OverLoadingDemo1 obj;
 		new OverLoadingDemo1(12);
 		new OverLoadingDemo1(new Object());
 		new OverLoadingDemo1(new String("s1"));

@@ -6,27 +6,21 @@ class Animal1 {
 
 	// public void speak() throws NullPointerException{
 	// public void speak() throws Exception{
-	/*
-	 * public static void speak() { System.out.println("I am an  Animal"); }
-	 */
-	void run() {
-		System.out.println("Animal is running");
-	}
 
+	//public static void speak() {
+	//	System.out.println("I am an  Animal");
+	//}
 }
 
 class Dog1 extends Animal1 {
-	public void speak() throws NullPointerException {
-	}
+	//public void speak() throws NullPointerException {
+	//}
 
-	// public void speak() throws NoSuchFieldException{
-	// public void speak() throws Exception{
-	/*
-	 * public static void speak() { System.out.println("I am a Dog"); }
-	 */
-	void run() {
-		super.run();
-		System.out.println("Dog is running");
+	// public void speak() throws NoSuchFieldException{}
+	// public void speak() throws Exception{}
+
+	public void speak() {
+		System.out.println("I am a Dog");
 	}
 }
 
@@ -35,9 +29,9 @@ public class OverRidingNew {
 		try {
 			Animal1 aniobj = new Dog1();
 			aniobj.speak();
-			aniobj.run();
-
+			
 		} catch (Exception e) {
+			System.out.println(e.getMessage());
 		}
 	}
 }

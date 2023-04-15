@@ -1,7 +1,8 @@
 package Core.abstraction;
 
 abstract class Shape11 {
-	// abstract void draw();
+	abstract void draw();
+
 	void display() {
 		System.out.println("Shape Hello");
 	}
@@ -21,10 +22,9 @@ class AbstractDemoTest {
 	public static void main(String args[]) {
 		Shape11 s1 = new Rectangle11();
 		Rectangle11 s2 = new Rectangle11();
-		// s1.draw();
+		s1.draw();
 		s1.display();
 		s2.draw();
 		s2.display();
 	}
 }
-

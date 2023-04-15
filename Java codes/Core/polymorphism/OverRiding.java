@@ -4,6 +4,10 @@ abstract class Animal {
 	void speak() {
 		System.out.println("I am an  Animal");
 	}
+
+	void say() {
+		System.out.println("I am an  Animal SAy");
+	}
 }
 
 class Dog extends Animal {
@@ -33,7 +37,6 @@ class OverRiding {
 		aniobj.speak();
 		aniobj = new Bulldog();
 		aniobj.speak();
+		aniobj.say();
 	}
 }
-
-/* Comment the speak() method from BullDog and execute the program again */

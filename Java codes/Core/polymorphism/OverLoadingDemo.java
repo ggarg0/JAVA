@@ -2,24 +2,24 @@ package Core.polymorphism;
 
 class OverLoadingDemo {
 	public int add(int num1, int num2) {
-		System.out.println("Inside int");
+		System.out.print("Inside int");
 		return num1 + num2;
 	}
 
 	private float add(float num1, float num2) {
-		System.out.println("Inside float");
+		System.out.print("Inside float");
 		return num1 + num2;
 	}
 
 	public static void main(String arg[]) {
 		OverLoadingDemo overload = new OverLoadingDemo();
-		int intNumber = overload.add(11, 10);
-		float longNumber = overload.add(10.0f, 20);
-		float longNumber1 = overload.add(10, 20.0f);
-
-		System.out.println("intNumber=" + intNumber);
-		System.out.println("longNumber=" + longNumber);
-		System.out.println("longNumber=" + longNumber1);
-
+		System.out.println(" and intNumber=" + overload.add(11, 10));
+		System.out.println(" and longNumber=" + overload.add(10.0f, 20));
+		System.out.println(" and longNumber=" + overload.add(10, 20.0f));
+		
+		int d = 10;
+		float f = 10.0f;
+		f = d;
+		System.out.println("f : " + f);
 	}
 }
