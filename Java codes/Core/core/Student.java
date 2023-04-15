@@ -4,22 +4,22 @@ public class Student {
 	protected int rollNumber;
 	protected String name;
 
-	protected Student() {
+	public Student() {
 		System.out.println("Parent class Default Constructor from Core.core");
 	}
 
-	protected Student(int rno, String na) {
+	public Student(int rno, String na) {
 		rollNumber = rno;
 		name = na;
 		System.out.println("Parent overloaded constructor from Core.core");
 	}
-	
+
 	void setStudent(int rno, String sname) {
 		rollNumber = rno;
 		name = sname;
 	}
 
-	private void disp() {
+	public void disp() {
 		System.out.println("rollNumber =" + rollNumber);
 		System.out.println("name =" + name);
 	}

@@ -5,27 +5,25 @@ class StudentShow {
 		System.out.println("Student Disp");
 	}
 
-	private void show() {
+	void show() {
 		System.out.println("Student Show");
 	}
 }
 
 class Perception extends StudentShow {
-	public void disp() {
+	public void display() {
 		System.out.println("User Disp1");
 	}
 
-	void show() {
-		System.out.println("User Show");
-	}
 }
 
 public class InheritanceNew {
 	public static void main(String arg[]) {
+		// PerceptionUser p1=new PerceptionUser();
+		// Student p1 = new Student();
+		// p1.disp();
+
 		Perception p = new Perception();
-		// Student p=new PerceptionUser();
-		// Student p=new Student();
-		p.disp();
-		p.show();
+		p.display();
 	}
 }

@@ -21,10 +21,8 @@ class PerceptionUsers extends Student {
 		System.out.println("Child class, Overloaded constructor for initializing all");
 	}
 
-	void disp() {
-		System.out.println(rollNumber);
-		System.out.println(name);
-		System.out.println(password);
+	public void disp() {
+		System.out.println(rollNumber + ", " + name + ", " + password);
 	}
 }
 
@@ -32,7 +30,7 @@ class InheritanceDemo {
 	public static void main(String arg[]) {
 		PerceptionUsers p1 = new PerceptionUsers("password");
 		p1.disp();
-		PerceptionUsers p2 = new PerceptionUsers(101, "Jack", "password");
-		p2.disp();
+		// PerceptionUsers p2 = new PerceptionUsers(101, "Jack", "password");
+		// p2.disp();
 	}
 }

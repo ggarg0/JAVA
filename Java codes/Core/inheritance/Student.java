@@ -1,8 +1,8 @@
 package Core.inheritance;
 
 class Student {
-	protected int rollNumber;
-	protected String name;
+	int rollNumber;
+	String name;
 
 	Student() {
 		System.out.println("Parent class Default Constructor from Core.inheritance");

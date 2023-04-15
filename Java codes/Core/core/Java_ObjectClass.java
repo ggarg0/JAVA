@@ -43,8 +43,7 @@ public class Java_ObjectClass implements Cloneable {
 	}
 
 	// Override the equals method
-	@Override
-	public boolean equals(Object obj) {
+	public boolean equal(Object obj) {
 		if (obj == null || !(obj instanceof Java_ObjectClass)) {
 			return false;
 		}
@@ -73,35 +72,43 @@ public class Java_ObjectClass implements Cloneable {
 		}
 	}
 
-	// Override the finalize method
-	@Override
 	protected void finalize() throws Throwable {
 		System.out.println("Finalizing " + this);
+		System.gc();
 	}
 
 	public static void main(String[] args) {
-		// Create a object and print its details
-		Java_ObjectClass book1 = new Java_ObjectClass("Java", "Oracle", 1991);
-		System.out.println(book1.toString());
+		try {
+			// Create a object and print its details
+			Java_ObjectClass book1 = new Java_ObjectClass("Java", "Oracle", 1991);
+			System.out.println("toString : " + book1.toString());
 
-		// Create a clone of the object and print its details
-		Java_ObjectClass book2 = book1.clone();
-		System.out.println(book2);
+			// Create a clone of the object and print its details
+			Java_ObjectClass book2 = book1.clone();
+			System.out.println("clone : " + book2);
 
-		//Java_ObjectClass book3 = book1;
-		
-		// Check if the two objects are equal
-		System.out.println("book1 equals book2: " + book1.equals(book2));
+			Java_ObjectClass book3 = book1;
+			// book3.setAuthor("Sun");
+			// book2.setAuthor("Sun");
 
-		// Get the hash code of the two objects
-		System.out.println("book1 hash code: " + book1.hashCode());
-		System.out.println("book2 hash code: " + book2.hashCode());
+			// Check if the two objects are equal
+			System.out.println("book1 equals book2: " + book1.equals(book2));
 
-		System.out.println("Java_ObjectClass object: " + book2.getClass().getName());
+			// System.out.println(book3.toString());
+			// System.out.println(book1.toString());
+			// System.out.println(book2.toString());
 
-		// Set book1 to null to trigger garbage collection
-		// and finalize method
-		book1 = null;
-		System.gc();
+			// Get the hash code of the two objects
+			System.out.println("book1 hash code: " + book1.hashCode());
+			System.out.println("book2 hash code: " + book2.hashCode());
+			System.out.println("book3 hash code: " + book3.hashCode());
+
+			System.out.println("Java_ObjectClass object: " + book2.getClass().getName());
+
+			book1.finalize();
+		} catch (Throwable e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }

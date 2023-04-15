@@ -6,6 +6,7 @@ class Employee {
 	private String email;
 
 	public Employee() {
+		super();
 		System.out.println("Default");
 	}
 
