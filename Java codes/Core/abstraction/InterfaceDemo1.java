@@ -1,7 +1,7 @@
 package Core.abstraction;
 
 interface First {
-	void disp();
+	void display();
 }
 
 interface Second extends First {
@@ -12,19 +12,24 @@ abstract class Shape22 {
 	abstract void draw();
 }
 
-class Rectangle22 extends Shape22 implements First {
+class Rectangle22 extends Shape22 implements First, Second {
 	void draw() {
 		System.out.println("Inside draw");
 	}
 
-	public void disp() {
+	public void display() {
+		System.out.println("Inside display");
+	}
+
+	public void show() {
+		System.out.println("Inside show");
 	};
-	// void disp() { };
+
 }
 
 class InterfaceDemo1 {
 	public static void main(String args[]) {
-		Shape22 shape = new Rectangle22();
-		shape.draw();
+		Second shape = new Rectangle22();
+		shape.display();
 	}
 }

@@ -7,6 +7,7 @@ public class Java_ObjectClass implements Cloneable {
 	private int year;
 
 	public Java_ObjectClass(String title, String author, int year) {
+		super();
 		this.title = title;
 		this.author = author;
 		this.year = year;
@@ -40,16 +41,6 @@ public class Java_ObjectClass implements Cloneable {
 	@Override
 	public String toString() {
 		return title + " by " + author + " (" + year + ")";
-	}
-
-	// Override the equals method
-	public boolean equal(Object obj) {
-		if (obj == null || !(obj instanceof Java_ObjectClass)) {
-			return false;
-		}
-		Java_ObjectClass other = (Java_ObjectClass) obj;
-		return this.title.equals(other.getTitle()) && this.author.equals(other.getAuthor())
-				&& this.year == other.getYear();
 	}
 
 	// Override the hashCode method
@@ -88,16 +79,13 @@ public class Java_ObjectClass implements Cloneable {
 			System.out.println("clone : " + book2);
 
 			Java_ObjectClass book3 = book1;
-			// book3.setAuthor("Sun");
+			//	book3.setAuthor("Sun");
 			// book2.setAuthor("Sun");
 
 			// Check if the two objects are equal
 			System.out.println("book1 equals book2: " + book1.equals(book2));
-
-			// System.out.println(book3.toString());
-			// System.out.println(book1.toString());
-			// System.out.println(book2.toString());
-
+			System.out.println("book1 equals book3: " + book1.equals(book3));
+		
 			// Get the hash code of the two objects
 			System.out.println("book1 hash code: " + book1.hashCode());
 			System.out.println("book2 hash code: " + book2.hashCode());

@@ -30,7 +30,7 @@ class InheritanceDemo {
 	public static void main(String arg[]) {
 		PerceptionUsers p1 = new PerceptionUsers("password");
 		p1.disp();
-		// PerceptionUsers p2 = new PerceptionUsers(101, "Jack", "password");
-		// p2.disp();
+		PerceptionUsers p2 = new PerceptionUsers(101, "Jack", "password");
+		p2.disp();
 	}
 }

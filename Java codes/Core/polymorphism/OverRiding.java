@@ -1,9 +1,7 @@
 package Core.polymorphism;
 
 abstract class Animal {
-	void speak() {
-		System.out.println("I am an  Animal");
-	}
+	abstract void speak();
 
 	void say() {
 		System.out.println("I am an  Animal SAy");

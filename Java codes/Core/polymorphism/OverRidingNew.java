@@ -1,10 +1,12 @@
 package Core.polymorphism;
 
 class Animal1 {
-	public void speak() throws NoSuchFieldException {
-	}
+	//public void speak() //throws NoSuchFieldException 
+	//{
+	//	System.out.println("I am an  Animal");
+	//}
 
-	// public void speak() throws NullPointerException{
+	 public void speak()  {}
 	// public void speak() throws Exception{
 
 	//public static void speak() {
@@ -13,15 +15,13 @@ class Animal1 {
 }
 
 class Dog1 extends Animal1 {
-	//public void speak() throws NullPointerException {
-	//}
-
+	//public void speak() throws NullPointerException { }
 	// public void speak() throws NoSuchFieldException{}
-	// public void speak() throws Exception{}
+	public void speak() {}
 
-	public void speak() {
-		System.out.println("I am a Dog");
-	}
+//	public void speak() {
+	//	System.out.println("I am a Dog");
+//	}
 }
 
 public class OverRidingNew {

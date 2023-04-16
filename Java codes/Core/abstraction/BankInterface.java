@@ -25,5 +25,4 @@ public class BankInterface {
 		CheckinAccount ca = new CheckinAccount();
 		System.out.println(ca.getRate());
 	}
-
 }

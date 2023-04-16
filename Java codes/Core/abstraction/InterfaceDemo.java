@@ -27,6 +27,7 @@ class Square implements Shapes, color {
 	}
 }
 
+
 class InterfaceDemo {
 	public static void main(String args[]) {
 		Shapes shape = new Square();

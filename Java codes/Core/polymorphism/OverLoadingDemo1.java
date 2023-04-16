@@ -1,6 +1,7 @@
 package Core.polymorphism;
 
 class OverLoadingDemo1 {
+	
 	OverLoadingDemo1(Object o) {
 		System.out.println("Inside Object");
 	}
@@ -15,6 +16,7 @@ class OverLoadingDemo1 {
 
 	public static void main(String arg[]) {
 		//OverLoadingDemo1 obj;
+		new OverLoadingDemo1(12f);
 		new OverLoadingDemo1(12);
 		new OverLoadingDemo1(new Object());
 		new OverLoadingDemo1(new String("s1"));
