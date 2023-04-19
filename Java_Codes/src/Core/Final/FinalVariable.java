@@ -1,22 +1,22 @@
 package Core.Final;
 
 class FinalVariable {
-	private int count;
+	private final int count;
 	private final double pi = 2;
 
 	FinalVariable(int count) {
 		this.count = count;
-		// pi=3.14;
+		//pi=3.14;
 	}
 
 	void disp() {
 		// pi=3.2;
-		// count = 14;
+		//count = 14;
 		final int x = 12;
-		
-		System.out.println("Inside disp pi " + pi);
-		System.out.println("Inside disp count " + count);
-		System.out.println("Inside disp x " + x);
+		System.out.println("Inside disp pi : " + pi);
+		System.out.println("Inside disp count : " + count);
+		//x=10;
+		System.out.println("Inside disp x : " + x);
 
 	}
 

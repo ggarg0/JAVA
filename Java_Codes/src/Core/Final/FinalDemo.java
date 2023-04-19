@@ -1,24 +1,22 @@
 package Core.Final;
 
 class Parent {
-	void disp() {
-		System.out.println("Final disp method");
-	}
+	void show() {
+        System.out.println("Parent show method");
+    }
 }
 
 class Child extends Parent {
-	final void disp() {
-		System.out.println("Child Final disp method");
-	}
+     void show() {
+        System.out.println("Child show method");
+    }
 }
 
 class FinalDemo {
-	public static final void main(String args[]) {
-		final Parent child = new Child();
-		Parent child1;
-		
-		child.disp();
-		child1 = child;
-		child1.disp();
-	}
+    public static final void main(String args[]) {
+        final Parent child = new Child();
+		String obj = new String();
+        child.show();
+       // child = new Parent();
+    }
 }
