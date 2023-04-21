@@ -16,7 +16,9 @@ class Generic {
 	public static void main(String arg[]) {
 		GenNumber<Integer> genInteger = new GenNumber<Integer>(10);
 		GenNumber<Double> genDouble = new GenNumber<Double>(10.55);
+		GenNumber<Long> genLong = new GenNumber<Long>(1000L);
 		genInteger.disp();
 		genDouble.disp();
+		genLong.disp();
 	}
 }

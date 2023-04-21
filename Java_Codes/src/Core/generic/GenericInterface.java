@@ -19,5 +19,3 @@ class GenericInterface {
 		object2.display(new Long(10));
 	}
 }
-
-/* Note: Analyze the code and understand the output. */
