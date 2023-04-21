@@ -15,7 +15,7 @@ public class LinkedListExample {
 
 		linkedlist.addFirst("First Item");
 		linkedlist.addLast("Last Item");
-		System.out.println("LinkedList Content after addition: " + linkedlist);
+		System.out.println("LinkedList Content after update: " + linkedlist);
 
 		System.out.println("First element: " +  linkedlist.get(0));
 		linkedlist.set(0, "Changed first item");
@@ -28,9 +28,10 @@ public class LinkedListExample {
 		linkedlist.add(0, "Newly added item");
 		linkedlist.remove(2);
 		System.out.println("Final Content: " + linkedlist);
-		System.out.println("List contains : " + linkedlist.contains("Item1"));
+		System.out.println("List contains : " + linkedlist.contains("Item5"));
 		System.out.println("List Size : " + linkedlist.size());
 		linkedlist.clear();
 		System.out.println("List Size after clear(): " + linkedlist.size());
+		System.out.println("List Size : " + linkedlist.isEmpty());
 	}
 }
