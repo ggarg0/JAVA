@@ -5,47 +5,31 @@ import java.util.*;
 public class ArrayListDemo {
     public static void main(String[] args) {
         try {
+            List<Object> list = new ArrayList<Object>();
+            list.add(5);
+            list.add(2);
+            list.add(2);
+            list.add(4);
+            list.add(11);
+            System.out.println("List: " + list);
+            System.out.println("Size is " + list.size());
 
-            List<Object> arraylist = new ArrayList<Object>();
-            for (int i = 0; i < 5; i++) {
-                arraylist.add(Integer.valueOf(i));
-            }
+            list.add(4, "jack");
+            System.out.println("List: " + list);
+            System.out.println("Element at index 4 is " + list.get(4));
 
-            System.out.println("Size now =" + arraylist.size());
-            arraylist.add(4, "jack");
-
-            for (int i = 0; i < arraylist.size(); i++) {
-                System.out.print(arraylist.get(i) + ", ");
-            }
-            System.out.println();
-            System.out.println("Size after adding =" + arraylist.size());
-            System.out.println("Element at index 5 =" + arraylist.get(5));
-
-            arraylist.remove(4);
-            System.out.println("Size after removing =" + arraylist.size());
-            for (int i = 0; i < arraylist.size(); i++) {
-                System.out.print(arraylist.get(i) + ", ");
-            }
-            System.out.println();
-            System.out.println("Remove from list");
+            list.remove(4);
+           // list.remove("jack");
+            System.out.println("List after removal : " + list);
 
             List<Object> remove = new ArrayList<Object>();
-            remove.add(Integer.valueOf(3));
-            remove.add(Integer.valueOf(4));
+            remove.add(3);
+            remove.add(4);
+            list.removeAll(remove);
+            System.out.println("List after removeAll : " + list);
 
-            arraylist.removeAll(remove);
-            for (int i = 0; i < arraylist.size(); i++) {
-                System.out.print(arraylist.get(i) + ", ");
-            }
-            System.out.println();
-            System.out.println("Add from list");
-
-            arraylist.addAll(1, remove);
-            for (int i = 0; i < arraylist.size(); i++) {
-                System.out.print(arraylist.get(i) + ", ");
-            }
-            System.out.println();
-
+            list.addAll(1, remove);
+            System.out.println("List after addAll : " + list);
         } catch (Exception e) {
             System.out.println(e);
         }

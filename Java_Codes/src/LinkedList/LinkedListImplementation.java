@@ -1,4 +1,4 @@
-package Collections;
+package LinkedList;
 
 class LinkedListImplementation {
 	// Class variables for the Linked List

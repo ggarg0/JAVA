@@ -21,7 +21,7 @@ class HashSetEmp {
 
     void setEmp() {
         empNumber = 50;
-        name = "Gaurav";
+        name = "Tom";
     }
 
     public static void main(String arg[]) {
