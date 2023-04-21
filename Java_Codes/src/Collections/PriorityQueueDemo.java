@@ -1,19 +1,17 @@
 package Collections;
 
 import java.util.PriorityQueue;
+import java.util.Queue;
 
 public class PriorityQueueDemo {
 	public static void main(String[] args) {
 
-		PriorityQueue<Integer> pq = new PriorityQueue<Integer>();
-		// add values
-		pq.add(1);
-		pq.add(50);
-		pq.add(33);
-		pq.add(42);
-		pq.add(62);
-		pq.add(21);
-		
+		Queue<String> pq = new PriorityQueue<String>();
+		pq.add("Ross");
+        pq.add("John");      
+        pq.add("Frank");
+        pq.add("Adam");
+        
 		System.out.println("All values : " + pq);
 		System.out.println("Head of queue : " + pq.peek());
 		System.out.println("All values after peek : " + pq);
