@@ -13,7 +13,7 @@ public class ReadPropFile {
 		try {
 
 			// load a properties file
-			input = new FileInputStream("C:\\Mine\\GIT\\JAVA\\Java codes\\Core\\inputoutput\\config.properties");
+			input = new FileInputStream("C:\\Mine\\GIT\\JAVA\\Java_codes\\src\\Core\\inputoutput\\config.properties");
 			props.load(input);
 
 			// get the property value and print it out
@@ -25,7 +25,7 @@ public class ReadPropFile {
 
 			System.out.println();
 			// Load XML file
-			input = new FileInputStream("C:\\Mine\\GIT\\JAVA\\Java codes\\Core\\inputoutput\\config.xml");
+			input = new FileInputStream("C:\\Mine\\GIT\\JAVA\\Java_codes\\src\\Core\\inputoutput\\config.xml");
 			props.loadFromXML(input);
 
 			// get the property value and print it out

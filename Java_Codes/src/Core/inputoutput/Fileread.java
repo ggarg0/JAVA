@@ -10,7 +10,7 @@ class Fileread {
 			String[] a = new String[50];
 			// Open the file that is the first
 			// command line parameter
-			FileInputStream fstream = new FileInputStream("C:\\Mine\\GIT\\JAVA\\Java codes\\Core\\inputoutput\\Test.txt");
+			FileInputStream fstream = new FileInputStream("C:\\Mine\\GIT\\JAVA\\Java_codes\\src\\Core\\inputoutput\\Test.txt");
 			// Get the object of DataInputStream
 			DataInputStream in = new DataInputStream(fstream);
 			BufferedReader br = new BufferedReader(new InputStreamReader(in));

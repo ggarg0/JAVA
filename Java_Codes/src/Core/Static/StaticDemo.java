@@ -19,6 +19,7 @@ class StaticDemo {
     }
 
     static {
+    	System.out.println("Inside static block : " + number);
         number = 99;
         System.out.println("Inside static block : " + number);
     }
@@ -33,7 +34,7 @@ class StaticDemo {
         StaticDemo s2 = new StaticDemo(20);
         s1.display();
         s2.display();
-        StaticDemo.StaticDisplay();
+        StaticDisplay();
         s1.display();
         s2.display();
         System.out.println("Inside end of main : " + number);

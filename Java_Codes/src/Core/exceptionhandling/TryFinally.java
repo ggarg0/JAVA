@@ -1,15 +1,10 @@
 package Core.exceptionhandling;
 
 class TryFinally {
-	public int divide(int a) throws Exception {
+	public int divide(int a) {
 		int b = 0;
-		try {
-			b = 10 / a;
-			return b;
-		} finally {
-			System.out.println("Finally called");
-			return 3;
-		}
+		b = 10 / a;
+		return b;
 	}
 
 	public static void main(String[] a) {

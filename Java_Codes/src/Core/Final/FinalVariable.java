@@ -2,17 +2,19 @@ package Core.Final;
 
 class FinalVariable {
 	private final int count;
-	private final double pi = 2;
+	private static final double pi = 3.14;
 
 	FinalVariable(int count) {
 		this.count = count;
-		//pi=3.14;
+		// pi=3.1464564;
+
 	}
 
 	void disp() {
 		// pi=3.2;
-		//count = 14;
-		final int x = 12;
+		// count = 14;
+		final int x;
+		x = 12;
 		System.out.println("Inside disp pi : " + pi);
 		System.out.println("Inside disp count : " + count);
 		//x=10;

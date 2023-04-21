@@ -12,8 +12,8 @@ class NumberTest {
 			System.out.println("from ArithmeticException : " + e.getMessage());
 			throw e;
 		} finally {
-			System.out.println("from finally : " + num);
-			// return 100;
+			System.out.println("from finally : " + n);
+			return 100;
 		}
 	}
 }

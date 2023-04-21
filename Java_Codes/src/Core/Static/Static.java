@@ -1,36 +1,47 @@
 package Core.Static;
 
+class test {
+
+	private static double watch = Math.PI;
+
+	public static void watch() {
+		System.out.println("watch: " + watch);
+	}
+}
+
 class Static {
-    private int count;
-    private static int number = 10;
+	private int count;
+	private static int number = 10;
 
-    Static(int count) {
-        this.count = count;
-    }
+	Static(int count) {
+		this.count = count;
+	}
 
-    public static void display() {
-        System.out.println("number in display: " + number);
+	public static void display() {
+		System.out.println("number in display: " + number);
 		number = 100;
-    }
+	}
 
-    public void show() {
-        System.out.println("count in show: " + count);
-        System.out.println("number in show: " + number);
+	public void show() {
+		System.out.println("count in show: " + count);
+		System.out.println("number in show: " + number);
 		number = 200;
 		count = 11;
-    }
+	}
 
 	public void showAgain() {
 		System.out.println("count in showAgain: " + count);
 		System.out.println("number in showAgain: " + number);
 	}
 
-    public static void main(String arg[]) {
-        Static.display();
-        Static s1 = new Static(100);
-        s1.show();
+	public static void main(String arg[]) {
+		Static.display();
+		test.watch();
+		Static s1 = new Static(100);
 		s1.show();
-        Static s2 = new Static(1000);
-        s2.showAgain();
-    }
+		s1.show();
+		Static s2 = new Static(1000);
+		s2.showAgain();
+	
+	}
 }

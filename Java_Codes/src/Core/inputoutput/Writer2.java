@@ -7,7 +7,7 @@ class Writer2 {
 		char[] in = new char[50];
 		int size = 0;
 		try {
-			File file = new File("C:\\Mine\\GIT\\JAVA\\Java codes\\Core\\inputoutput\\Mine.txt");
+			File file = new File("C:\\Mine\\GIT\\JAVA\\Java_codes\\src\\Core\\exceptionhandling\\Mine.txt");
 			FileWriter fw = new FileWriter(file);
 			fw.write("Javafolks");
 			fw.flush();

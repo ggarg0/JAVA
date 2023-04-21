@@ -5,7 +5,7 @@ import java.io.FileReader;
 
 public class ReadFileExample {
 
-	private static final String FILENAME = "C:\\Mine\\GIT\\JAVA\\Java codes\\Core\\inputoutput\\Test.txt";
+	private static final String FILENAME = "C:\\Mine\\GIT\\JAVA\\Java_codes\\src\\Core\\inputoutput\\Test.txt";
 
 	public static void main(String[] args) {
 
