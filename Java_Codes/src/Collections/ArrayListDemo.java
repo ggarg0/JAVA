@@ -8,7 +8,7 @@ public class ArrayListDemo {
 
 			List<Object> arraylist = new ArrayList<Object>();
 			for (int i = 0; i < 5; i++) {
-				arraylist.add(new Integer(i));
+				arraylist.add(Integer.valueOf(i));
 			}
 
 			System.out.println("Size now =" + arraylist.size());
@@ -30,8 +30,8 @@ public class ArrayListDemo {
 			System.out.println("Remove from list");
 
 			List<Object> remove = new ArrayList<Object>();
-			remove.add(2);
-			remove.add(3);
+			remove.add(Integer.valueOf(3));
+			remove.add(Integer.valueOf(4));
 
 			arraylist.removeAll(remove);
 			for (int i = 0; i < arraylist.size(); i++) {
