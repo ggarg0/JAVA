@@ -32,12 +32,14 @@ class HashSetEmp {
 
         HashSetEmp emp2 = new HashSetEmp(20, "Jerry");
         emp2.disp();
+        
         hashset.add(emp1);
         hashset.add(emp2);
-        emp2 = emp1;
+      
+        //emp2 = emp1;
 
-        emp2.disp();
-        hashset.add(emp2);
+     //   emp2.disp();
+     //   hashset.add(emp2);
         emp1.setEmp();
 
         Iterator<HashSetEmp> iterator = hashset.iterator();
