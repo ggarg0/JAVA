@@ -23,7 +23,7 @@ public class HashSetDemo {
             System.out.println("value : " + value);
             if (value.equalsIgnoreCase("tom")) {
                 it.remove();
-                hashset.add("tom");
+              //  hashset.add("tom");
             }
         }
         

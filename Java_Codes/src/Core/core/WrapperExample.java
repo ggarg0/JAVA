@@ -61,7 +61,5 @@ public class WrapperExample {
 		System.out.println("double value: " + doublevalue);
 		System.out.println("char value: " + charvalue);
 		System.out.println("boolean value: " + boolvalue);
-
 	}
-
 }
