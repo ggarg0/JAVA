@@ -11,7 +11,6 @@ public class ReadPropFile {
 
 		Properties props = new Properties();
 		try {
-
 			// load a properties file
 			input = new FileInputStream("C:\\Mine\\GIT\\JAVA\\Java_codes\\src\\Core\\inputoutput\\config.properties");
 			props.load(input);

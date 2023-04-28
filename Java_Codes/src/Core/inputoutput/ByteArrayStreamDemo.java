@@ -21,7 +21,8 @@ public class ByteArrayStreamDemo {
 
 			output.write(buffer);
 			System.out.print("The bytes read from the output stream: : ");
-			for (byte b : output.toByteArray()) {
+			byte[] result = output.toByteArray();
+			for (byte b : result) {
 				System.out.print(" " + b);
 			}
 			output.close();

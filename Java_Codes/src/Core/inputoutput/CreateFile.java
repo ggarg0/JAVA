@@ -4,7 +4,6 @@ import java.io.*;
 
 class CreateFile {
 	public static void main(String[] a) {
-
 		try {
 			boolean newFile;
 			File file = new File("C:\\Mine\\GIT\\JAVA\\Java_codes\\src\\Core\\inputoutput\\Test.txt");
