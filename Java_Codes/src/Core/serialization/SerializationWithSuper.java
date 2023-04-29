@@ -6,7 +6,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
-class A implements Serializable {
+class A  {
 	int i;
 
 	public A(int i) {
@@ -18,7 +18,7 @@ class A implements Serializable {
 	}
 }
 
-class B extends A {
+class B extends A implements Serializable{
 	int j;
 	public B(int i, int j) {
 		super(i);
