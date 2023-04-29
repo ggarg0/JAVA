@@ -1,52 +1,55 @@
 package Core.serialization;
 
-import java.io.*;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 
-class SerializationWithSuper {
-	public static void main(String[] a) {
-		Dog d = new Dog(12, 12, "Gaurav");
-		System.out.println("Before Serial name : " + "Id : " + d.id + " named : " + d.name + " & weight : " + d.weight);
-		try {
-			FileOutputStream fos = new FileOutputStream("C:\\Mine\\GIT\\JAVA\\Java codes\\Core\\serialization\\SuperNotSerial.txt");
-			ObjectOutputStream bos = new ObjectOutputStream(fos);
-			bos.writeObject(d);
-			bos.close();
-		} catch (Exception e) {
-			System.out.println("EXP : " + e);
-		}
+class A implements Serializable {
+	int i;
 
-		try {
-			d.name = "Garg";
-			d.id = 111;
-			d.weight = 123;
-			System.out.println("Before object : " + "Id : " + d.id + " named : " + d.name + " & weight : " + d.weight);
-			FileInputStream fis = new FileInputStream("SuperNotSerial.txt");
-			ObjectInputStream bis = new ObjectInputStream(fis);
-			d = (Dog) bis.readObject();
-			bis.close();
-		} catch (Exception e) {
-			System.out.println("EXP : " + e);
-		}
-		System.out.println("Recovered object : " + "Id : " + d.id + " named : " + d.name + " & weight : " + d.weight);
+	public A(int i) {
+		this.i = i;
+	}
+
+	public A() {
+		System.out.println("A's class constructor called");
 	}
 }
 
-class Dog extends Animal {
-	String name;
-	int weight;
-
-	Dog(int id, int w, String n) {
-		super(id);
-		weight = w;
-		name = n;
+class B extends A {
+	int j;
+	public B(int i, int j) {
+		super(i);
+		this.j = j;
 	}
 }
 
-class Animal implements Serializable {
-	static int id;
+// Driver class
+public class SerializationWithSuper {
+	static String file = "C:\\Mine\\GIT\\JAVA\\Java_codes\\src\\Core\\serialization\\SuperNotSerial.txt";
 
-	public Animal(int id2) {
-		id = id2;
+	public static void main(String[] args) throws Exception {
+		B b1 = new B(10, 20);
+		System.out.println("i = " + b1.i);
+		System.out.println("j = " + b1.j);
+
+		FileOutputStream fos = new FileOutputStream(file);
+		ObjectOutputStream oos = new ObjectOutputStream(fos);
+		oos.writeObject(b1);
+		oos.close();
+		fos.close();
+		System.out.println("Object has been serialized");
+
+		FileInputStream fis = new FileInputStream(file);
+		ObjectInputStream ois = new ObjectInputStream(fis);
+		B b2 = (B) ois.readObject();
+		ois.close();
+		fis.close();
+		System.out.println("Object has been deserialized");
+
+		System.out.println("i = " + b2.i);
+		System.out.println("j = " + b2.j);
 	}
-
 }

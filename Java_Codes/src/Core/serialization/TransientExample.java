@@ -31,16 +31,17 @@ class NameStore implements Serializable {
 
 public class TransientExample {
 	public static void main(String args[]) throws Exception {
-		NameStore nameStore = new NameStore("Steve", "Middle", "Jobs");
+		NameStore nameStore = new NameStore("Steve", "Apple", "Jobs");
 		ObjectOutputStream o = new ObjectOutputStream(
-				new FileOutputStream("C:\\Mine\\GIT\\JAVA\\Java codes\\Core\\serialization\\nameStore"));
+				new FileOutputStream("C:\\Mine\\GIT\\JAVA\\Java_codes\\src\\Core\\serialization\\nameStore"));
 		// writing to object
 		o.writeObject(nameStore);
 		o.close();
-
+		System.out.println(nameStore);
+		
 		// reading from object
 		ObjectInputStream in = new ObjectInputStream(
-				new FileInputStream("C:\\Mine\\GIT\\JAVA\\Java codes\\Core\\serialization\\nameStore"));
+				new FileInputStream("C:\\Mine\\GIT\\JAVA\\Java_codes\\src\\Core\\serialization\\nameStore"));
 		NameStore nameStoreRead = (NameStore) in.readObject();
 		System.out.println(nameStoreRead);
 		in.close();
