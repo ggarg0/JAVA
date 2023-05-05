@@ -19,9 +19,11 @@ public class StringMethods {
 		System.out.println("Substring = " + s.substring(2, 5));
 
 		// Concatenates string2 to the end of string1.
-		String s1 = "Leaning";
+		String s1 = "Learning";
 		String s2 = "Java";
 		System.out.println("Concatenated string = " + s1.concat(s2));
+		System.out.println("Concatenated string = " + s1);
+		System.out.println("Concatenated string = " + s2);
 
 		// Returns the index within the string
 		// of the first occurrence of the specified string.

@@ -22,7 +22,5 @@ public class StringSplitDemo {
 		for (String token : tokens) {
 			System.out.println("Split Output: " + token);
 		}
-
 	}
-
 }
