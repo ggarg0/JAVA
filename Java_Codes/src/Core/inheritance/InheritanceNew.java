@@ -14,7 +14,6 @@ class Perception extends StudentShow {
 	public void display() {
 		System.out.println("User Disp1");
 	}
-
 }
 
 public class InheritanceNew {

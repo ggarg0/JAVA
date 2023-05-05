@@ -9,6 +9,15 @@ class Product {
 	String name;
 	double price;
 
+	@Override
+	public String toString() {
+		return "\nProduct {" +
+				"id=" + id +
+				", name='" + name + '\'' +
+				", price=" + price +
+				'}';
+	}
+
 	public Product(int id, String name, double price) {
 		super();
 		this.id = id;
@@ -28,32 +37,33 @@ public class LambdaWithListComparator {
 
 		System.out.println("Sorting by Id ascending...");
 		Collections.sort(list, (o1, o2) -> o1.id - o2.id);
-		list.forEach(Product -> System.out.print(Product.id + " "));
+		System.out.println(list.toString());
 		System.out.println();
 
 		System.out.println("Sorting by Id descending...");
 		Collections.sort(list, (o1, o2) -> o2.id - o1.id);
-		list.forEach(Product -> System.out.print(Product.id + " "));
+		System.out.println(list.toString());
 		System.out.println();
 
 		System.out.println("Sorting by name ascending...");
 		Collections.sort(list, (o1, o2) -> { return o1.name.compareTo(o2.name); } );
-		list.forEach(Product -> System.out.print(Product.name + " "));
+		System.out.println(list.toString());
 		System.out.println();
 
 		System.out.println("Sorting by name descending...");
 		Collections.sort(list, (o1, o2) -> { return o2.name.compareTo(o1.name); } );
-		list.forEach(Product -> System.out.print(Product.name + " "));
+		System.out.println(list.toString());
 		System.out.println();
 
 		System.out.println("Sorting by price ascending...");
 		Collections.sort(list, (o1, o2) -> (int) (o1.price - o2.price));
-		list.forEach(Product -> System.out.print(Product.price + " "));
+		System.out.println(list.toString());
 		System.out.println();
 
 		System.out.println("Sorting by price descending...");
 		Collections.sort(list, (o1, o2) -> (int) (o2.price - o1.price));
-		list.forEach(Product -> System.out.print(Product.price + " "));
+		System.out.println(list.toString());
+		//list.forEach(Product -> System.out.print(Product.price + " "));
 		System.out.println();
 
 	}
