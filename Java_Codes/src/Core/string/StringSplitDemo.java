@@ -19,8 +19,8 @@ public class StringSplitDemo {
 		String[] tokens = splitString.split(delims);
 		int tokenCount = tokens.length;
 		System.out.println("String Split Count Output: " + tokenCount);
-		for (int j = 0; j < tokenCount; j++) {
-			System.out.println("Split Output: " + tokens[j]);
+		for (String token : tokens) {
+			System.out.println("Split Output: " + token);
 		}
 
 	}
