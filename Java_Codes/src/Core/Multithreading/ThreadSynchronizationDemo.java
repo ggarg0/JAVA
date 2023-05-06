@@ -12,11 +12,11 @@ class Account {
 	}
 }
 
-public class ThreadAccountDanger implements Runnable {
+public class ThreadSynchronizationDemo implements Runnable {
 	private Account acct = new Account();
 
 	public static void main(String[] a) {
-		ThreadAccountDanger r = new ThreadAccountDanger();
+		ThreadSynchronizationDemo r = new ThreadSynchronizationDemo();
 		Thread one = new Thread(r);
 		Thread two = new Thread(r);
 		one.setName("Gaurav");
@@ -39,13 +39,14 @@ public class ThreadAccountDanger implements Runnable {
 			System.out.println(
 					Thread.currentThread().getName() + " is going to withdraw. Current balance : " + acct.getBalance());
 			try {
-				Thread.sleep(100);
-			} catch (InterruptedException e) {
+				acct.withdraw(amt);
+				Thread.sleep(1000);
+				System.out.println(Thread.currentThread().getName() + " completes the withdrawal. Current balance : "
+						+ acct.getBalance());
+			} catch (Exception e) {
 				System.out.println("InterruptedException" + e);
 			}
-			acct.withdraw(amt);
-			System.out.println(Thread.currentThread().getName() + " completes the withdrawal. Current balance : "
-					+ acct.getBalance());
+
 		} else {
 			System.out.println("Not Enough in account for " + Thread.currentThread().getName() + " to withdraw "
 					+ acct.getBalance());
