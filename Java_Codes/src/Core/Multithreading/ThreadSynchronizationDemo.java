@@ -19,8 +19,8 @@ public class ThreadSynchronizationDemo implements Runnable {
 		ThreadSynchronizationDemo r = new ThreadSynchronizationDemo();
 		Thread one = new Thread(r);
 		Thread two = new Thread(r);
-		one.setName("Gaurav");
-		two.setName("Garg");
+		one.setName("John");
+		two.setName("Tim");
 		one.start();
 		two.start();
 	}
@@ -40,7 +40,7 @@ public class ThreadSynchronizationDemo implements Runnable {
 					Thread.currentThread().getName() + " is going to withdraw. Current balance : " + acct.getBalance());
 			try {
 				acct.withdraw(amt);
-				Thread.sleep(1000);
+				//Thread.sleep(1000);
 				System.out.println(Thread.currentThread().getName() + " completes the withdrawal. Current balance : "
 						+ acct.getBalance());
 			} catch (Exception e) {
