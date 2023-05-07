@@ -18,10 +18,11 @@ class ThreadDemo extends Thread {
 
         System.out.println("Creating thread...");
         ThreadDemo thread = new ThreadDemo();
-		thread.setName("Thread-1");
-		//thread.setPriority(5);
         ThreadDemo thread1 = new ThreadDemo();
-		thread1.setName("Thread-2");
+		thread.setName("Thread-0");
+		thread.setPriority(5);
+
+		thread1.setName("Thread-1");
 		thread1.setPriority(10);
 
         System.out.println("Starting thread...");

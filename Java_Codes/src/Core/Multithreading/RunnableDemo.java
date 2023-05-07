@@ -9,9 +9,11 @@ public class RunnableDemo implements Runnable {
         RunnableDemo runnable = new RunnableDemo();
 
         System.out.println("Creating Thread...");
-        Thread thread1 = new Thread(runnable, "Thread-1");
-        Thread thread2 = new Thread(runnable, "Thread-2");
+        Thread thread1 = new Thread(runnable);
+        Thread thread2 = new Thread(runnable);
 
+        thread1.setName("Thread-1");
+        thread2.setName("Thread-2");
         System.out.println("Starting Thread...");
         thread1.start();
         thread2.start();

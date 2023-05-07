@@ -5,20 +5,21 @@ class ThreadJoinMethod implements Runnable {
 	public void run() {
 		try {
 			Thread.sleep(500);
-			System.out.println(Thread.currentThread().getName());
+			System.out.println(Thread.currentThread().getName() + " and isAlive : " + Thread.currentThread().isAlive());
 		} catch (Exception e) {
-			System.out.println(e);
+			System.out.println(e.getMessage());
 		}
 	}
 
-	public static void main(String args[]) {
+	public static void main(String[] args) {
 		ThreadJoinMethod test = new ThreadJoinMethod();
-		Thread[] threads = new Thread[9];
+		Thread[] threads = new Thread[5];
 		try {
 			for (int i = 0; i < threads.length; i++) {
-				threads[i] = new Thread(test, "Thread" + i);
+				threads[i] = new Thread(test, "Thread - " + i);
 				threads[i].start();
 				threads[i].join();
+				System.out.println(threads[i].getName() + " and isAlive : " + threads[i].isAlive());
 			}
 
 			Thread t1 = new Thread(test, "IMP");
@@ -32,7 +33,7 @@ class ThreadJoinMethod implements Runnable {
 			t3.start();
 
 		} catch (Exception e) {
-			System.out.println(e);
+			System.out.println(e.getMessage());
 		}
 	}
 }
