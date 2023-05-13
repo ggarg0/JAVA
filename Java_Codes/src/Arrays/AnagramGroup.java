@@ -8,12 +8,11 @@ import java.util.Map;
 
 public class AnagramGroup {
 
-	public static String groupAnagrams(String arr[]) {
-		String anagrams = "";
+	public static String groupAnagrams(String[] arr) {
+		StringBuilder anagrams = new StringBuilder();
 		Map<String, List<String>> map = new HashMap<String, List<String>>();
 
-		for (int i = 0; i < arr.length; i++) {
-			String word = arr[i];
+		for (String word : arr) {
 			char[] letters = word.toCharArray();
 			Arrays.sort(letters);
 			String sortedWord = new String(letters);
@@ -28,13 +27,13 @@ public class AnagramGroup {
 		}
 
 		for (String words : map.keySet()) 
-			anagrams = anagrams + map.get(words);
+			anagrams.append(map.get(words));
 
-		return anagrams;
+		return anagrams.toString();
 	}
 
 	public static void main(String[] args) {
-		String arr[] = { "cat", "dog", "tac", "god", "act", "tom marvolo riddle ", "abc", "def", "cab", "fed",
+		String[] arr = { "cat", "dog", "tac", "god", "act", "tom marvolo riddle ", "abc", "def", "cab", "fed",
 				"clint eastwood ", "i am lord voldemort", "elvis", "old west action", "lives" };
 		System.out.println(groupAnagrams(arr));
 	}

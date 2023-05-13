@@ -2,7 +2,7 @@ package Arrays;
 
 class ArrayMaxSumPair {
 	public static void main(String[] args) {
-		int arr[] = { 12, 34, 60, 45, 40 };
+		int[] arr = { 12, 34, 60, 45, 40 };
 		int first, second;
 		if (arr[0] > arr[1]) {
 			first = arr[0];

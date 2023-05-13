@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class BinarySearchMissingNumber {
 
-	public static int missingNumber(int arr[], int size) {
+	public static int missingNumber(int[] arr, int size) {
 		int start = 0;
 		int mid = 0;
 		int end = arr.length - 1;

@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class DistinctCommonElementInRow {
 
-	static void distinct(int matrix[][], int N) {
+	static void distinct(int[][] matrix, int N) {
 	
 		Map<Integer, Integer> ans = new HashMap<>();
 		for (int j = 0; j < N; j++) {
@@ -26,7 +26,7 @@ public class DistinctCommonElementInRow {
 	}
 
 	public static void main(String[] args) {
-		int matrix[][] = { { 2, 1, 4, 3 }, { 1, 2, 3, 2 }, { 3, 6, 2, 3 }, { 5, 2, 5, 3 } };
+		int[][] matrix = { { 2, 1, 4, 3 }, { 1, 2, 3, 2 }, { 3, 6, 2, 3 }, { 5, 2, 5, 3 } };
 		int n = 4;
 		distinct(matrix, n);
 	}

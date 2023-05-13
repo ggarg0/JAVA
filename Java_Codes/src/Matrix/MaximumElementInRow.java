@@ -2,11 +2,11 @@ package Matrix;
 
 public class MaximumElementInRow {
 
-	static void printMatrix(String str, int mat[][]) {
+	static void printMatrix(String str, int[][] mat) {
 		System.out.println(str + "Matrix\n===========================");
-		for (int i = 0; i < mat.length; i++) {
+		for (int[] ints : mat) {
 			for (int j = 0; j < mat.length; j++)
-				System.out.print(mat[i][j] + "	");
+				System.out.print(ints[j] + "	");
 			System.out.println();
 		}
 		System.out.println("===========================\n");
