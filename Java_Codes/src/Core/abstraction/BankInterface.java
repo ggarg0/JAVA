@@ -1,7 +1,9 @@
 package Core.abstraction;
 
 interface Account {
-	public int getRate();
+	default public int getRate(){
+		return 0;
+	}
 }
 
 class SavingsAccount implements Account {
@@ -14,6 +16,15 @@ class CheckinAccount implements Account {
 	public int getRate() {
 		return 4;
 	}
+	public int getOverdraft() {
+		return 6;
+	}
+}
+
+class LoanAccount implements Account {
+	public int getLoanRate() {
+		return 8;
+	}
 }
 
 public class BankInterface {
@@ -23,6 +34,9 @@ public class BankInterface {
 		System.out.println(sa.getRate());
 
 		CheckinAccount ca = new CheckinAccount();
-		System.out.println(ca.getRate());
+		System.out.println(ca.getOverdraft());
+
+		LoanAccount loan = new LoanAccount();
+		System.out.println(loan.getRate());
 	}
 }

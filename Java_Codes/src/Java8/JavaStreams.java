@@ -27,7 +27,7 @@ public class JavaStreams {
 		System.out.println("Does programming Array contains Java? " + 
 								programmingListLowerCase.contains("java"));
 		System.out.println("Index of Java in programming Array is : " + 
-								programmingListLowerCase.indexOf("java"));
+								programmingListLowerCase.indexOf("JAVA"));
 
 		// filter function
 		Stream<String> stream = list.stream().filter(p -> p.length() > 3);
