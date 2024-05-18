@@ -6,16 +6,16 @@ public class DutchFlagProblem {
 
 	public static void dutchNationalFlag(int[] arr) {
 		int start = 0;
-		int mid = 0;
+		int current = 0;
 		int end = arr.length - 1;
 
-		while (mid <= end) {
-			if (arr[mid] == 1) {
-				mid++;
-			} else if (arr[mid] == 0) {
-				swap(arr, start++, mid++);
-			} else if (arr[mid] == 2) {
-				swap(arr, mid, end--);
+		while (current <= end) {
+			if (arr[current] == 1) {
+				current++;
+			} else if (arr[current] == 0) {
+				swap(arr, start++, current++);
+			} else if (arr[current] == 2) {
+				swap(arr, current, end--);
 			}
 		}
 	}
@@ -27,7 +27,7 @@ public class DutchFlagProblem {
 	}
 
 	public static void main(String[] args) {
-		int[] arr = { 2, 0, 0, 1, 2, 1 };
+		int[] arr = { 0,1,0 };
 		dutchNationalFlag(arr);
 		System.out.println(Arrays.toString(arr));
 	}
