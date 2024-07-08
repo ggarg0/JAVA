@@ -16,7 +16,7 @@ public class MySinglyLinkedList<V> {
 	}
 
 	public boolean isEmpty() {
-		return (headNode == null ? true : false);
+		return headNode == null;
 	}
 
 	public int length() {

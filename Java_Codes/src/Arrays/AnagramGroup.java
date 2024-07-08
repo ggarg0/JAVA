@@ -5,30 +5,23 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 public class AnagramGroup {
 
 	public static String groupAnagrams(String[] arr) {
 		StringBuilder anagrams = new StringBuilder();
-		Map<String, List<String>> map = new HashMap<String, List<String>>();
+		Map<String, List<String>> map = new HashMap<>();
 
 		for (String word : arr) {
 			char[] letters = word.toCharArray();
 			Arrays.sort(letters);
 			String sortedWord = new String(letters);
 
-			if (map.containsKey(sortedWord)) {
-				map.get(sortedWord).add(word);
-			} else {
-				List<String> list = new ArrayList<String>();
-				list.add(word);
-				map.put(sortedWord, list);
-			}
+			map.computeIfAbsent(sortedWord, k -> new ArrayList<>()).add(word);
 		}
 
-		for (String words : map.keySet()) 
-			anagrams.append(map.get(words));
-
+		for (List<String> words : map.values()) {
+			anagrams.append(words);
+		}
 		return anagrams.toString();
 	}
 

@@ -19,18 +19,12 @@ public class MyStack<V> {
 	}
 
 	public boolean isFull() {
-		if (index == maxSize - 1)
-			return true;
-
-		return false;
-	}
+        return index == maxSize - 1;
+    }
 
 	public boolean isEmpty() {
-		if (index == -1)
-			return true;
-
-		return false;
-	}
+        return index == -1;
+    }
 
 	public void push(V data) {
 		if (isFull()) {
@@ -45,11 +39,11 @@ public class MyStack<V> {
 		V result = null;
 		if (isEmpty()) {
 			System.out.println("Stack is empty");
-		} else {
-			result = stack[index];
-			stack[index--] = null;
-			printStack("After Pop() : ");
+			return null;
 		}
+		result = stack[index];
+		stack[index--] = null;
+		printStack("After Pop() : ");
 		return result;
 	}
 
@@ -62,14 +56,7 @@ public class MyStack<V> {
 
 	public void resizeStack() {
 		maxSize = maxSize * 2;
-		V[] temp = (V[]) new Object[maxSize];
-		int counter = 0;
-
-		while (counter <= index) {
-			temp[counter] = stack[counter];
-			counter++;
-		}
-		stack = temp;
+		stack = Arrays.copyOf(stack, maxSize);
 		printStack("After resizing : ");
 	}
 
