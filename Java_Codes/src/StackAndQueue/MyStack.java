@@ -5,22 +5,21 @@ import java.util.Arrays;
 public class MyStack<V> {
 
 	private int index = -1;
-	private int maxSize;
+	private int size;
 	private V[] stack;
 
-	public MyStack() {
-		this.maxSize = 0;
-		stack = (V[]) new Object[0];
-	}
-
-	public MyStack(int maxSize) {
-		this.maxSize = maxSize;
-		stack = (V[]) new Object[maxSize];
+	public MyStack(int size) {
+		this.size = size;
+		stack = (V[]) new Object[size];
 	}
 
 	public boolean isFull() {
-        return index == maxSize - 1;
+        return index == size - 1;
     }
+
+	public int getSize() {
+		return size;
+	}
 
 	public boolean isEmpty() {
         return index == -1;
@@ -55,8 +54,8 @@ public class MyStack<V> {
 	}
 
 	public void resizeStack() {
-		maxSize = maxSize * 2;
-		stack = Arrays.copyOf(stack, maxSize);
+		size = size * 2;
+		stack = Arrays.copyOf(stack, size);
 		printStack("After resizing : ");
 	}
 
@@ -72,10 +71,10 @@ public class MyStack<V> {
 		myStack.push(2);
 		myStack.push(false);
 		myStack.push(null);
-		System.out.println("Peek() called : " + myStack.peek());
 		myStack.pop();
 		myStack.push("stack");
 		myStack.push("add");
+		System.out.println("Peek() called : " + myStack.peek());
 		myStack.push(7);
 		myStack.push(true);
 	}

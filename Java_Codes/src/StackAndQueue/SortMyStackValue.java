@@ -1,9 +1,12 @@
 package StackAndQueue;
 
+import java.sql.SQLOutput;
+import java.util.Arrays;
+
 public class SortMyStackValue {
 	public static void sortStack(MyStack<Integer> stack) {
 
-		MyStack<Integer> newStack = new MyStack<>(4);
+		MyStack<Integer> newStack = new MyStack<>(stack.getSize());
 		while (!stack.isEmpty()) {
 			Integer value = stack.pop();
 			if (!newStack.isEmpty() && value >= newStack.peek()) {
@@ -14,7 +17,7 @@ public class SortMyStackValue {
 				newStack.push(value);
 			}
 		}
-
+		newStack.printStack("newstack : ");
 		while (!newStack.isEmpty())
 			stack.push(newStack.pop());
 

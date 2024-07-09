@@ -41,7 +41,7 @@ public class EvaluatePostfix {
 	}
 
 	public static void main(String[] args) {
-		String expression = "921*-8-4+";
+		String expression = "921*-8-4+"; // 9*2-1-8+4
 		System.out.println(evaluatePostFix(expression));
 	}
 }
