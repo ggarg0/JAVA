@@ -12,7 +12,7 @@ public class GenerateBinaryNumbers {
 		Queue<String> queue = new ArrayDeque<String>();
 
 		queue.add("1");
-
+		System.out.println(((ArrayDeque<String>) queue).size());
 		for (int i = 0; i < number; i++) {
 			result[i] = queue.remove();
 			String s1 = result[i] + "0";

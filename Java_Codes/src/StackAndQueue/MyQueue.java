@@ -26,6 +26,10 @@ public class MyQueue<V> {
         return true;
     }
 
+    public int size() {
+        return index;
+    }
+
     public boolean isFull() {
         if (index != maxSize - 1) {
             return false;
