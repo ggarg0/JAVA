@@ -4,12 +4,11 @@ import java.util.Stack;
 
 public class SortStackValue {
 
-	public static void sortStack(Stack<Integer> stack) {
-
+	public static Stack<Integer> sortStack(Stack<Integer> stack) {
 		Stack<Integer> newStack = new Stack<>();
 		while (!stack.isEmpty()) {
 			Integer value = stack.pop();
-			if (!newStack.isEmpty() && value >= newStack.peek()) {
+			if (!newStack.isEmpty() && newStack.peek() < value) {
 				newStack.push(value);
 			} else {
 				while (!newStack.isEmpty() && newStack.peek() > value)
@@ -17,10 +16,7 @@ public class SortStackValue {
 				newStack.push(value);
 			}
 		}
-
-		while (!newStack.isEmpty())
-			stack.push(newStack.pop());
-
+		return newStack;
 	}
 
 	public static void main(String[] args) {
@@ -29,8 +25,8 @@ public class SortStackValue {
 		stack.push(12);
 		stack.push(60);
 		stack.push(23);
-		sortStack(stack);
-		System.out.println(stack.toString());
+		System.out.println(stack);
+		System.out.println(sortStack(stack));
 	}
 
 }

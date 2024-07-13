@@ -1,59 +1,47 @@
 package StackAndQueue;
 
+import java.util.Stack;
+
 public class MinStack {
 
-	private int size;
-	private MyStack<Integer> main;
-	private MyStack<Integer> min;
+    Stack<Integer> stack = new Stack<>();
+    Stack<Integer> min = new Stack<>();
 
-	public MinStack() {
-		this.size = 0;
-		this.main = new MyStack<Integer>(this.size);
-		this.min = new MyStack<Integer>(this.size);
-	}
-
-	public MinStack(int size) {
-		this.size = size;
-		main = new MyStack<Integer>(this.size);
-		min = new MyStack<Integer>(this.size);
-	}
-
-	public int pop() {
-		min.pop();
-		return main.pop();		
-	}
-
-	
-	public void push(Integer value) {
-		main.push(value);
-		if(!min.isEmpty() && min.peek() < value) {
+    public void push(Integer data) {
+        stack.push(data);
+        if (min.isEmpty() || min.peek() > data) {
+			min.push(data);
+        } else {
 			min.push(min.peek());
-		}else {
-			min.push(value);
-		}
-	}
+        }
+    }
 
-	public int min() {
-		return min.peek();
-	}
+    public int pop() {
+        min.pop();
+        return stack.pop();
+    }
 
-	public static void main(String args[]) {
+    public int min() {
+        return min.peek();
+    }
 
-		MinStack stack = new MinStack(6);
-		stack.push(5);
-		stack.push(2);
-		stack.push(4);
-		stack.push(1);
-		stack.push(3);
-		stack.push(9);
+    public static void main(String args[]) {
 
-		System.out.println(stack.min());
+        MinStack stack = new MinStack();
+        stack.push(5);
+        stack.push(2);
+        stack.push(4);
+        stack.push(1);
+        stack.push(3);
+        stack.push(9);
 
-		stack.pop();
-		stack.pop();
-		stack.pop();
+        System.out.println(stack.min());
 
-		System.out.println(stack.min());
+        stack.pop();
+        stack.pop();
+        stack.pop();
 
-	}
+        System.out.println(stack.min());
+
+    }
 }

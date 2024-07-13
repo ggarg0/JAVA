@@ -4,6 +4,7 @@ import java.util.Stack;
 
 public class QueueUsingStack {
 
+    //approach 1
     Stack<Object> stack1 = new Stack<Object>();
     Stack<Object> stack2 = new Stack<Object>();
 
@@ -52,6 +53,7 @@ public class QueueUsingStack {
         return result;
     }
 
+    //approach 2
     Stack<Object> s1 = new Stack<>();
     Stack<Object> s2 = new Stack<>();
 
