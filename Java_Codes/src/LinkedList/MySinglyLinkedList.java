@@ -1,5 +1,7 @@
 package LinkedList;
 
+import java.util.Objects;
+
 public class MySinglyLinkedList<V> {
 
 	public static class Node<V> {
@@ -7,16 +9,33 @@ public class MySinglyLinkedList<V> {
 		public Node<V> nextNode;
 	}
 
-	public int size;
-	public Node<V> headNode;
+	private int size;
+	private Node<V> headNode;
 
 	public MySinglyLinkedList() {
 		headNode = null;
 		size = 0;
 	}
 
+	public int size(){
+		if (isEmpty()) {
+			System.out.println("List is empty");
+			return 0;
+		}
+		System.out.println("Size of list is [" + size + "]");
+		return size;
+	}
+
+	public Node<V> getHeadNode(){
+		return headNode;
+	}
+
+	public void setHeadNode(Node<V> head){
+		headNode = head;
+	}
+
 	public boolean isEmpty() {
-		return headNode == null;
+		return Objects.isNull(headNode);
 	}
 
 	public int length() {
@@ -201,6 +220,7 @@ public class MySinglyLinkedList<V> {
 		MySinglyLinkedList<Object> list = new MySinglyLinkedList<Object>();
 
 		list.length();
+		list.size();
 		list.insertAtHead(1);
 		list.insertAtHead("One");
 		list.insertAtHead(true);
@@ -215,6 +235,7 @@ public class MySinglyLinkedList<V> {
 		list.insertAtEnd("Eleven");
 
 		list.length();
+		list.size();
 		list.deleteAtHead();
 		list.deleteByValue(99);
 

@@ -6,7 +6,7 @@ public class RemoveAdjacent {
 
     public static String removeDuplicates(String input) {
         Stack<Character> stack = new Stack<>();
-        for (int i = 0; i < input.length(); i++) {
+        for (int i = input.length() - 1; i >= 0; i--) {
             if (!stack.isEmpty() && input.charAt(i) == stack.peek()) {
                 stack.pop();
             } else {
@@ -17,7 +17,7 @@ public class RemoveAdjacent {
         while (!stack.isEmpty()) {
             result.append(stack.pop());
         }
-        return result.reverse().toString();
+        return result.toString();
     }
 
     public static void main(String[] args) {

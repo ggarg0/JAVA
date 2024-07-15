@@ -6,7 +6,7 @@ public class ReverseLinkedList {
 
 	public static void reverse(MySinglyLinkedList<Object> list) {
 		Node<Object> previous = null;
-		Node<Object> current = list.headNode;
+		Node<Object> current = list.getHeadNode();
 		Node<Object> next = null;
 		while (current != null) {
 			next = current.nextNode;
@@ -14,7 +14,7 @@ public class ReverseLinkedList {
 			previous = current;
 			current = next;
 		}
-		list.headNode = previous;
+		list.setHeadNode(previous);
 		list.printList("Reversed list : ");
 	}
 

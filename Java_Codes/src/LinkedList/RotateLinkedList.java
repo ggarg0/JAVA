@@ -13,7 +13,7 @@ public class RotateLinkedList {
 		}		
 
 		int rotationsCount = list.length() - n;
-		Node<Object> current = list.headNode;
+		Node<Object> current = list.getHeadNode();
 		Node<Object> previous = null;	
 		while (rotationsCount != 0) {
 			rotationsCount--;
@@ -21,8 +21,8 @@ public class RotateLinkedList {
 			current = current.nextNode;
 		}				
 		previous.nextNode = null;			
-		Node<Object> temp = list.headNode;
-		list.headNode = current;
+		Node<Object> temp = list.getHeadNode();
+		list.setHeadNode(current);
 		
 		while(current.nextNode != null) {
 			current = current.nextNode;

@@ -24,7 +24,7 @@ public class SearchInLinkedList {
 		list.insertAtHead(4);
 
 		int searchFor = 8;
-		boolean result = search(list.headNode, searchFor);
+		boolean result = search(list.getHeadNode(), searchFor);
 		System.out.println("Is " + searchFor + " present in the list? : " + result);
 	}
 

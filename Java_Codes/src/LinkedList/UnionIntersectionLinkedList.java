@@ -12,7 +12,7 @@ public class UnionIntersectionLinkedList {
 		MySinglyLinkedList<Object> result = new MySinglyLinkedList<Object>();
 		Set<Object> set = new HashSet<Object>();
 
-		Node<Object> current = list1.headNode;
+		Node<Object> current = list1.getHeadNode();
 		while (current != null) {
 
 			if (set.add(current.data)) 
@@ -21,7 +21,7 @@ public class UnionIntersectionLinkedList {
 			current = current.nextNode;
 		}
 
-		current = list2.headNode;
+		current = list2.getHeadNode();
 		while (current != null) {
 
 			if (set.add(current.data)) 
@@ -39,7 +39,7 @@ public class UnionIntersectionLinkedList {
 		MySinglyLinkedList<Object> result = new MySinglyLinkedList<Object>();
 
 		Set<Object> set = new HashSet<Object>();
-		Node<Object> current = list1.headNode;
+		Node<Object> current = list1.getHeadNode();
 
 		while (current != null) {
 			if (!set.add(current.data)) 
@@ -48,7 +48,7 @@ public class UnionIntersectionLinkedList {
 			current = current.nextNode;
 		}
 
-		current = list2.headNode;
+		current = list2.getHeadNode();
 		while (current != null) {
 			if (!set.add(current.data)) 
 				result.insertAtEnd(current.data);

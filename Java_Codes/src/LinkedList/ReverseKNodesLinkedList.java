@@ -10,7 +10,7 @@ public class ReverseKNodesLinkedList {
 			return;
 		}
 
-		Node<Integer> head = list.headNode;
+		Node<Integer> head = list.getHeadNode();
 		Node<Integer> reversed = null;
 		Node<Integer> previousNode = null;
 
@@ -38,7 +38,7 @@ public class ReverseKNodesLinkedList {
 			previousNode = currentHead;
 		}
 
-		list.headNode = reversed;
+		list.setHeadNode(reversed);
 
 	}
 

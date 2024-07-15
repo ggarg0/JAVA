@@ -6,8 +6,8 @@ public class FindMiddleOfLinkedList {
 
 	public static Object findMiddleElementUsingTwoPointer(MySinglyLinkedList<Integer> list) {
 
-		Node<Integer> current = list.headNode;
-		Node<Integer> mid = list.headNode;
+		Node<Integer> current = list.getHeadNode();
+		Node<Integer> mid = list.getHeadNode();
 
 		while (current != null && mid != null && current.nextNode != null) {
 			current = current.nextNode.nextNode;
@@ -22,7 +22,7 @@ public class FindMiddleOfLinkedList {
 	public static Object findMiddleElementUsingListLength(MySinglyLinkedList<Integer> list) {
 
 		int length = list.length() / 2;
-		Node<Integer> current = list.headNode;
+		Node<Integer> current = list.getHeadNode();
 
 		for (int i = 0; i < length - 1; i++) {
 			current = current.nextNode;
