@@ -17,7 +17,7 @@ public class MySinglyLinkedList<V> {
 		size = 0;
 	}
 
-	public int size(){
+	public int size() {
 		if (isEmpty()) {
 			System.out.println("List is empty");
 			return 0;
@@ -26,11 +26,11 @@ public class MySinglyLinkedList<V> {
 		return size;
 	}
 
-	public Node<V> getHeadNode(){
+	public Node<V> getHeadNode() {
 		return headNode;
 	}
 
-	public void setHeadNode(Node<V> head){
+	public void setHeadNode(Node<V> head) {
 		headNode = head;
 	}
 
@@ -203,7 +203,7 @@ public class MySinglyLinkedList<V> {
 
 	public void reverse(MySinglyLinkedList<V> list) {
 		Node<V> previous = null;
-		Node<V> current = list.headNode;
+		Node<V> current = getHeadNode();
 		Node<V> next = null;
 
 		while (current != null) {
@@ -214,6 +214,24 @@ public class MySinglyLinkedList<V> {
 		}
 		list.headNode = previous;
 		printList("Reversed list :");
+	}
+
+	public Node<V> findMiddleElement() {
+		if (isEmpty()) {
+			System.out.println("List is Empty");
+			return null;
+		}
+
+		Node<V> temp = getHeadNode();
+		Node<V> mid = getHeadNode();
+
+		while (temp != null && temp.nextNode != null) {
+			temp = temp.nextNode.nextNode;
+			if(temp != null)
+				mid = mid.nextNode;
+		}
+		System.out.println("Middle node is : " + mid.data);
+		return mid;
 	}
 
 	public static void main(String args[]) {
@@ -230,15 +248,16 @@ public class MySinglyLinkedList<V> {
 		list.insertAtHead(9);
 		list.searchNode(11);
 		list.insertAtEnd(11);
+		list.findMiddleElement();
 		list.searchNode(11);
 		list.insertAfter(99, 9);
 		list.insertAtEnd("Eleven");
-
+		list.findMiddleElement();
 		list.length();
 		list.size();
 		list.deleteAtHead();
-		list.deleteByValue(99);
-
+		list.findMiddleElement();
+		list.deleteByValue(99);	
 		list.reverse(list);
 	}
 
