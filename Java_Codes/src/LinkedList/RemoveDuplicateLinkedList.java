@@ -6,7 +6,7 @@ import LinkedList.MySinglyLinkedList.Node;
 
 public class RemoveDuplicateLinkedList {
 
-	public static Object removeDuplicateUsingSet(MySinglyLinkedList<Integer> list) {
+	public static void removeDuplicateUsingSet(MySinglyLinkedList<Integer> list) {
 		Object result = null;
 		HashSet<Integer> set = new HashSet<Integer>();
 		Node<Integer> current = list.getHeadNode();
@@ -20,7 +20,6 @@ public class RemoveDuplicateLinkedList {
 		}
 
 		list.printList("Removed duplicate [" + current.data + "] using HashSet from list :");
-		return result;
 	}
 
 	public static void main(String[] args) {

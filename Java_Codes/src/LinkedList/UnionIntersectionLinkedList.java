@@ -34,6 +34,20 @@ public class UnionIntersectionLinkedList {
 		return result;
 	}
 
+    public static MySinglyLinkedList<Object> union(MySinglyLinkedList<Object> list1,
+                                                   MySinglyLinkedList<Object> list2) {
+
+        Node<Object> current = list2.getHeadNode();
+        while (current != null) {
+            if (!list1.searchNode(current.data))
+                list1.insertAtEnd(current.data);
+
+            current = current.nextNode;
+        }
+        list1.printList("After Union :");
+        return list1;
+    }
+
 	public static MySinglyLinkedList<Object> intersectionWithHashing(MySinglyLinkedList<Object> list1,
 			MySinglyLinkedList<Object> list2) {
 		MySinglyLinkedList<Object> result = new MySinglyLinkedList<Object>();
@@ -79,6 +93,7 @@ public class UnionIntersectionLinkedList {
 
 		System.out.println("Calling Union ");
 		unionWithHashing(list1, list2);
+        union(list1, list2);
 	}
 
 }
