@@ -28,6 +28,12 @@ public class HashMapSortKeys {
                System.out.print(me.getKey() + ": ");
                System.out.println(me.getValue());*/
          }
+
+        hmap.forEach((key, value) -> System.out.println(key + " : " + value));
+
+
+
+
          Map<Integer, String> map = new TreeMap<Integer, String>(hmap);
          System.out.println("After Sorting by keys :");
 

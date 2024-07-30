@@ -41,7 +41,7 @@ public class StringReverseWords {
 
     public static void main(String[] args) {
         System.out.println("**********************************************");
-        String test = "We Love Java";
+        String test = "We Love Java.";
         System.out.println("String input : " + test);
         System.out.println("**********************************************");
         System.out.println("Using two pointer : " + reverseWords(test));

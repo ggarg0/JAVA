@@ -46,11 +46,10 @@ public class DetectLoopInLinkedList {
         Node<Integer> node = list.getHeadNode();
 
         while (node != null) {
-            if (set.contains(node)) {
+            if (!set.add(node)) {
                 result = true;
                 break;
             }
-            set.add(node);
             node = node.nextNode;
         }
         return result;
@@ -62,7 +61,14 @@ public class DetectLoopInLinkedList {
         list.insertAtHead(7);
         list.insertAtHead(14);
         list.insertAtHead(21);
-        list.getHeadNode().nextNode.nextNode = list.getHeadNode();
+        list.insertAtHead(23);
+        list.insertAtHead(24);
+        list.insertAtHead(25);
+        list.insertAtHead(26);
+        list.insertAtHead(27);
+        list.insertAtHead(28);
+        list.printList();
+        list.getHeadNode().nextNode.nextNode.nextNode.nextNode = list.getHeadNode();
 
         System.out.println("Detect loop using two pointers : " + detectLoopUsingTwoPointers(list));
         System.out.println("Detect loop using HashSet : " + detectLoopUsingSet(list));
