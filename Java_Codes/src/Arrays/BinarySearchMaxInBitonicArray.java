@@ -1,5 +1,9 @@
 package Arrays;
 
+/*
+A Bitonic Sequence is a sequence of numbers that is first strictly increasing then after a point decreasing.
+*/
+
 public class BinarySearchMaxInBitonicArray {
 
 	public static int findMax(int[] arr) {

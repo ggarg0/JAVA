@@ -25,7 +25,7 @@ public class FindDuplicates {
                 map.put(j, 1);
             }
         }
-        
+
         map.entrySet().stream()
                 .filter(a -> a.getValue() <= 1)
                 .map(Entry::getKey)

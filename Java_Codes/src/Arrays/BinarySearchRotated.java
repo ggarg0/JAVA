@@ -1,5 +1,7 @@
 package Arrays;
 
+//https://www.educative.io/courses/grokking-coding-interview-patterns-java/search-in-rotated-sorted-array
+
 public class BinarySearchRotated {
 	public static void main(String[] args) {
 		int[] nums = { 4, 5, 6, 7, 0, 1, 2 };
@@ -7,7 +9,7 @@ public class BinarySearchRotated {
 
 		int start = 0;
 		int end = nums.length - 1;
-		int mid = (start + end) / 2;
+		int mid;
 		int foundIndex = -1;
 
 		while (start <= end) {
