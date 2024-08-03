@@ -2,6 +2,8 @@ package Arrays.TwoPointers;
 
 import java.util.Arrays;
 
+//https://www.educative.io/module/page/Z4JLg2tDQPVv6QjgO/10370001/5849282476507136/4688843308793856
+
 public class FindMedianSortedArrays {
 
 	public static double getMedian(int array1[], int array2[]) {
@@ -13,32 +15,32 @@ public class FindMedianSortedArrays {
 		int i = 0;
 		int j = 0;
 
-		double median = -1;
-		double previousMedian = -1;
+		double current = -1;
+		double previous = -1;
 
 		for (int k = 0; k <= arraySizeMid; k++) {
-			previousMedian = median;
+			previous = current;
 			if (i < sizeOfArray1 && j < sizeOfArray2) {
 				if (array1[i] < array2[j]) {
-					median = array1[i];
+					current = array1[i];
 					i++;
 				} else {
-					median = array1[j];
+					current = array2[j];
 					j++;
 				}
 			} else if (i < sizeOfArray1) {
-				median = array1[i];
+				current = array1[i];
 				i++;
 			} else {
-				median = array2[j];
+				current = array2[j];
 				j++;
 			}
 		}
-		return (arraySize % 2 == 0 ? (median + previousMedian) / 2 : median);
+		return (arraySize % 2 == 0 ? (current + previous) / 2 : current);
 	}
 
 	public static void main(String[] args) {
-		int array1[] = { 4, 5 };
+		int array1[] = { 4, 5 , 6};
 		int array2[] = { 12, 13, 15, 18 };
 		System.out.println("The median of " + Arrays.toString(array1) + " and " + Arrays.toString(array2) + " is "
 				+ getMedian(array1, array2));

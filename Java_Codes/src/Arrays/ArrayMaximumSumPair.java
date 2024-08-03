@@ -1,10 +1,10 @@
-package Arrays.TwoPointers;
+package Arrays;
 
 import java.util.Arrays;
 
 class ArrayMaximumSumPair {
     public static void main(String[] args) {
-        int[] arr = {90, 94, 60, 85, 80};
+        int[] arr = {-4, -1, -9, 1, -7};
         int first, second;
         int[] indexes = {-1, -1};
         int sum;

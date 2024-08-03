@@ -1,11 +1,11 @@
-package Arrays;
+package Arrays.SlidingWindow;
 
 public class MaxSumSubArrayOfSizeK {
 
 	public static void main(String[] args) {
 
-		int[] arr = { 2, 1, 5, 1, 3, 2 };
-		int key = 2;
+		int[] arr = { 2, 1, 5, 8, 3, 2 };
+		int key = 3;
 		int maxSum = 0;
 		int len = arr.length;
 

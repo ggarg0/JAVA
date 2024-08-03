@@ -1,8 +1,10 @@
 package Arrays.TwoPointers;
 
+//https://www.educative.io/courses/data-structures-coding-interviews-java/solution-find-two-numbers-that-add-up-to-k
+
 import java.util.Arrays;
 
-public class ArrayFindSumPairUsingTwoPointers {
+public class ArrayFindSumPair {
 
     public static void main(String[] args) {
         int[] arr = {12, 34, 60, 45, 40};

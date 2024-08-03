@@ -2,7 +2,7 @@ package Arrays.TwoPointers;
 
 import java.util.*;
 
-public class ArraySumThree {
+public class TripletSumWithGivenTarget {
 
     public static void main(String[] args) {
         int[] arr = {3, 7, 1, 2, 8, 4, 5, 6};

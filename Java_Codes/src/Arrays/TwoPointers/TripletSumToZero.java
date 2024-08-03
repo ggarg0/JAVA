@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class TripletSumToZeroArray {
+public class TripletSumToZero {
 
 	public static List<List<Integer>> searchTriplets(int[] arr) {
 		Arrays.sort(arr);

@@ -1,4 +1,4 @@
-package Arrays;
+package Arrays.FastAndSlowPointers;
 
 import java.util.Arrays;
 

@@ -2,6 +2,8 @@ package Arrays.TwoPointers;
 
 import java.util.Arrays;
 
+//https://www.educative.io/courses/grokking-coding-interview-patterns-java/solution-sort-colors
+
 public class DutchFlagProblem {
 
 	public static void dutchNationalFlag(int[] arr) {

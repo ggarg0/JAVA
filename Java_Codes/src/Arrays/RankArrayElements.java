@@ -6,7 +6,7 @@ import java.util.TreeMap;
 
 public class RankArrayElements {
 	public static void main(String[] args) {
-		int[] arr = { 40, 10, 20, 30 };
+		int[] arr = { 40, 10, 10, 30 };
 
 		int[] result = new int[arr.length];
 		Map<Integer, Integer> map = new TreeMap<Integer, Integer>();
