@@ -1,4 +1,4 @@
-package Arrays;
+package Arrays.DivideAndConquer;
 
 public class PeakElement {
 	public static int findPeak(int[] array) {

@@ -1,7 +1,9 @@
-package Arrays;
+package Arrays.DivideAndConquer;
 
 import java.util.ArrayList;
 import java.util.Collections;
+
+//https://www.educative.io/courses/algorithms-coding-interviews-java/solution-merge-a-number-of-sorted-arrays
 
 public class MergeSortedArrays {
 	public static ArrayList<Integer> mergeSortedArrays(int[][] arr, ArrayList<Integer> Output) {

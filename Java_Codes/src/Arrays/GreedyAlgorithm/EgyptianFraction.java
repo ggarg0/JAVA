@@ -1,4 +1,6 @@
-package Arrays;
+package Arrays.GreedyAlgorithm;
+
+//https://www.educative.io/courses/algorithms-coding-interviews-java/solution-find-the-egyptian-fraction
 
 public class EgyptianFraction {
 

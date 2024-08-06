@@ -3,29 +3,21 @@ package Arrays.TwoPointers;
 
 public class PalindromeValid {
     public static void main(String[] a) {
-        System.out.println("Is Palindrome : " + isPalindrome("madame"));
-		System.out.println("Is Palindrome : " + isPalindrome("dead"));
-		System.out.println("Is Palindrome : " + isPalindrome("abca"));
-		System.out.println("Is Palindrome : " + isPalindrome("eeccccbebaeeabebccceea"));
+        //   String str = "madame";
+        // String str = "dead";
+        //  String str = "abca";
+        String str = "eeccccbebaeeabebccceea";
+        System.out.println("Is Palindrome : " + isPalindrome(str, 0, str.length() - 1, false));
+
     }
 
-    public static boolean isPalindrome(String str) {
-		System.out.println("Verifying : " + str);
-        int start = 0;
-        int end = str.length() - 1;
+    public static boolean isPalindrome(String str, int start, int end, boolean check) {
         while (start < end) {
             if (str.charAt(start) != str.charAt(end)) {
-                return validPalindrome(str, start + 1, end) || validPalindrome(str, start, end - 1);
-            }
-            start++;
-            end--;
-        }
-        return true;
-    }
-
-    public static boolean validPalindrome(String str, int start, int end) {
-        while (start < end) {
-            if (str.charAt(start) != str.charAt(end)) {
+                if (!check) {
+                    check = !check;
+                    return (isPalindrome(str, start + 1, end, check) || isPalindrome(str, start, end - 1, check));
+                }
                 return false;
             }
             start++;

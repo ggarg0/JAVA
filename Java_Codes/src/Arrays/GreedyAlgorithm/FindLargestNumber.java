@@ -1,8 +1,10 @@
-package Arrays;
+package Arrays.GreedyAlgorithm;
 
 import java.util.Arrays;
 
-public class MaxNumber {
+//https://www.educative.io/courses/algorithms-coding-interviews-java/solution-find-the-largest-number
+
+public class FindLargestNumber {
 
 	public static void findLargestNumber(int number_of_digits, int sum_of_digits) {
 		int[] result = new int[number_of_digits];
@@ -32,7 +34,8 @@ public class MaxNumber {
 
 	public static void main(String[] args) {
 		int sumOfDigits = 20;
-		int numberOfDigits = 2;
+		int numberOfDigits = 3;
 		findLargestNumber(numberOfDigits, sumOfDigits);
 	}
 }
+

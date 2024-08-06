@@ -1,8 +1,10 @@
-package Arrays;
+package Arrays.DivideAndConquer;
 
 import java.util.Arrays;
 
-public class ShuffleArray {
+//https://www.educative.io/courses/algorithms-coding-interviews-java/solution-shuffle-integers
+
+public class ShuffleInteger {
 
 	public static void shuffleArray(int arr[]) {
 		int size = arr.length;
@@ -26,7 +28,7 @@ public class ShuffleArray {
 	}
 
 	public static void main(String[] args) {
-		int[] arr = { 11, 13, 15, 17, 12, 24 };
+		int[] arr = { 3, 5, 7, 9, 11, 13};
 		System.out.println(Arrays.toString(arr));
 		shuffleArray(arr);
 	}

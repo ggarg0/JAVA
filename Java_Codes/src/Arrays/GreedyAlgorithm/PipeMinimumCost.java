@@ -1,6 +1,8 @@
-package Arrays;
+package Arrays.GreedyAlgorithm;
 
 import java.util.Arrays;
+
+//https://www.educative.io/courses/algorithms-coding-interviews-java/solution-connecting-n-pipes-with-minimum-cost
 
 public class PipeMinimumCost {
 

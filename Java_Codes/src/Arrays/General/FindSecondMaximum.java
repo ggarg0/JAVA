@@ -1,8 +1,6 @@
-package Arrays;
+package Arrays.General;
 
 //https://www.educative.io/courses/data-structures-coding-interviews-java/solution-find-second-maximum-value-in-an-array
-
-import java.util.Arrays;
 
 public class FindSecondMaximum {
     public static void main(String args[]) {

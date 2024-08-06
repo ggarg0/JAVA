@@ -1,29 +1,24 @@
 package Arrays.TwoPointers;
 
 public class StringReverseWords {
-    private static void strRev(char[] str, int startRev, int endRev) {
-        while (startRev < endRev) {
-            char temp = str[startRev];
-            str[startRev] = str[endRev];
-            str[endRev] = temp;
-            startRev++;
-            endRev--;
-        }
-    }
-
-    public static String reverseWords(String sentence) {
-     //   sentence = sentence.replaceAll("\\s+", " ").trim();
-        char[] charArray = sentence.toCharArray();
-        int strLen = charArray.length - 1;
-        strRev(charArray, 0, strLen);
-        for (int start = 0, end = 0; end <= strLen; ++end) {
-            if (end == strLen || charArray[end] == ' ') {
-                int endIdx = (end == strLen) ? end : end - 1;
-                strRev(charArray, start, endIdx);
-                start = end + 1;
+    public static String reverseString(String s) {
+        StringBuilder ans = new StringBuilder();
+        String temp = "";
+        for (int i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+            if (ch == ' ') {
+                if (!temp.equals("")) {
+                    ans.insert(0, temp + " ");
+                }
+                temp = "";
+            } else {
+                temp += ch;
             }
         }
-        return new String(charArray);
+        if (!temp.equals("")) {
+            ans.insert(0, temp + " ");
+        }
+        return ans.toString().trim();
     }
 
     public static String reverseWordsWithSplit(String stringToReverse) {
@@ -41,7 +36,7 @@ public class StringReverseWords {
         String test = "We Love Java.";
         System.out.println("String input : " + test);
         System.out.println("**********************************************");
-        System.out.println("Using two pointer : " + reverseWords(test));
+        System.out.println("Using two pointer : " + reverseString(test));
         System.out.println("**********************************************");
         System.out.println("Using split function : " + reverseWordsWithSplit(test));
         System.out.println("**********************************************");

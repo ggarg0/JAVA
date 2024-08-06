@@ -1,6 +1,8 @@
-package Arrays;
+package Arrays.GreedyAlgorithm;
 
 import java.util.ArrayList;
+
+//https://www.educative.io/courses/algorithms-coding-interviews-java/solution-make-your-own-change-machine
 
 public class CoinChangeMachine {
 

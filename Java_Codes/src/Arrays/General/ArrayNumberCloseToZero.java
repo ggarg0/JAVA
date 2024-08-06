@@ -1,4 +1,4 @@
-package Arrays.TwoPointers;
+package Arrays.General;
 //https://leetcode.com/problems/find-closest-number-to-zero/
 
 public class ArrayNumberCloseToZero {

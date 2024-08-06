@@ -1,4 +1,4 @@
-package Arrays;
+package Arrays.DivideAndConquer;
 
 //https://www.educative.io/courses/algorithms-coding-interviews-java/solution-maximum-subarray-sum
 
