@@ -1,5 +1,7 @@
 package Arrays.DivideAndConquer;
 
+//https://www.educative.io/courses/algorithms-coding-interviews-java/solution-peak-element
+
 public class PeakElement {
 	public static int findPeak(int[] array) {
 		int len = array.length;
