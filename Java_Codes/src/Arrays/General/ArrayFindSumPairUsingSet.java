@@ -3,7 +3,7 @@ package Arrays.General;
 import java.util.HashSet;
 import java.util.Set;
 
-public class ArrayFindSumPairUsingHashing {
+public class ArrayFindSumPairUsingSet {
 	public static void main(String[] args) {
 		int[] arr = { 1, 8, 45, 6, 10, 8 };
 		int sum = 16;
