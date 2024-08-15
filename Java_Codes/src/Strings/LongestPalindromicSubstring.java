@@ -39,7 +39,7 @@ public class LongestPalindromicSubstring {
 	}
 
 	public static void main(String[] args) {
-		String[] inputs = { "a"};
+		String[] inputs = { "1234287"};
 
 		int index = 0;
 		for (String input : inputs) {

@@ -33,7 +33,7 @@ public class FindLargestNumber {
 	}
 
 	public static void main(String[] args) {
-		int sumOfDigits = 20;
+		int sumOfDigits = 17;
 		int numberOfDigits = 3;
 		findLargestNumber(numberOfDigits, sumOfDigits);
 	}

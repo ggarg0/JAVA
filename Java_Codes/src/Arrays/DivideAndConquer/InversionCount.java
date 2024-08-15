@@ -9,7 +9,7 @@ the inversion count is 0. But if it’s sorted in the reverse order, the inversi
 (9, 5, 6, 11, 8, 10)
 Number of inversions = 5
 i-e: (9, 5), (9, 6), (9, 8), (11, 8), (11, 10)
-
+https://www.educative.io/courses/algorithms-coding-interviews-java/solution-inversion-count-in-an-array
 */
 
 

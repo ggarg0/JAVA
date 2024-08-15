@@ -2,6 +2,8 @@ package Arrays.General;
 
 import java.util.Arrays;
 
+//https://www.educative.io/courses/coderust-hacking-the-coding-interview/product-of-all-array-elements-except-self
+
 public class ProductExceptSelf {
     public static void main(String args[]) {
         int[] arr = {1, 2, 6, 4};

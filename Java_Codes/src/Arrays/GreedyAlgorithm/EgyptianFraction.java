@@ -31,7 +31,7 @@ public class EgyptianFraction {
 	}
 
 	public static void main(String[] args) {
-		int numerator = 2, denominator = 8;
+		int numerator = 6, denominator = 14;
 		System.out.print("Egyptian Fraction Representation of " + numerator + "/" + denominator + " is\n ");
 		printEgyptianFraction(numerator, denominator);
 		System.out.println();

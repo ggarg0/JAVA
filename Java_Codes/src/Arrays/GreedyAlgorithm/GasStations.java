@@ -6,7 +6,6 @@ import java.util.Arrays;
 
 public class GasStations {
     public static int gasStationJourney(int[] gas, int[] cost) {
-
         if (Arrays.stream(cost).sum() > Arrays.stream(gas).sum()) {
             return -1;
         }
@@ -49,7 +48,7 @@ public class GasStations {
             System.out.print(i + 1);
             System.out.println(".\tGas: " + Arrays.toString(gas[i]));
             System.out.println("\tCost: " + Arrays.toString(cost[i]));
-            System.out.println("\tThe index of the gas station we can start our journey from is " + gasStationJourney(gas[i], cost[i]) + " (If it's -1, then that means no solution exists)");
+            System.out.println("\tThe index of the gas station we can start our journey from is " + gasStationJourney(gas[i], cost[i]));
             System.out.println(new String(new char[100]).replace('\0', '-'));
         }
     }

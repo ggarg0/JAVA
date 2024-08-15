@@ -16,8 +16,8 @@ public class FindGreatestCommonDivisor {
 	}
 
 	public static void main(String[] args) {
-		int x = 85;
-		int y = 68;
+		int x = 20;
+		int y = 15;
 		int result = findGreatestCommonDivisor(x, y);
 		System.out.println("The GCD of " + x + " and " + y + " is : " + result);
 

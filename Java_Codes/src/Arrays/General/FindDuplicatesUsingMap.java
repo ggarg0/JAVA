@@ -23,6 +23,12 @@ public class FindDuplicatesUsingMap {
                 map.put(j, 1);
             }
         }
+        System.out.println(map);
+
+        System.out.println(map.entrySet().stream()
+                .filter(e -> e.getValue() == 1)
+                .map(Entry::getKey)
+                .collect(Collectors.toList()));
 
         map.entrySet().stream()
                 .filter(a -> a.getValue() <= 1)
@@ -30,7 +36,6 @@ public class FindDuplicatesUsingMap {
                 .collect(Collectors.toList())
                 .forEach(map.keySet()::remove);
 
-        System.out.println(map);
 
         return map.entrySet().stream()
                 .filter(a -> a.getValue() > 1)

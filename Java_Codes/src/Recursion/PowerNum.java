@@ -20,6 +20,6 @@ public class PowerNum {
 	}
 
 	public static void main(String[] args) {
-		System.out.println(myPow(0.00001d, 2147483647));
+		System.out.println(myPow(3, 3));
 	}
 }

@@ -33,7 +33,7 @@ public class FindAllPalindromeSubstrings {
 	}
 
 	public static void main(String[] args) {
-		String[] inputStr = { "abdbca", "cddpd", "educative" };
+		String[] inputStr = { "1234287", "cddpd", "educative" };
 		for (int i = 0; i < inputStr.length; i++) {
 			List<String> result = findAllPalindromeSubstrings(inputStr[i]);
 			System.out.println((i + 1) + ".   Input string: " + inputStr[i]);

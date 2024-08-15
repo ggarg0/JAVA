@@ -5,16 +5,14 @@ import java.util.Arrays;
 //https://www.educative.io/courses/grokking-coding-interview-patterns-java/solution-jump-game-i
 
 public class JumpGame {
-    public static boolean jumpGame(int[] nums) {
-        int targetNumIndex = nums.length - 1;
-        for (int i = nums.length - 2; i >= 0; i--) {
-            if (targetNumIndex <= (i + nums[i])) {
-                targetNumIndex = i;
+    public static boolean jumpGame(int[] jumps) {
+        int index = jumps.length - 1;
+        for (int current = jumps.length - 2; current >= 0; current--) {
+            if ((current + jumps[current]) >= index) {
+                index = current;
             }
         }
-        if (targetNumIndex == 0)
-            return true;
-        return false;
+        return index == 0;
     }
 
     public static void main(String[] args) {
@@ -36,6 +34,7 @@ public class JumpGame {
                 System.out.println("\tCan we reach the very last index? True");
             else
                 System.out.println("\tCan we reach the very last index? False");
+
             System.out.println(new String(new char[100]).replace('\0', '-'));
         }
     }

@@ -1,4 +1,6 @@
-package Recursion;
+package Arrays.DivideAndConquer;
+
+//https://www.educative.io/courses/algorithms-coding-interviews-java/solution-review-1-euclidean-algorithm
 
 public class EuclideanAlgorithm {
 
@@ -10,8 +12,8 @@ public class EuclideanAlgorithm {
 	}
 
 	public static void main(String[] args) {
-		int a = 85;
-		int b = 68;
+		int a = 8;
+		int b = 3;
 		System.out.println("GCD(" + a + " , " + b + ") = " + GCD(a, b));
 
 	}
