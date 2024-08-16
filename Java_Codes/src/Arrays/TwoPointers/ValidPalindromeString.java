@@ -1,6 +1,6 @@
 package Arrays.TwoPointers;
 
-public class PalindromeString {
+public class ValidPalindromeString {
     public static void main(String[] a) {
         String str = "122221";
         char[] arr = str.toCharArray();

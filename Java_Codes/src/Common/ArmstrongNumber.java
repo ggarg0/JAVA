@@ -13,7 +13,7 @@ public class ArmstrongNumber {
             sum += Math.pow(ld, k);
             n = n / 10;
         }
-        return sum == num ? true : false;
+        return sum == num;
     }
 
     public static void main(String[] args) {
