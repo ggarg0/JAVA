@@ -2,26 +2,27 @@ package Arrays.CyclicSort;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class FirstKMissingPositiveNumber {
 
     public static List<Integer> firstMissingPositiveInteger(int[] arr, int k) {
-        Arrays.sort(arr);
-        List<Integer> result = new ArrayList<>();
-        int count = 1;
-        int found = 0;
+        List<Integer> values = Arrays.stream(arr).boxed().collect(Collectors.toList());
+        List<Integer> result = new ArrayList<Integer>();
 
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] == count) {
-                count++;
-            } else {
+        int count = 1;
+        int notFound = 0;
+
+        for (int i = 0; i < (arr.length + k); i++) {
+            if (!values.contains(count)) {
+                notFound += 1;
                 result.add(count);
-                found++;
-                if (found == k) {
+                if (notFound == k)
                     break;
-                }
             }
+            count += 1;
         }
         return result;
     }
