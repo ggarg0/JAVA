@@ -1,7 +1,10 @@
 package Arrays.MergeIntervals;
 
+//https://www.educative.io/courses/grokking-coding-interview-patterns-java/solution-merge-intervals
+
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 public class MergeIntervals {
@@ -10,8 +13,8 @@ public class MergeIntervals {
         if (intervals.length < 1)
             return new int[][]{};
 
-        Arrays.sort(intervals, (a, b) -> a[0] - b[0]);
-
+        Arrays.sort(intervals, Comparator.comparingInt(a -> a[0]));
+        System.out.println("Sort Intervals : " + Arrays.deepToString(intervals));
         List<int[]> result = new ArrayList<>();
         int[] interval = intervals[0];
         result.add(interval);

@@ -1,5 +1,7 @@
 package Arrays.MergeIntervals;
 
+//https://www.educative.io/courses/grokking-coding-interview-patterns-java/solution-interval-list-intersections
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
