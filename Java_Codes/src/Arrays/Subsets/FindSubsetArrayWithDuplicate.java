@@ -1,5 +1,7 @@
 package Arrays.Subsets;
 
+//https://www.educative.io/courses/grokking-coding-interview-patterns-java/solution-subsets
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,7 +26,7 @@ public class FindSubsetArrayWithDuplicate {
 		List<List<Integer>> result = findSubsets(new int[] { 1, 3, 3 });
 		System.out.println("Result: " + result);
 
-		result = findSubsets(new int[] { 1, 5, 3 });
+		result = findSubsets(new int[] { 3, 6, 9 });
 		System.out.println("Result: " + result);
 
 	}
