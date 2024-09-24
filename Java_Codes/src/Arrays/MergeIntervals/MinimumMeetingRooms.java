@@ -31,10 +31,12 @@ public class MinimumMeetingRooms {
 
         while (startPointer < intervals.length) {
             usedRooms++;
+            System.out.print("Start : " + start[startPointer] + ", end : " + end[endPointer]);
             if (start[startPointer] >= end[endPointer]) {
                 usedRooms--;
                 endPointer++;
             }
+            System.out.println(", rooms: " + usedRooms);
             startPointer++;
         }
         return usedRooms;
@@ -42,6 +44,7 @@ public class MinimumMeetingRooms {
 
     public static void main(String[] args) {
         int[][] intervals = {{8, 10}, {10, 13}, {11, 12}, {12, 15}, {17, 20}};
+    //    int[][] intervals = {{1, 3}, {2, 4}, {3, 5}};
         System.out.println("Intervals : " + Arrays.deepToString(intervals));
         System.out.println("Minimum meeting room: " + minMeetingRooms(intervals));
     }
