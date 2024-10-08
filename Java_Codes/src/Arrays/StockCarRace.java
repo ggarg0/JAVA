@@ -1,6 +1,7 @@
 package Arrays;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class StockCarRace {
     public static List<String> solution(String[][] laps) {
@@ -16,27 +17,20 @@ public class StockCarRace {
                     bestTimes.put(name, Math.min(bestTimes.getOrDefault(name, Integer.MAX_VALUE), time));
                 }
             }
-
             if(bestTimes.isEmpty())
                 continue;
             // Find the slowest best time
             int slowestTime = Collections.max(bestTimes.values());
-            List<String> slowestDrivers = new ArrayList<>();
+            List<String> slowestDrivers = bestTimes.entrySet().stream()
+                    .filter(entry -> entry.getValue() == slowestTime)
+                    .map(Map.Entry::getKey)
+                    .sorted()
+                    .collect(Collectors.toList());
 
-            for (Map.Entry<String, Integer> entry : bestTimes.entrySet()) {
-                if (entry.getValue() == slowestTime) {
-                    slowestDrivers.add(entry.getKey());
-                }
-            }
-
-            // Sort the slowest drivers alphabetically
-            Collections.sort(slowestDrivers);
             eliminationOrder.addAll(slowestDrivers);
 
             // Remove the eliminated drivers from the best times map
-            for (String driver : slowestDrivers) {
-                bestTimes.remove(driver);
-            }
+            slowestDrivers.forEach(bestTimes::remove);
         }
         return eliminationOrder;
     }

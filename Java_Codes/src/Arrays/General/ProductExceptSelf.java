@@ -40,5 +40,28 @@ public class ProductExceptSelf {
         }
 
         System.out.println(Arrays.toString(product));
+
+        //approach 3
+        int zeroCount = 0;
+        int tempProduct = 1;
+        for (int value : arr) {
+            if (value == 0) {
+                zeroCount++;
+            } else {
+                tempProduct *= value;
+            }
+        }
+
+        // Fill the result array based on zero count
+        for (int m = 0; m < arr.length; m++) {
+            if (zeroCount > 1) {
+                result[m] = 0;
+            } else if (zeroCount == 1) {
+                result[m] = arr[m] == 0 ? tempProduct : 0;
+            } else {
+                result[m] = tempProduct / arr[m];
+            }
+        }
+        System.out.println(Arrays.toString(result));
     }
 }
