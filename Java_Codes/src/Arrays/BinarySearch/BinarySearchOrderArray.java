@@ -36,7 +36,7 @@ public class BinarySearchOrderArray {
 
     public static void main(String[] args) {
         System.out.println(search(new int[]{1, 3, 4, 6, 7, 8, 9}, 5));
-        System.out.println(search(new int[]{1, 2, 3, 4, 5, 6, 7}, 5));
+        System.out.println(search(new int[]{1, 2, 3, 4, 5, 6, 7}, 0));
         System.out.println(search(new int[]{10, 8, 6, 4, 3, 2, 1}, 7));
         System.out.println(search(new int[]{10, 6, 4}, 4));
 

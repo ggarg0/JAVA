@@ -21,7 +21,7 @@ public class MinimumMeetingRooms {
             end[i] = intervals[i][1];
         }
 
-        Arrays.sort(start, Comparator.comparingInt(a -> a));
+        Arrays.sort(start);
         Arrays.sort(end, Comparator.comparingInt(a -> a));
         System.out.println("Start Intervals : " + Arrays.toString(start));
         System.out.println("End Intervals : " + Arrays.toString(end));

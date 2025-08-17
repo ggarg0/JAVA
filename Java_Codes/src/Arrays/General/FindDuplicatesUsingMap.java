@@ -35,7 +35,7 @@ public class FindDuplicatesUsingMap {
                 .map(Entry::getKey)
                 .collect(Collectors.toList())
                 .forEach(map.keySet()::remove);
-
+        System.out.println(map);
 
         return map.entrySet().stream()
                 .filter(a -> a.getValue() > 1)

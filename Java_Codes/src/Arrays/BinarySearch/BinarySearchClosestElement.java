@@ -33,7 +33,7 @@ public class BinarySearchClosestElement {
     }
 
     public static void main(String[] args) {
-        System.out.println(searchClosestElement(new int[]{3, 5, 7, 8, 11, 17}, 10));
+        System.out.println(searchClosestElement(new int[]{3, 5, 7, 8, 11, 17}, 2));
         System.out.println(searchClosestElement(new int[]{4, 6, 10}, 4));
         System.out.println(searchClosestElement(new int[]{1, 3, 8, 10, 15}, 12));
         System.out.println(searchClosestElement(new int[]{4, 6, 10}, 17));
