@@ -31,7 +31,7 @@ public class FindDuplicatesInArray {
     // Driver code
     public static void main(String[] args) {
         int[][] nums = {
-                {1, 3, 2, 3, 5, 4},
+                {1, 3, 2, 3, 5, 2},
                 {2, 4, 5, 4, 1, 3},
                 {1, 6, 3, 5, 1, 2, 7, 4},
                 {1, 2, 2, 4, 3},

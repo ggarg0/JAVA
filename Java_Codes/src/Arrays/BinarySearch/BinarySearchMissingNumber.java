@@ -35,7 +35,7 @@ public class BinarySearchMissingNumber {
     public static void main(String[] args) {
         int[] input1 = {1, 2, 4};
         int[] input2 = {1, 2, 3, 4, 6};
-        int[] input3 = {2, 3, 4, 5, 6};
+        int[] input3 = {1, 3, 4, 5, 6};
         int[] input4 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
         System.out.println("Find the Missing Number!");

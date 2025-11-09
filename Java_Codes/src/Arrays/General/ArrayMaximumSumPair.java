@@ -4,37 +4,27 @@ import java.util.Arrays;
 
 class ArrayMaximumSumPair {
     public static void main(String[] args) {
-        int[] arr = {-4, -1, -9, 1, -7};
-        int first, second;
-        int[] indexes = {-1, -1};
-        int sum;
-
-        if (arr[0] > arr[1]) {
-            first = arr[0];
-            second = arr[1];
-            indexes[0] = 0;
-            indexes[1] = 1;
-        } else {
-            first = arr[1];
-            second = arr[0];
-            indexes[0] = 1;
-            indexes[1] = 0;
+        int[] arr = {4, -1, -9, 1, -7};
+        if (arr.length < 2) {
+            System.out.println("Array must contain at least two elements.");
+            return;
         }
+        int first = Integer.MIN_VALUE, second = Integer.MIN_VALUE;
+        int firstIndex = -1, secondIndex = -1;
 
-        for (int i = 2; i < arr.length; i++) {
+        for (int i = 0; i < arr.length; i++) {
             if (arr[i] > first) {
                 second = first;
+                secondIndex = firstIndex;
                 first = arr[i];
-                indexes[1] = indexes[0];
-                indexes[0] = i;
+                firstIndex = i;
             } else if (arr[i] > second) {
                 second = arr[i];
-                indexes[1] = i;
+                secondIndex = i;
             }
         }
-        sum = first + second;
-
-        System.out.println("Pair with given sum " + sum
-                + " is (" + first + ", " + second + ") and indexes : " + Arrays.toString(indexes));
+        System.out.println("Pair with given sum " + (first + second) +
+                " is (" + first + ", " + second + ") and indexes : " +
+                Arrays.toString(new int[]{firstIndex, secondIndex}));
     }
 }

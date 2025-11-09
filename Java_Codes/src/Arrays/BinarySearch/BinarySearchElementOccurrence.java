@@ -30,7 +30,7 @@ public class BinarySearchElementOccurrence {
 
     public static void main(String[] args) {
         int[] arr = {1, 1, 2, 2, 2, 2, 2, 3, 4, 4, 5, 6, 6, 9};
-        int key = 1;
+        int key = 4;
         int first = findIndexes(arr, key, true);
         int last = first == -1 ? 0 : findIndexes(arr, key, false);
         System.out.println("element occurrences : " + (first == -1 ? 0 : ((last - first) + 1)));

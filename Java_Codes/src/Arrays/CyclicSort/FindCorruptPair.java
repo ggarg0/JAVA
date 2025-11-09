@@ -34,9 +34,9 @@ public class FindCorruptPair {
     }
 
     public static void main(String[] args) {
-        //  int[] arr = {3, 1, 2, 3, 6, 4};
+         int[] arr = {3, 1, 2, 3, 6, 4};
         //  int[] arr =  {4, 1, 2, 1, 6, 3};
-        int[] arr = {5, 3, 5, 6, 2, 1};
+        //int[] arr = {5, 3, 5, 6, 2, 1};
         //int[] arr = {3, 1, 2, 5, 2};
         System.out.println("Missing number: " + Arrays.toString(findCorruptPair(arr)));
     }
